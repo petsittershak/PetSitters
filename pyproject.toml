@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "backend"
 version = "0.1.0"
-description = ""
+description = "Hakaton Project"
 authors = ["4got10king <Aldavletshina77654@yandex.ru>"]
 readme = "README.md"
 
@@ -10,6 +10,9 @@ python = "^3.12"
 uvicorn = "^0.29.0"
 psycopg2-binary = "^2.9.9"
 fastapi = "^0.111.0"
+sqlalchemy = "^2.0.30"
+alembic = "^1.13.1"
+pydantic-settings = "^2.2.1"
 
 
 [build-system]
