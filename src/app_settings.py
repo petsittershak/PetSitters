@@ -10,7 +10,6 @@ class AppSettings(BaseSettings):
 
     DEBUG: bool = False
 
-    # HOST: str = 'https://7b76-84-54-80-187.ngrok-free.app'
     PORT: int = "8081"
     server_host: str = "localhost"
     server_port: int = 8080
@@ -28,12 +27,6 @@ class AppSettings(BaseSettings):
     ]
     methods: List[str] = ["GET", "POST", "OPTIONS", "DELETE", "PATCH", "PUT"]
     headers: List[str] = ["*"]
-    # headers: List[str] = ["Content-Type", "Set-Cookie", "Access-Control-Allow-Headers",
-    #                       "Access-Control-Allow-Origin",
-    #                       "Authorization", "X-PID-Token", "fastapiusersauth"]
-
-    SECRET_KEY: str = "32198"
-    ALGORITHM: str = "HS256"
     SAVE_PATH: str = "research_data"
     REFRESH_TOKEN_EXPIRE_DAYS: int = 30
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 60
