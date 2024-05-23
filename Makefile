@@ -1,6 +1,10 @@
 run-server:
 	@echo "Starting server..."
-	@poetry run python3 run.py
+	@cd src && poetry run python3 run.py
+
+start-server:
+	@echo "Starting server with Docker Compose..."
+	@docker-compose up
 
 install:
 	@poetry install
