@@ -12,5 +12,8 @@ install:
 
 migrations:
 	@echo "Applying database migrations..."
+	@poetry run alembic revision --autogenerate -m "DB"
 	@poetry run alembic upgrade head
 	@echo "Migrations applied successfully."
+
+
