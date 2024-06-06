@@ -19,7 +19,7 @@ class ClientOrm(Model):
     pet: Mapped[str]
     price: Mapped[int]
     city: Mapped[str]
-    telephone: Mapped[int]
+    telephone: Mapped[str]
     description: Mapped[Optional[str]]
 
 

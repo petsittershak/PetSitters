@@ -1,6 +1,9 @@
 from typing import Optional
 import re
 from pydantic import BaseModel, ConfigDict, validator
+import phonenumbers
+from phonenumbers import parse, is_valid_number
+from fastapi import HTTPException
 
 
 class SClientAdd(BaseModel):
@@ -8,16 +11,18 @@ class SClientAdd(BaseModel):
     pet: str
     price: int
     city: str
-    telephone: int
+    telephone: str
     description: Optional[str] = None
 
     @validator("telephone")
     def validate_phone_number(cls, v):
-        if not re.match(r"^\d{11}$", str(v)):
-            raise ValueError(
-                "Неверный формат номера телефона. Пожалуйста, используйте формат 89999999999"
+        parsed_number = parse(v, "RU")
+        if is_valid_number(parsed_number):
+            return v
+        else:
+            raise HTTPException(
+                status_code=400, detail="Неверный формат номера телефона"
             )
-        return v
 
 
 class SClient(SClientAdd):

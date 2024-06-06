@@ -2,8 +2,8 @@ from typing import Annotated
 
 from fastapi import APIRouter, Depends
 
-from ..repository.repository import ClientRepository
-from ..schemas.schemas import SClientAdd, SClient, SClientId
+from application.repository.client import ClientRepository
+from application.schemas.client import SClientAdd, SClient, SClientId
 
 router = APIRouter(
     prefix="/clients",

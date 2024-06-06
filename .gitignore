@@ -1,6 +1,8 @@
-__pycahe__/
+__pycache__/
 .env
 
 app/Clients.db
+
+poetry.lock
 
 Clients.db

@@ -1,7 +1,7 @@
 from sqlalchemy import select
 
-from ..database.database import new_session, ClientOrm
-from ..schemas.schemas import SClientAdd, SClient
+from ..database.client import new_session, ClientOrm
+from ..schemas.client import SClientAdd, SClient
 
 
 class ClientRepository:
