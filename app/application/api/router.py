@@ -16,7 +16,7 @@ async def add_client(
     client: Annotated[SClientAdd, Depends()],
 ) -> SClientId:
     client_id = await ClientRepository.add_one(client)
-    return {"ok": True, "client_id": client_id}
+    return {"Add": True, "client_id": client_id}
 
 
 @router.get("")
