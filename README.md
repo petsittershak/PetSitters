@@ -19,10 +19,16 @@
 
 ## Make 
 
-1) `Make install` - установит все зависимости
-2) `Make start-server` - запустит базу данных в docker
-3) `Make migrations` - применит все таблицы для базы данных
-4) `Make run-server` - запустит сервер uvicorn
+1) `Make app` - поднимет приложение
 
 *Все, что нужно еще - можете обращаться, докину в Make 
 
+## Windows 
+
+1) Поднимаем докер 
+
+`docker-compose -f docker_compose/app.yml --env-file .env up --build -d`
+
+2) заходим в браузуре по адресу
+
+`http://localhost:8909/docs`
