@@ -1,0 +1,219 @@
+$mainLightColor: #BDA8D4;
+$secondLightColor: #DFCFF1;
+$mainDarkColor: #320064;
+$whiteColor: #FFFFFF;
+$outlineGrayColor: #B3B3B3;
+
+// .form_div{
+
+// }
+.client_form_div{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  
+}
+
+.client_form{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 1000px;
+  height: 668px;
+  border: solid 3px $mainDarkColor;
+  border-radius: 30px;
+  background-color: #FFFFFF;
+  font-family: "Myfont";
+
+  .client_form_pic1{
+    position: absolute;
+    z-index: 1;
+    left: 40px;
+    top: 90px;
+  }
+  
+  .client_form_pic2{
+    position: absolute;
+    z-index: 1;
+    left: 840px;
+    top: 96px;
+  }
+  .client_form_li{
+   list-style: none;
+   line-height: 60px;
+  }
+}
+.client_form_header{
+  height: min-content;
+  margin: 0px;
+  color: $mainDarkColor;
+  font-size: 48px;
+}
+.client_form_form_div{
+  display: flex;
+  justify-content: space-evenly;
+  width: 1000px;
+  height: 472px;
+  z-index: 2;
+
+  div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: fit-content;
+  }
+ 
+
+label{
+  color: $outlineGrayColor;
+  font-size: 24px;
+}
+
+}
+
+
+
+.client_form{
+
+    label{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100px;
+    width: 341px;
+    align-items: center;
+    }
+.client_form_select_opt{
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+    align-items: flex-start;
+    width: inherit;
+    
+
+}
+
+.form_select_active{
+      display: flex;
+      height: fit-content;
+      overflow: visible;
+      width: 400px;
+      border-radius: 30px;
+      background-color: #ffffff;
+      border: solid 1px $outlineGrayColor;
+      z-index: 2;
+      position: absolute;
+      top: 60px;
+      left: 0px;
+
+      li{
+        cursor: pointer;
+        width:390px;
+        color: $mainDarkColor;
+        border-radius: 30px;
+        padding-left: 10px;
+      }
+      li:hover{
+        background-color: $mainLightColor;
+      }
+    }
+
+    input{
+    width: 301px;
+    height: 60px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: solid 1px $mainLightColor;
+    box-shadow: 2px 2px 5px $outlineGrayColor;
+    border-radius: 30px;
+  }
+
+    ._select{
+    width: 360px;
+    height: 60px;
+    color: black;
+    align-items: start;
+    line-height: 60px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #ffffff;
+    border: solid 1px $mainLightColor;
+    box-shadow: 2px 2px 5px $outlineGrayColor;
+    border-radius: 30px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+  
+
+    option{
+     height: max-content;
+     color: #320064;
+     border-radius: 30px;
+     cursor: pointer;
+     }
+
+     }
+
+    ._select:hover{
+      cursor: pointer;
+    }
+     .price{
+      display:flex;
+      flex-direction: row;
+    
+       } 
+
+       .price_select{
+        width: 191px;
+        padding-left: 14px;
+        padding-right: 14px;
+       }
+    
+
+    button{
+    width: 400px;
+    height: 60px;
+    border: solid 1px $mainLightColor;
+    box-shadow: 2px 2px 5px $outlineGrayColor;
+    border-radius: 30px;
+    background-color:#FFFFFF;
+    font-family: "Myfont";
+    
+    }
+    button:hover{
+      cursor: pointer;
+    }
+
+    .positionBtn{
+    text-align: left;
+    padding-left: 20px;
+    background-image: url('../pictures/icons/07_icons_drop.png');
+    background-size: initial;
+    background-repeat: no-repeat;
+    background-position-x: 340px;
+    background-position-y: 5px;
+    font-size: 24px;
+    color: $outlineGrayColor;
+    }
+
+  .submitBtn{
+    width: 342px;
+    height: 70px;
+    text-align: center;
+    background-image: url('../pictures/dogs/Dog_Paw_light.png');
+    background-size: initial;
+    background-repeat: no-repeat;
+    background-position-x: 275px;
+    background-position-y: 5px;
+    font-size: 32px;
+    color: $outlineGrayColor;
+  }
+   
+  }
+ 

@@ -1,20 +1,27 @@
 @import "sitters_page.scss";
+@import "client_form_styles.scss";
 
  $mainLightColor: #BDA8D4;
  $secondLightColor: #DFCFF1;
  $mainDarkColor: #320064;
  $whiteColor: #FFFFFF;
  
+@font-face {
+  font-family: "Myfont";
+  font-style: normal;
+  src: url(../fonts/RG-StandardBook.ttf) format(".ttf");
+}
+
 html{
-  font-family: 'Courier New', Courier, monospace;
   width: 100%;
   scroll-behavior: smooth;
+  font-family: "MyFont";
 }
 
 body{
  background-color: $whiteColor;
  margin:0px;
-
+ font-family: "MyFont";
 }
 
 .main_page{

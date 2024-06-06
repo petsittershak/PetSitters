@@ -29,15 +29,203 @@
   padding: 60px;
 }
 
+.client_form_div {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.client_form {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 1000px;
+  height: 668px;
+  border: solid 3px #320064;
+  border-radius: 30px;
+  background-color: #FFFFFF;
+  font-family: "Myfont";
+}
+.client_form .client_form_pic1 {
+  position: absolute;
+  z-index: 1;
+  left: 40px;
+  top: 90px;
+}
+.client_form .client_form_pic2 {
+  position: absolute;
+  z-index: 1;
+  left: 840px;
+  top: 96px;
+}
+.client_form .client_form_li {
+  list-style: none;
+  line-height: 60px;
+}
+
+.client_form_header {
+  height: min-content;
+  margin: 0px;
+  color: #320064;
+  font-size: 48px;
+}
+
+.client_form_form_div {
+  display: flex;
+  justify-content: space-evenly;
+  width: 1000px;
+  height: 472px;
+  z-index: 2;
+}
+.client_form_form_div div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: fit-content;
+}
+.client_form_form_div label {
+  color: #B3B3B3;
+  font-size: 24px;
+}
+
+.client_form label {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100px;
+  width: 341px;
+  align-items: center;
+}
+.client_form .client_form_select_opt {
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+  align-items: flex-start;
+  width: inherit;
+}
+.client_form .form_select_active {
+  display: flex;
+  height: fit-content;
+  overflow: visible;
+  width: 400px;
+  border-radius: 30px;
+  background-color: #ffffff;
+  border: solid 1px #B3B3B3;
+  z-index: 2;
+  position: absolute;
+  top: 60px;
+  left: 0px;
+}
+.client_form .form_select_active li {
+  cursor: pointer;
+  width: 390px;
+  color: #320064;
+  border-radius: 30px;
+  padding-left: 10px;
+}
+.client_form .form_select_active li:hover {
+  background-color: #BDA8D4;
+}
+.client_form input {
+  width: 301px;
+  height: 60px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border: solid 1px #BDA8D4;
+  box-shadow: 2px 2px 5px #B3B3B3;
+  border-radius: 30px;
+}
+.client_form ._select {
+  width: 360px;
+  height: 60px;
+  color: black;
+  align-items: start;
+  line-height: 60px;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: #ffffff;
+  border: solid 1px #BDA8D4;
+  box-shadow: 2px 2px 5px #B3B3B3;
+  border-radius: 30px;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+.client_form ._select option {
+  height: max-content;
+  color: #320064;
+  border-radius: 30px;
+  cursor: pointer;
+}
+.client_form ._select:hover {
+  cursor: pointer;
+}
+.client_form .price {
+  display: flex;
+  flex-direction: row;
+}
+.client_form .price_select {
+  width: 191px;
+  padding-left: 14px;
+  padding-right: 14px;
+}
+.client_form button {
+  width: 400px;
+  height: 60px;
+  border: solid 1px #BDA8D4;
+  box-shadow: 2px 2px 5px #B3B3B3;
+  border-radius: 30px;
+  background-color: #FFFFFF;
+  font-family: "Myfont";
+}
+.client_form button:hover {
+  cursor: pointer;
+}
+.client_form .positionBtn {
+  text-align: left;
+  padding-left: 20px;
+  background-image: url("../pictures/icons/07_icons_drop.png");
+  background-size: initial;
+  background-repeat: no-repeat;
+  background-position-x: 340px;
+  background-position-y: 5px;
+  font-size: 24px;
+  color: #B3B3B3;
+}
+.client_form .submitBtn {
+  width: 342px;
+  height: 70px;
+  text-align: center;
+  background-image: url("../pictures/dogs/Dog_Paw_light.png");
+  background-size: initial;
+  background-repeat: no-repeat;
+  background-position-x: 275px;
+  background-position-y: 5px;
+  font-size: 32px;
+  color: #B3B3B3;
+}
+
+@font-face {
+  font-family: "Myfont";
+  font-style: normal;
+  src: url(../fonts/RG-StandardBook.ttf) format(".ttf");
+}
 html {
-  font-family: "Courier New", Courier, monospace;
   width: 100%;
   scroll-behavior: smooth;
+  font-family: "MyFont";
 }
 
 body {
   background-color: #FFFFFF;
   margin: 0px;
+  font-family: "MyFont";
 }
 
 .main_page {
