@@ -41,6 +41,7 @@ export default function CreateDatePicker(){
   return (
     <DatePicker
       locale="ru"
+      dateFormat="dd.MM.yyyy"
       selectsRange={true}
       minDate={new Date()}
       startDate={startDate}
