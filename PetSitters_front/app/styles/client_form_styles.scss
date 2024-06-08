@@ -1,20 +1,28 @@
-$mainLightColor: #BDA8D4;
-$secondLightColor: #DFCFF1;
-$mainDarkColor: #320064;
-$whiteColor: #FFFFFF;
-$outlineGrayColor: #B3B3B3;
+@import "standard_styles.scss";
+@import "03_button_styles.scss";
+/// 
 
-// .form_div{
 
-// }
+.form_background{
+  content: '';
+  background-color: rgba(0, 0, 0, 0.6);
+	position: fixed; 
+	left: 0;
+	top: 0;
+	width: 100%; 
+	height: 100%;
+	z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .client_form_div{
   position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100vw;
-  height: 100vh;
-  
+  // z-index: 101;
 }
 
 .client_form{
@@ -25,9 +33,9 @@ $outlineGrayColor: #B3B3B3;
   justify-content: space-evenly;
   width: 1000px;
   height: 668px;
-  border: solid 3px $mainDarkColor;
+  border: $outline;
   border-radius: 30px;
-  background-color: #FFFFFF;
+  background-color: $whiteColor;
   font-family: "Myfont";
 
   .client_form_pic1{
@@ -77,10 +85,7 @@ label{
 
 }
 
-
-
 .client_form{
-
     label{
     display: flex;
     flex-direction: column;
@@ -89,14 +94,13 @@ label{
     width: 341px;
     align-items: center;
     }
+
 .client_form_select_opt{
     display: none;
     flex-direction: column;
     overflow: hidden;
     align-items: flex-start;
     width: inherit;
-    
-
 }
 
 .form_select_active{
@@ -105,8 +109,8 @@ label{
       overflow: visible;
       width: 400px;
       border-radius: 30px;
-      background-color: #ffffff;
-      border: solid 1px $outlineGrayColor;
+      background-color: $whiteColor;
+      border: $outline;
       z-index: 2;
       position: absolute;
       top: 60px;
@@ -116,7 +120,7 @@ label{
         cursor: pointer;
         width:390px;
         color: $mainDarkColor;
-        border-radius: 30px;
+        border-radius: $borderRadius;
         padding-left: 10px;
       }
       li:hover{
@@ -129,8 +133,8 @@ label{
     height: 60px;
     padding-left: 20px;
     padding-right: 20px;
-    border: solid 1px $mainLightColor;
-    box-shadow: 2px 2px 5px $outlineGrayColor;
+    border: $outline;
+    box-shadow: $shadow;
     border-radius: 30px;
   }
 
@@ -142,10 +146,10 @@ label{
     line-height: 60px;
     padding-left: 20px;
     padding-right: 20px;
-    background-color: #ffffff;
-    border: solid 1px $mainLightColor;
-    box-shadow: 2px 2px 5px $outlineGrayColor;
-    border-radius: 30px;
+    background-color: $whiteColor;
+    border: $outline;
+    box-shadow: $shadow;
+    border-radius: $borderRadius;
     display: flex;
     justify-content: space-between;
     position: relative;
@@ -153,8 +157,8 @@ label{
 
     option{
      height: max-content;
-     color: #320064;
-     border-radius: 30px;
+     color:$mainDarkColor;
+     border-radius: $borderRadius;
      cursor: pointer;
      }
 
@@ -166,54 +170,18 @@ label{
      .price{
       display:flex;
       flex-direction: row;
-    
+      justify-content: space-between;
        } 
 
        .price_select{
-        width: 191px;
+        width: 163px;
         padding-left: 14px;
         padding-right: 14px;
        }
-    
 
-    button{
-    width: 400px;
-    height: 60px;
-    border: solid 1px $mainLightColor;
-    box-shadow: 2px 2px 5px $outlineGrayColor;
-    border-radius: 30px;
-    background-color:#FFFFFF;
-    font-family: "Myfont";
-    
-    }
-    button:hover{
-      cursor: pointer;
-    }
+   
 
-    .positionBtn{
-    text-align: left;
-    padding-left: 20px;
-    background-image: url('../pictures/icons/07_icons_drop.png');
-    background-size: initial;
-    background-repeat: no-repeat;
-    background-position-x: 340px;
-    background-position-y: 5px;
-    font-size: 24px;
-    color: $outlineGrayColor;
-    }
-
-  .submitBtn{
-    width: 342px;
-    height: 70px;
-    text-align: center;
-    background-image: url('../pictures/dogs/Dog_Paw_light.png');
-    background-size: initial;
-    background-repeat: no-repeat;
-    background-position-x: 275px;
-    background-position-y: 5px;
-    font-size: 32px;
-    color: $outlineGrayColor;
-  }
+  
    
   }
  

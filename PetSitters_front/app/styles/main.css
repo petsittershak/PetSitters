@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "Myfont";
+  font-style: normal;
+  src: url(../fonts/RG-StandardBook.ttf) format(".ttf");
+}
 .sitters_page {
   width: 100%;
   min-width: 1280px;
@@ -29,13 +34,99 @@
   padding: 60px;
 }
 
+@font-face {
+  font-family: "Myfont";
+  font-style: normal;
+  src: url(../fonts/RG-StandardBook.ttf) format(".ttf");
+}
+@font-face {
+  font-family: "Myfont";
+  font-style: normal;
+  src: url(../fonts/RG-StandardBook.ttf) format(".ttf");
+}
+.btn {
+  cursor: pointer;
+  border-radius: 30px;
+  font-family: "MyFont";
+  border: solid 1px #BDA8D4;
+}
+
+.main_button_styles {
+  width: 360px;
+  height: 44px;
+  color: #320064;
+  background-color: #BDA8D4;
+}
+
+.fill_form_btn {
+  width: 460px;
+  height: 76px;
+  color: #320064;
+  background-color: #BDA8D4;
+}
+
+.submit_form_btn {
+  width: 342px;
+  height: 70px;
+  text-align: center;
+  line-height: 70px;
+  background-image: url("../pictures/dogs/Dog_Paw_light.png");
+  background-size: initial;
+  background-repeat: no-repeat;
+  background-position-x: 275px;
+  background-position-y: 5px;
+  font-size: 32px;
+  color: #B3B3B3;
+}
+
+.positionBtn {
+  width: 400px;
+  height: 60px;
+  text-align: left;
+  padding-left: 20px;
+  background-image: url("../pictures/icons/07_icons_drop.png");
+  background-size: initial;
+  background-repeat: no-repeat;
+  background-position-x: 340px;
+  background-position-y: 5px;
+  font-size: 24px;
+  color: #B3B3B3;
+  line-height: 60px;
+}
+
+.small_button_styles {
+  width: 119px;
+  height: 36px;
+  color: #0F0F0F;
+  background-color: #FFF9F5;
+}
+
+.footer_button_styles {
+  width: 361px;
+  height: 48px;
+  color: #0F0F0F;
+  background-color: #FFF9F5;
+}
+
+.form_background {
+  content: "";
+  background-color: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .client_form_div {
   position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100vw;
-  height: 100vh;
 }
 
 .client_form {
@@ -46,7 +137,7 @@
   justify-content: space-evenly;
   width: 1000px;
   height: 668px;
-  border: solid 3px #320064;
+  border: solid 1px #BDA8D4;
   border-radius: 30px;
   background-color: #FFFFFF;
   font-family: "Myfont";
@@ -115,8 +206,8 @@
   overflow: visible;
   width: 400px;
   border-radius: 30px;
-  background-color: #ffffff;
-  border: solid 1px #B3B3B3;
+  background-color: #FFFFFF;
+  border: solid 1px #BDA8D4;
   z-index: 2;
   position: absolute;
   top: 60px;
@@ -138,7 +229,7 @@
   padding-left: 20px;
   padding-right: 20px;
   border: solid 1px #BDA8D4;
-  box-shadow: 2px 2px 5px #B3B3B3;
+  box-shadow: none;
   border-radius: 30px;
 }
 .client_form ._select {
@@ -149,9 +240,9 @@
   line-height: 60px;
   padding-left: 20px;
   padding-right: 20px;
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   border: solid 1px #BDA8D4;
-  box-shadow: 2px 2px 5px #B3B3B3;
+  box-shadow: none;
   border-radius: 30px;
   display: flex;
   justify-content: space-between;
@@ -169,25 +260,57 @@
 .client_form .price {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
 }
 .client_form .price_select {
-  width: 191px;
+  width: 163px;
   padding-left: 14px;
   padding-right: 14px;
 }
-.client_form button {
+
+@font-face {
+  font-family: "Myfont";
+  font-style: normal;
+  src: url(../fonts/RG-StandardBook.ttf) format(".ttf");
+}
+.btn {
+  cursor: pointer;
+  border-radius: 30px;
+  font-family: "MyFont";
+  border: solid 1px #BDA8D4;
+}
+
+.main_button_styles {
+  width: 360px;
+  height: 44px;
+  color: #320064;
+  background-color: #BDA8D4;
+}
+
+.fill_form_btn {
+  width: 460px;
+  height: 76px;
+  color: #320064;
+  background-color: #BDA8D4;
+}
+
+.submit_form_btn {
+  width: 342px;
+  height: 70px;
+  text-align: center;
+  line-height: 70px;
+  background-image: url("../pictures/dogs/Dog_Paw_light.png");
+  background-size: initial;
+  background-repeat: no-repeat;
+  background-position-x: 275px;
+  background-position-y: 5px;
+  font-size: 32px;
+  color: #B3B3B3;
+}
+
+.positionBtn {
   width: 400px;
   height: 60px;
-  border: solid 1px #BDA8D4;
-  box-shadow: 2px 2px 5px #B3B3B3;
-  border-radius: 30px;
-  background-color: #FFFFFF;
-  font-family: "Myfont";
-}
-.client_form button:hover {
-  cursor: pointer;
-}
-.client_form .positionBtn {
   text-align: left;
   padding-left: 20px;
   background-image: url("../pictures/icons/07_icons_drop.png");
@@ -197,18 +320,21 @@
   background-position-y: 5px;
   font-size: 24px;
   color: #B3B3B3;
+  line-height: 60px;
 }
-.client_form .submitBtn {
-  width: 342px;
-  height: 70px;
-  text-align: center;
-  background-image: url("../pictures/dogs/Dog_Paw_light.png");
-  background-size: initial;
-  background-repeat: no-repeat;
-  background-position-x: 275px;
-  background-position-y: 5px;
-  font-size: 32px;
-  color: #B3B3B3;
+
+.small_button_styles {
+  width: 119px;
+  height: 36px;
+  color: #0F0F0F;
+  background-color: #FFF9F5;
+}
+
+.footer_button_styles {
+  width: 361px;
+  height: 48px;
+  color: #0F0F0F;
+  background-color: #FFF9F5;
 }
 
 @font-face {
@@ -220,6 +346,7 @@ html {
   width: 100%;
   scroll-behavior: smooth;
   font-family: "MyFont";
+  background-color: #FFF9F5;
 }
 
 body {
@@ -231,7 +358,7 @@ body {
 .main_page {
   width: 100%;
   min-width: 1280px;
-  height: 5389px;
+  height: 5166px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -248,7 +375,7 @@ body {
 }
 
 .main_content {
-  height: 4651px;
+  height: 4447px;
   width: inherit;
   display: flex;
   flex-direction: column;
@@ -295,6 +422,10 @@ body {
   background-color: #BDA8D4;
   padding-left: 60px;
   padding-right: 60px;
+}
+
+.form_div {
+  display: block;
 }
 
 .footer {

@@ -1,0 +1,22 @@
+$mainLightColor: #BDA8D4;
+$secondLightColor: #DFCFF1;
+$mainDarkColor: #320064;
+$whiteColor: #FFFFFF;
+$outlineGrayColor: #B3B3B3;
+$beigeColor: #FFF9F5;
+$mainBlackColor: #0F0F0F;
+$outline: solid 1px $mainLightColor;
+$shadow: none;
+$borderRadius: 30px;
+$fontSizwLarge: 48px;
+$fontSizeMedium: 32px;
+$fontSizeSmall: 20px;
+$fontSizeButtons: 24px;
+$fontSizeSmallButton: 16px;
+
+
+@font-face {
+  font-family: "Myfont";
+  font-style: normal;
+  src: url(../fonts/RG-StandardBook.ttf) format(".ttf");
+}

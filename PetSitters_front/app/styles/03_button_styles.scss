@@ -1,0 +1,65 @@
+@import "standard_styles.scss";
+
+.btn{
+  cursor: pointer;
+  border-radius: $borderRadius;
+  font-family: "MyFont";
+  border: solid 1px $mainLightColor;
+}
+
+.main_button_styles{
+width: 360px;
+height: 44px;
+color: $mainDarkColor;
+background-color: $mainLightColor;
+}
+
+.fill_form_btn{
+width: 460px;
+height: 76px;
+color: $mainDarkColor;
+background-color: $mainLightColor;
+}
+
+.submit_form_btn{
+    width: 342px;
+    height: 70px;
+    text-align: center;
+    line-height: 70px;
+    background-image: url('../pictures/dogs/Dog_Paw_light.png');
+    background-size: initial;
+    background-repeat: no-repeat;
+    background-position-x: 275px;
+    background-position-y: 5px;
+    font-size: 32px;
+    color: $outlineGrayColor;
+}
+
+.positionBtn{
+  width: 400px;
+  height: 60px;
+  text-align: left;
+  padding-left: 20px;
+  background-image: url('../pictures/icons/07_icons_drop.png');
+  background-size: initial;
+  background-repeat: no-repeat;
+  background-position-x: 340px;
+  background-position-y: 5px;
+  font-size: 24px;
+  color: $outlineGrayColor;
+  line-height: 60px;
+  }
+
+.small_button_styles{
+  width: 119px;
+  height: 36px;
+  color: $mainBlackColor;
+  background-color: $beigeColor;
+}
+
+.footer_button_styles{
+  width: 361px;
+  height: 48px;
+  color: $mainBlackColor;
+  background-color: $beigeColor;
+}
