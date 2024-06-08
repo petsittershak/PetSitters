@@ -1,7 +1,8 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
+import ReactDOM from "react-dom/client";
 import CreateInput from "./02_input.jsx";
 import CreateButton from "./03_button_all.jsx";
-import ReactDOM from "react-dom/client";
+import CreateDatePicker from "./05_react_date_picker.jsx";
 
 //данный компонент согдает форму для заполнения заказчиком
 
@@ -143,13 +144,14 @@ const tooltips = ["Погуляем с собачкой в вашем район
           </div>
           <div className="client_form_div2">
             <label>
-              Период с
+              Период
               <br />
-              <div className="price" >
-              <input className="price_select" type="date" placeholder="С"></input>
-              <input className="price_select" type="date" placeholder="По"></input>
+              <div className="date_picker" >
+                 <CreateDatePicker />
+              {/* <input className="price_select" type="date" placeholder="С"></input>
+              <input className="price_select" type="date" placeholder="По"></input> */}
               </div>
-             
+            
             </label>
             <label>
               Телефон
