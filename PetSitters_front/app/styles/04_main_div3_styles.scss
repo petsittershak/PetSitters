@@ -1,0 +1,55 @@
+@import "00_standard_styles.scss";
+
+
+.main_page_div3{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Myfont";
+  min-width: 1160px;
+ 
+}
+
+.returnBlocksDiv{
+ display: flex;
+ flex-direction: column;
+ justify-content: space-between;
+align-items: center;
+ width: 760px;
+ height: 603px;
+}
+
+.mainPageDiv3_2_block{
+ display: flex; 
+ justify-content: space-between;
+ align-items: center;
+ min-width: 1160px;
+max-width: 1300px;
+}
+
+.howPetsittersWork_optionsDivs{
+  display: flex;
+  height: 92px;
+  border: solid 1px $mainLightColor;
+  border-radius: $borderRadius;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 90px;
+  padding-right: 60px;
+}
+
+.howPetsittersWorkDescription{
+display: block;
+width: 500px;
+text-align: start;
+font-size: $fontSizeSmall;
+padding-left: 11px;
+}
+
+.gif {
+  display:block; /* Устанавливаем */
+  width:76px; /* Ширина и высота картинки */
+  height:76px;
+  }
+  

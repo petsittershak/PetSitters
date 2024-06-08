@@ -1,9 +1,10 @@
 @import "sitters_page.scss";
-@import "client_form_styles.scss";
+@import "00_standard_styles.scss";
+@import "01_client_form_styles.scss";
 @import "03_button_styles.scss";
-@import "standard_styles.scss";
+@import "04_main_div3_styles.scss";
 @import "05_react_date_picker.scss";
- 
+
 
 
 html{
@@ -59,9 +60,10 @@ body{
 }
 .div3{
   height:742px;
-  background-color: $mainLightColor;
+  background-color: $whiteColor;
   padding-left: 60px;
   padding-right: 60px;
+  text-align: center;
 }
 .div4{
   height:840px;
@@ -83,10 +85,14 @@ body{
 }
 
 .form_div{
-  display: block;
+  display: none;
 }
 
 .footer{
   height: 400px;
   background-color: $mainLightColor;
+}
+
+.picture{
+  border-radius: $borderRadius;
 }

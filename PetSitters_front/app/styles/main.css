@@ -45,6 +45,11 @@
   font-style: normal;
   src: url(../fonts/RG-StandardBook.ttf) format(".ttf");
 }
+@font-face {
+  font-family: "Myfont";
+  font-style: normal;
+  src: url(../fonts/RG-StandardBook.ttf) format(".ttf");
+}
 .btn {
   cursor: pointer;
   border-radius: 30px;
@@ -366,6 +371,57 @@
   font-style: normal;
   src: url(../fonts/RG-StandardBook.ttf) format(".ttf");
 }
+.main_page_div3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Myfont";
+  min-width: 1160px;
+}
+
+.returnBlocksDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 760px;
+  height: 603px;
+}
+
+.mainPageDiv3_2_block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 1160px;
+  max-width: 1300px;
+}
+
+.howPetsittersWork_optionsDivs {
+  display: flex;
+  height: 92px;
+  border: solid 1px #BDA8D4;
+  border-radius: 30px;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 90px;
+  padding-right: 60px;
+}
+
+.howPetsittersWorkDescription {
+  display: block;
+  width: 500px;
+  text-align: start;
+  font-size: 20px;
+  padding-left: 11px;
+}
+
+.gif {
+  display: block; /* Устанавливаем */
+  width: 76px; /* Ширина и высота картинки */
+  height: 76px;
+}
+
 .react-datepicker__year-read-view--down-arrow,
 .react-datepicker__month-read-view--down-arrow,
 .react-datepicker__month-year-read-view--down-arrow, .react-datepicker__navigation-icon::before {
@@ -1282,9 +1338,10 @@ body {
 
 .div3 {
   height: 742px;
-  background-color: #BDA8D4;
+  background-color: #FFFFFF;
   padding-left: 60px;
   padding-right: 60px;
+  text-align: center;
 }
 
 .div4 {
@@ -1309,12 +1366,16 @@ body {
 }
 
 .form_div {
-  display: block;
+  display: none;
 }
 
 .footer {
   height: 400px;
   background-color: #BDA8D4;
+}
+
+.picture {
+  border-radius: 30px;
 }
 
 /*# sourceMappingURL=main.css.map */
