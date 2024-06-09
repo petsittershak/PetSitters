@@ -25,10 +25,14 @@
 
 ## Windows 
 
-1) Поднимаем докер 
+1) Скачиваем докер 
+
+`https://docs.docker.com/desktop/install/windows-install/`
+
+2) Поднимаем докер 
 
 `docker-compose -f docker_compose/app.yml --env-file .env up --build -d`
 
-2) заходим в браузуре по адресу
+3) заходим в браузуре по адресу
 
 `http://localhost:8909/docs`
