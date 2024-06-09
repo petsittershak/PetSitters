@@ -1,12 +1,41 @@
 import React, { useState } from "react";
 
-function CreateBlocks({ options, description }) {
+function changeBackground(e) {
+  e.target.style.background = 'none';
+}
+// function changeBackgroundBack(e, i, iconsOpt) {
+//   gif.style.background  = `url(${iconsOpt[i]}) no-repeat`;
+//   gif.style.backgroundPosition = "center";
+//   console.log(e.target.closest("A"))
+// }
+
+function CreateBlocks({ options, description, iconsOpt}) {
   return (
     <div className="returnBlocksDiv">
       {options.map((opt, i) => {
         return (
-        <div key={i} className="howPetsittersWork_optionsDivs">
-          <img src={opt} className="gif" />
+          <div key={i} className="howPetsittersWork_optionsDivs">
+            <a className="gif" href="#"
+              style={{
+                background: `url(${iconsOpt[i]}) no-repeat`, backgroundPosition: "center", width: "76px", height: "76px"
+              }}
+              onMouseOver={(e) => changeBackground(e)}
+              onMouseLeave={(e) => {
+                e.target.style.background = `url(${iconsOpt[i]}) no-repeat`;
+                e.target.style.backgroundPosition = "center";
+                e.target.style.width = "76px";
+                e.target.style.height = "76px";
+              }}  
+            
+            >
+            <img className="gifBackground" src={opt} alt="" 
+                  onMouseLeave={(e) => {
+                    e.target.closest("A").style.background = `url(${iconsOpt[i]}) no-repeat`;
+                    e.target.closest("A").style.backgroundPosition = "center";
+                    e.target.closest("A").style.width = "76px";
+                    e.target.closest("A").style.height = "76px";
+                  }}/>
+                  </a>
           <p className="howPetsittersWorkDescription">{description[i]}</p>
           </div>
         )
@@ -24,6 +53,14 @@ export default function HowPetsittersWork() {
     "./app/pictures/gif/05_gif_dogsitter.gif",
     "./app/pictures/gif/06_gif_reports.gif",
   ];
+  const iconArray = [
+    "./app/pictures/icons/01_icons_request.png",
+    "./app/pictures/icons/02_icons_choose_sitter.png",
+    "./app/pictures/icons/03_icons_payment.png",
+    "./app/pictures/icons/04_icons_catsitter.png",
+    "./app/pictures/icons/05_icons_dogsitter.png",
+    "./app/pictures/icons/06_icons_reports.png",
+  ]
 
   const descriptionArr = [
     "Вы оставляете заявку на передержку на сайте",
@@ -40,7 +77,7 @@ export default function HowPetsittersWork() {
         <h1>Как работает Petsitter</h1>
       </div>
       <div className="mainPageDiv3_2_block">
-          <CreateBlocks options={gifArray} description={descriptionArr} />
+        <CreateBlocks options={gifArray} description={descriptionArr} iconsOpt={iconArray} />
         <img
           src="./app/pictures/pic/06_picture.jpg"
           alt="Описание"

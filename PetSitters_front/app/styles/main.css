@@ -394,7 +394,7 @@
   justify-content: space-between;
   align-items: center;
   min-width: 1160px;
-  max-width: 1300px;
+  width: 80%;
 }
 
 .howPetsittersWork_optionsDivs {
@@ -413,13 +413,17 @@
   width: 500px;
   text-align: start;
   font-size: 20px;
-  padding-left: 11px;
+  padding-left: 30px;
 }
 
-.gif {
-  display: block; /* Устанавливаем */
-  width: 76px; /* Ширина и высота картинки */
+a.gif .gifBackground {
+  width: 76px;
   height: 76px;
+  visibility: hidden;
+}
+
+a.gif:hover .gifBackground {
+  visibility: visible;
 }
 
 .react-datepicker__year-read-view--down-arrow,
