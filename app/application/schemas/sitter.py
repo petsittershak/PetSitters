@@ -1,16 +1,17 @@
 from typing import Optional
 from pydantic import BaseModel, ConfigDict, validator
 from phonenumbers import parse, is_valid_number
-from fastapi import HTTPException
+from fastapi import HTTPException, UploadFile, File
 
 
-class SClientAdd(BaseModel):
+class SSitterAdd(BaseModel):
     name: str
     pet: str
     price: int
     city: str
     telephone: str
     description: Optional[str] = None
+    photo: Optional[UploadFile] = File(None)
 
     @validator("telephone")
     def validate_phone_number(cls, v):
@@ -23,12 +24,12 @@ class SClientAdd(BaseModel):
             )
 
 
-class SClient(SClientAdd):
+class SSitter(SSitterAdd):
     id: int
 
     model_config = ConfigDict(from_attributes=True)
 
 
-class SClientId(BaseModel):
+class SSitterId(BaseModel):
     ok: bool = True
-    client_id: int
+    sitter_id: int

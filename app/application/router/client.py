@@ -23,3 +23,19 @@ async def add_client(
 async def get_clients() -> list[SClient]:
     client = await ClientRepository.find_all()
     return client
+
+
+@router.get("/find_by_id/{client_id}")
+async def find_client_by_id(client_id: int) -> SClient:
+    client = await ClientRepository.find_by_id(client_id)
+    return client
+
+
+@router.delete("/clients/{client_id}")
+async def delete_client(client_id: int) -> str:
+    existing_client = await ClientRepository.find_by_id(client_id)
+    if existing_client:
+        result = await ClientRepository.delete_by_id(client_id)
+        return f"Client with id {client_id} has been deleted"
+    else:
+        return f"Client with id {client_id} does not exist, deletion failed"
