@@ -13,16 +13,12 @@ $fontSizeSmall: 20px;
 $fontSizeButtons: 24px;
 $borderRadius: 30px;
 $fontSizeMedium: 32px;
-$fontSizwLarge: 48px;
-
-
-
-
-
+$fontSizeLarge: 48px;
+$fontWeightStandart: 400;
 
 
 @font-face {
   font-family: "Myfont";
   font-style: normal;
-  src: url(../fonts/RG-StandardBook.ttf) format(".ttf");
+  src: url(../fonts/RG-StandardMedium.ttf) format(".ttf");
 }

@@ -3,11 +3,7 @@ import React, { useState } from "react";
 function changeBackground(e) {
   e.target.style.background = 'none';
 }
-// function changeBackgroundBack(e, i, iconsOpt) {
-//   gif.style.background  = `url(${iconsOpt[i]}) no-repeat`;
-//   gif.style.backgroundPosition = "center";
-//   console.log(e.target.closest("A"))
-// }
+
 
 function CreateBlocks({ options, description, iconsOpt}) {
   return (
@@ -17,12 +13,13 @@ function CreateBlocks({ options, description, iconsOpt}) {
           <div key={i} className="howPetsittersWork_optionsDivs">
             <a className="gif" href="#"
               style={{
-                background: `url(${iconsOpt[i]}) no-repeat`, backgroundPosition: "center", width: "76px", height: "76px"
+                background: `url(${iconsOpt[i]}) no-repeat`, backgroundPosition: "center", backgroundSize:"cover", width: "75px", height: "75px"
               }}
               onMouseOver={(e) => changeBackground(e)}
               onMouseLeave={(e) => {
                 e.target.style.background = `url(${iconsOpt[i]}) no-repeat`;
                 e.target.style.backgroundPosition = "center";
+                e.target.style.backgroundSize = "cover";
                 e.target.style.width = "76px";
                 e.target.style.height = "76px";
               }}  
@@ -32,6 +29,7 @@ function CreateBlocks({ options, description, iconsOpt}) {
                   onMouseLeave={(e) => {
                     e.target.closest("A").style.background = `url(${iconsOpt[i]}) no-repeat`;
                     e.target.closest("A").style.backgroundPosition = "center";
+                    e.target.closest("A").style.backgroundSize = "cover";
                     e.target.closest("A").style.width = "76px";
                     e.target.closest("A").style.height = "76px";
                   }}/>

@@ -4,7 +4,7 @@
 @import "03_button_styles.scss";
 @import "04_main_div3_styles.scss";
 @import "05_react_date_picker.scss";
-
+@import "06_main_div2_styles.scss";
 
 
 html{
@@ -12,12 +12,14 @@ html{
   scroll-behavior: smooth;
   font-family: "MyFont";
   background-color: $beigeColor;
+  color: $mainDarkColor;
+  font-weight: $fontWeightStandart;
 }
 
 body{
  background-color: $whiteColor;
  margin:0px;
- font-family: "MyFont";
+
 }
 
 .main_page{
@@ -51,12 +53,15 @@ body{
   background-color: $mainLightColor;
   padding-left: 60px;
   padding-right: 60px;
+  text-align: center;
 }
 .div2{
-  height:1362px;
+  height:1092px;
   background-color: $mainLightColor;
   padding-left: 60px;
   padding-right: 60px;
+  border-radius: $borderRadius;
+  text-align: center;
 }
 .div3{
   height:742px;
@@ -70,18 +75,21 @@ body{
   background-color: $mainLightColor;
   padding-left: 60px;
   padding-right: 60px;
+  text-align: center;
 }
 .div5{
   height:239px;
   background-color: $mainLightColor;
   padding-left: 60px;
   padding-right: 60px;
+  text-align: center;
 }
 .div6{
   height:566px;
   background-color: $mainLightColor;
   padding-left: 60px;
   padding-right: 60px;
+  text-align: center;
 }
 
 .form_div{

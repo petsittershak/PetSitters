@@ -1,0 +1,46 @@
+@import "00_standard_styles.scss";
+
+
+
+.main_page_div2{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+  height: 972px;
+
+  h1{
+    font-size: $fontSizeLarge;
+    font-weight: $fontWeightStandart;
+    line-height: 68px;
+  }
+  
+}
+
+.mainPageDiv2_2_block{
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 848px;
+  align-items: center;
+
+    .div2_picture{
+    width: 90%;
+    min-width: 1160px;
+    max-width: 1260px;
+    }
+
+  }
+
+  .mainPage_div_descript{
+    h2{
+      font-size: $fontSizeMedium;
+      font-weight: $fontWeightStandart;
+    }
+    p{
+      font-size: $fontSizeSmall;
+      color: $mainBlackColor;
+    }
+  }
