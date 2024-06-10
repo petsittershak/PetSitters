@@ -1,0 +1,104 @@
+@import "00_standard_styles.scss";
+
+
+  .link {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: $mainBlackColor;
+    font-family: "Myfont";
+    font-size: $fontSizeSmall;
+    line-height: 24px;   
+  }
+
+.linkSocial{
+  padding-bottom: 10px;
+}
+
+.footerDivContainer{
+  width: 100%;
+  min-width: 1162px;
+  max-width: 1300px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+}
+.footer_header{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+img{
+  width: 90px;
+  height: 90px;
+}
+
+  h1{
+    font-size: $fontSizeLarge;
+    font-weight: $fontWeightStandart;
+     }
+}
+
+.footerContent{
+  display: flex;
+  justify-content: space-between;
+  min-width: 1162px;
+  max-width: 1300px;
+  width: 100%;
+  height: 256px;
+}
+
+.footerContentDiv{
+  width: 361px;
+
+  p{
+    color: $mainBlackColor;
+    font-family: "Myfont";
+    font-size: $fontSizeSmall;
+  }
+
+}
+
+.footerCityList{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 250px;
+  height: 80px;
+}
+
+.footerSocialList{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 320px;
+  height: 104px;
+
+  img{
+    margin-right: 5px;
+  }
+  a{
+    line-height: 20px;
+  }
+}
+
+.footerUsefulLinksList{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 270px;
+  height: 136px;
+}
+
+.rightsReserved{
+  position: absolute;
+  bottom: 0px;
+  right: 20px;
+  line-height: 5px;
+  color: $mainDarkColor;
+  font-family: "Myfont";
+  font-size: $fontSizeSmall;
+}

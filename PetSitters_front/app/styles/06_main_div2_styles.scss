@@ -9,6 +9,9 @@
   align-items: center;
   text-align: left;
   height: 972px;
+   min-width: 1160px;
+    max-width: 1260px;
+    width: 90%;
 
   h1{
     font-size: $fontSizeLarge;
@@ -25,9 +28,13 @@
   justify-content: space-between;
   height: 848px;
   align-items: center;
+  width: 100%;
+  min-width: 1160px;
+  max-width: 1260px;
+
 
     .div2_picture{
-    width: 90%;
+    width: 100%;
     min-width: 1160px;
     max-width: 1260px;
     }

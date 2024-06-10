@@ -1,0 +1,79 @@
+@import "00_standard_styles.scss";
+
+
+.div4_content{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  text-align: left;
+  height: 779px;
+  min-width: 1160px;
+  max-width: 1300px;
+  width: 100%;
+
+  .div4_content_div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: -30px;
+    // min-width: 1160px;
+     width: 100%;
+    // max-width: 1300px;
+    // height: 364px;
+
+    h1{
+      font-weight: $fontWeightStandart;
+      font-family: "Myfont";
+      font-size: $fontSizeLargeMedium;
+    }
+
+}
+}
+
+
+.dogCatSittersBlockPict{
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  min-width: 1160px;
+  width: 100%;
+  max-width: 1400px;
+  height: 261px;
+}
+.catSittersBlockPict{
+margin-top: -20px;
+}
+
+.oneActionblock{
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+  width: fit-content;
+  height: fit-content;
+}
+
+.dogsittersCatsittersCan{
+  background-color: $whiteColor;
+  border: solid 1px $mainDarkColor;
+  border-radius: $borderRadius;
+  height: 128px;
+  margin-top: 23px;
+  text-align: center;
+  font-size: $fontSizeSmall22;
+  color: $mainBlackColor;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dogsittersCan{
+  width: 184px;
+}
+.catsittersCan{
+  width: 213px;
+  padding-left: 16px;
+  padding-right: 16px;
+}

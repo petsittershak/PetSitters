@@ -5,6 +5,10 @@
 @import "04_main_div3_styles.scss";
 @import "05_react_date_picker.scss";
 @import "06_main_div2_styles.scss";
+@import "07_main_div1_styles.scss";
+@import "08_main_div4_styles.scss";
+@import "11_footer_styles.scss";
+
 
 
 html{
@@ -39,6 +43,8 @@ body{
   flex-wrap: nowrap;
   justify-content: space-around;
   background-color: $mainLightColor;
+  border-bottom-left-radius: $borderRadius;
+  border-bottom-right-radius: $borderRadius;
 }
 
 .main_content{
@@ -48,57 +54,76 @@ body{
   flex-direction:column;
   justify-content: space-between;
 }
+
 .div1{
-  height:340px;
-  background-color: $mainLightColor;
+  height:240px;
+  background-color: $whiteColor;
   padding-left: 60px;
   padding-right: 60px;
-  text-align: center;
+  display: flex;
+  justify-content: space-around;
+
 }
+
 .div2{
   height:1092px;
   background-color: $mainLightColor;
   padding-left: 60px;
   padding-right: 60px;
   border-radius: $borderRadius;
-  text-align: center;
+  display: flex;
+  justify-content: space-around;
 }
+
 .div3{
   height:742px;
   background-color: $whiteColor;
   padding-left: 60px;
   padding-right: 60px;
-  text-align: center;
+  display: flex;
+  justify-content: space-around;
 }
 .div4{
   height:840px;
   background-color: $mainLightColor;
   padding-left: 60px;
   padding-right: 60px;
-  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  border-radius: $borderRadius;
 }
 .div5{
   height:239px;
   background-color: $mainLightColor;
   padding-left: 60px;
   padding-right: 60px;
-  text-align: center;
+  display: flex;
+  justify-content: space-around;
 }
 .div6{
   height:566px;
   background-color: $mainLightColor;
   padding-left: 60px;
   padding-right: 60px;
-  text-align: center;
+  display: flex;
+  justify-content: space-around;
 }
 
-.form_div{
+.form_background{
   display: none;
 }
 
 .footer{
-  height: 400px;
+  height: 460px;
   background-color: $mainLightColor;
+  padding-left: 60px;
+  padding-right: 60px;
+  border-top-left-radius: $borderRadius;
+  border-top-right-radius: $borderRadius;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
 }
 
 .picture{

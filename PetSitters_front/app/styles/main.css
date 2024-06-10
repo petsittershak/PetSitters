@@ -62,6 +62,7 @@
   height: 44px;
   color: #320064;
   background-color: #BDA8D4;
+  font-size: 22px;
 }
 
 .fill_form_btn {
@@ -112,6 +113,7 @@
   height: 48px;
   color: #0F0F0F;
   background-color: #FFF9F5;
+  font-size: 20px;
 }
 
 .form_background {
@@ -314,6 +316,7 @@
   height: 44px;
   color: #320064;
   background-color: #BDA8D4;
+  font-size: 22px;
 }
 
 .fill_form_btn {
@@ -364,6 +367,7 @@
   height: 48px;
   color: #0F0F0F;
   background-color: #FFF9F5;
+  font-size: 20px;
 }
 
 @font-face {
@@ -377,6 +381,8 @@
   justify-content: space-between;
   align-items: center;
   min-width: 1160px;
+  width: 90%;
+  max-width: 1300px;
 }
 .main_page_div3 h1 {
   font-size: 48px;
@@ -398,7 +404,7 @@
   justify-content: space-between;
   align-items: center;
   min-width: 1160px;
-  width: 80%;
+  width: 100%;
 }
 
 .howPetsittersWork_optionsDivs {
@@ -1302,6 +1308,9 @@ a.gif:hover .gifBackground {
   align-items: center;
   text-align: left;
   height: 972px;
+  min-width: 1160px;
+  max-width: 1260px;
+  width: 90%;
 }
 .main_page_div2 h1 {
   font-size: 48px;
@@ -1316,9 +1325,12 @@ a.gif:hover .gifBackground {
   justify-content: space-between;
   height: 848px;
   align-items: center;
+  width: 100%;
+  min-width: 1160px;
+  max-width: 1260px;
 }
 .mainPageDiv2_2_block .div2_picture {
-  width: 90%;
+  width: 100%;
   min-width: 1160px;
   max-width: 1260px;
 }
@@ -1330,6 +1342,229 @@ a.gif:hover .gifBackground {
 .mainPage_div_descript p {
   font-size: 20px;
   color: #0F0F0F;
+}
+
+@font-face {
+  font-family: "Myfont";
+  font-style: normal;
+  src: url(../fonts/RG-StandardMedium.ttf) format(".ttf");
+}
+.main_find_sitter_block {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+  text-align: left;
+  height: 240px;
+  min-width: 1160px;
+  width: 90%;
+  max-width: 1350px;
+}
+.main_find_sitter_block h1 {
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 68px;
+  width: 760px;
+}
+.main_find_sitter_block img {
+  border-radius: 30px;
+  width: 360px;
+  height: 240px;
+  align-self: center;
+}
+
+.main_find_sitter_div1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 240px;
+}
+
+.main_findSitter_buttonsdiv {
+  width: 760px;
+  display: flex;
+  justify-content: space-between;
+}
+
+@font-face {
+  font-family: "Myfont";
+  font-style: normal;
+  src: url(../fonts/RG-StandardMedium.ttf) format(".ttf");
+}
+.div4_content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  text-align: left;
+  height: 779px;
+  min-width: 1160px;
+  max-width: 1300px;
+  width: 100%;
+}
+.div4_content .div4_content_div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: -30px;
+  width: 100%;
+}
+.div4_content .div4_content_div h1 {
+  font-weight: 400;
+  font-family: "Myfont";
+  font-size: 44px;
+}
+
+.dogCatSittersBlockPict {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  min-width: 1160px;
+  width: 100%;
+  max-width: 1400px;
+  height: 261px;
+}
+
+.catSittersBlockPict {
+  margin-top: -20px;
+}
+
+.oneActionblock {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+  width: fit-content;
+  height: fit-content;
+}
+
+.dogsittersCatsittersCan {
+  background-color: #FFFFFF;
+  border: solid 1px #320064;
+  border-radius: 30px;
+  height: 128px;
+  margin-top: 23px;
+  text-align: center;
+  font-size: 22px;
+  color: #0F0F0F;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dogsittersCan {
+  width: 184px;
+}
+
+.catsittersCan {
+  width: 213px;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+@font-face {
+  font-family: "Myfont";
+  font-style: normal;
+  src: url(../fonts/RG-StandardMedium.ttf) format(".ttf");
+}
+.link {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  color: #0F0F0F;
+  font-family: "Myfont";
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.linkSocial {
+  padding-bottom: 10px;
+}
+
+.footerDivContainer {
+  width: 100%;
+  min-width: 1162px;
+  max-width: 1300px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.footer_header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.footer_header img {
+  width: 90px;
+  height: 90px;
+}
+.footer_header h1 {
+  font-size: 48px;
+  font-weight: 400;
+}
+
+.footerContent {
+  display: flex;
+  justify-content: space-between;
+  min-width: 1162px;
+  max-width: 1300px;
+  width: 100%;
+  height: 256px;
+}
+
+.footerContentDiv {
+  width: 361px;
+}
+.footerContentDiv p {
+  color: #0F0F0F;
+  font-family: "Myfont";
+  font-size: 20px;
+}
+
+.footerCityList {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 250px;
+  height: 80px;
+}
+
+.footerSocialList {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 320px;
+  height: 104px;
+}
+.footerSocialList img {
+  margin-right: 5px;
+}
+.footerSocialList a {
+  line-height: 20px;
+}
+
+.footerUsefulLinksList {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 270px;
+  height: 136px;
+}
+
+.rightsReserved {
+  position: absolute;
+  bottom: 0px;
+  right: 20px;
+  line-height: 5px;
+  color: #320064;
+  font-family: "Myfont";
+  font-size: 20px;
 }
 
 html {
@@ -1363,6 +1598,8 @@ body {
   flex-wrap: nowrap;
   justify-content: space-around;
   background-color: #BDA8D4;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
 }
 
 .main_content {
@@ -1374,11 +1611,12 @@ body {
 }
 
 .div1 {
-  height: 340px;
-  background-color: #BDA8D4;
+  height: 240px;
+  background-color: #FFFFFF;
   padding-left: 60px;
   padding-right: 60px;
-  text-align: center;
+  display: flex;
+  justify-content: space-around;
 }
 
 .div2 {
@@ -1387,7 +1625,8 @@ body {
   padding-left: 60px;
   padding-right: 60px;
   border-radius: 30px;
-  text-align: center;
+  display: flex;
+  justify-content: space-around;
 }
 
 .div3 {
@@ -1395,7 +1634,8 @@ body {
   background-color: #FFFFFF;
   padding-left: 60px;
   padding-right: 60px;
-  text-align: center;
+  display: flex;
+  justify-content: space-around;
 }
 
 .div4 {
@@ -1403,7 +1643,9 @@ body {
   background-color: #BDA8D4;
   padding-left: 60px;
   padding-right: 60px;
-  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  border-radius: 30px;
 }
 
 .div5 {
@@ -1411,7 +1653,8 @@ body {
   background-color: #BDA8D4;
   padding-left: 60px;
   padding-right: 60px;
-  text-align: center;
+  display: flex;
+  justify-content: space-around;
 }
 
 .div6 {
@@ -1419,16 +1662,25 @@ body {
   background-color: #BDA8D4;
   padding-left: 60px;
   padding-right: 60px;
-  text-align: center;
+  display: flex;
+  justify-content: space-around;
 }
 
-.form_div {
+.form_background {
   display: none;
 }
 
 .footer {
-  height: 400px;
+  height: 460px;
   background-color: #BDA8D4;
+  padding-left: 60px;
+  padding-right: 60px;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
 }
 
 .picture {
