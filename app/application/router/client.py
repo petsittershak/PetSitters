@@ -11,7 +11,7 @@ router = APIRouter(
 )
 
 
-@router.post("")
+@router.post("add_cliens")
 async def add_client(
     client: Annotated[SClientAdd, Depends()],
 ) -> SClientId:
@@ -19,7 +19,7 @@ async def add_client(
     return {"Add": True, "client_id": client_id}
 
 
-@router.get("")
+@router.get("get_all_clients")
 async def get_clients() -> list[SClient]:
     client = await ClientRepository.find_all()
     return client
