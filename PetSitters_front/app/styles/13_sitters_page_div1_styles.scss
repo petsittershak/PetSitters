@@ -1,0 +1,39 @@
+@import "00_standard_styles.scss";
+
+.sitters_div1_content{
+  height:260px;
+  min-width: 1160px;
+  width: 100%;
+  max-width: 1300px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.sitters_div1_content_div1{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+
+h1{
+color: $mainDarkColor;
+font-size: $fontSizeLarge;
+font-weight: $fontWeightStandart;
+}
+
+p{
+color: $mainBlackColor;
+font-size: $fontSizeButtons;
+line-height: 36px;
+width: 559px;
+height: 182px;
+}
+
+}
+
+
+.sitters_div1_content_div2{
+  width: 660px;
+  height: 260px;
+  border-radius: $borderRadius;
+}

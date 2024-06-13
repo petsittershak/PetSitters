@@ -8,15 +8,17 @@
 .sitters_page {
   width: 100%;
   min-width: 1280px;
-  height: 2124px;
+  height: 2382px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: stretch;
+  font-family: "Myfont";
+  font-weight: 500;
 }
 
 .main_content_sitters {
-  height: 1478px;
+  height: 1700px;
   width: inherit;
   display: flex;
   flex-direction: column;
@@ -25,15 +27,27 @@
 
 .div_sitters_1 {
   height: 260px;
-  background-color: #BDA8D4;
   padding-left: 60px;
   padding-right: 60px;
+  display: flex;
+  justify-content: space-around;
 }
 
 .div_sitters_2 {
-  height: 1050px;
+  height: 310px;
+  padding-left: 60px;
+  padding-right: 60px;
+  display: flex;
+  justify-content: space-around;
   background-color: #BDA8D4;
-  padding: 60px;
+}
+
+.div_sitters_3 {
+  height: 1050px;
+  padding-left: 60px;
+  padding-right: 60px;
+  display: flex;
+  justify-content: space-around;
 }
 
 @font-face {
@@ -1980,9 +1994,87 @@ h2 {
   width: 248px;
   height: 96px;
   overflow: hidden;
+  overflow-wrap: break-word;
   text-overflow: ellipsis;
 }
 
+@font-face {
+  font: "Random Grotesque Standard Medium";
+  font-family: "Myfont";
+  font-style: normal;
+  src: url(public/fonts/RG-StandardMedium.woff) format(".woff");
+}
+.sitters_div1_content {
+  height: 260px;
+  min-width: 1160px;
+  width: 100%;
+  max-width: 1300px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.sitters_div1_content_div1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+.sitters_div1_content_div1 h1 {
+  color: #320064;
+  font-size: 48px;
+  font-weight: 500;
+}
+.sitters_div1_content_div1 p {
+  color: #0F0F0F;
+  font-size: 24px;
+  line-height: 36px;
+  width: 559px;
+  height: 182px;
+}
+
+.sitters_div1_content_div2 {
+  width: 660px;
+  height: 260px;
+  border-radius: 30px;
+}
+
+@font-face {
+  font: "Random Grotesque Standard Medium";
+  font-family: "Myfont";
+  font-style: normal;
+  src: url(public/fonts/RG-StandardMedium.woff) format(".woff");
+}
+@font-face {
+  font: "Random Grotesque Standard Medium";
+  font-family: "Myfont";
+  font-style: normal;
+  src: url(public/fonts/RG-StandardMedium.woff) format(".woff");
+}
+.sitters_page_foundSitters {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sitters_page_suggestedSitters {
+  width: 1160px;
+  height: 928px;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  flex-wrap: wrap;
+  overflow-wrap: normal;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@font-face {
+  font: "Random Grotesque Standard Medium";
+  font-family: "Myfont";
+  font-style: normal;
+  src: url(./../../../PetSitters_front/public/fonts/RG-StandardMedium.woff) format(".woff");
+}
 html {
   width: 100%;
   scroll-behavior: smooth;

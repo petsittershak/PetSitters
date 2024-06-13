@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import CreateButton from "./03_button_all.jsx";
 import CreateSitterInfoBlock from "./12_sitter_data.jsx";
-
-
+import Sitters from "../pages/sitters.js";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 function CreateSittersProfiles({ sitters }) {
 let sitterCanOpt= ["vet", "canHelpAlergicAnimal", "ownSertificate", "canCookHomeFood"];
@@ -16,7 +16,7 @@ const iconsLinks = {
 
   return (
     <div className="createSittersProfilesDiv">
-      {sitters.map((sitter, i) => { return <CreateSitterInfoBlock sitterObj={sitter} iconsLinksOpt={iconsLinks} sitterCan={sitterCanOpt} />})}
+      {sitters.map((sitter, i) => { return <CreateSitterInfoBlock sitterObj={sitter} iconsLinksOpt={iconsLinks} sitterCan={sitterCanOpt} key={i} />})}
     </div>
   )
 }
@@ -124,7 +124,7 @@ export default function CreateGetToKnowOurSitters() {
       <div className="getToKnowContent_div2">
       <CreateAboutSitterDiv options={getToKnowArr} />
       <CreateSittersProfiles sitters={petSittersProfilesArr}/>
-      <CreateButton classN="btn verticalButton" onClickFunct={()=> window.open('./app/pages/sitters.html')}/>
+        <CreateButton classN="btn verticalButton" onClickFunct={() => {}}/>
 </div>
     </div>
   )

@@ -1,0 +1,21 @@
+@import "00_standard_styles.scss";
+
+
+.sitters_page_foundSitters{
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+align-items: center;
+}
+
+.sitters_page_suggestedSitters{
+  width: 1160px;
+  height: 928px;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  flex-wrap: wrap;
+  overflow-wrap: normal;
+  justify-content: space-between;
+  align-items: center;
+}

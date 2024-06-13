@@ -15,9 +15,9 @@ function CreateAbilityDiv({options, iconsLinks, sitterObject}) {
   );
 }
 
-export default function CreateSitterInfoBlock({sitterObj, iconsLinksOpt, sitterCan}) {
+export default function CreateSitterInfoBlock({sitterObj, iconsLinksOpt, sitterCan, key}) {
   return (
-    <div className="sitterProfileDiv">
+    <div key={key} className="sitterProfileDiv">
       <div className="sitterProfileDiv_div1">
         <img src={sitterObj.picture} />
         <div className="sitterProfileDiv_div1_div2">

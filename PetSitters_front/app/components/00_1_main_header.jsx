@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import CreateButton from "./03_button_all.jsx";
 
-
 function CreateHeaderList({options, hrefOpt}){
   return (
   <div className="headerMenu_div2">
@@ -11,12 +10,12 @@ function CreateHeaderList({options, hrefOpt}){
 }
 
 const menuOptArr = ["О сервисе", "Ситтеры", "Сотрудничество", "Отзывы"];
-const hrefArr = ["#HowPetsittersWork", "./app/pages/sitters.html", "#", "#"]
+const hrefArr = ["#HowPetsittersWork", "/sitters", "#", "#"]
 
 export default function CreateHeader() {
   return (
     <div className="headerMenu">
-      <a href="#main_page"><img src="./app/pictures/01_petsitters_logo.png"/></a>
+      <a href="/"><img src="./app/pictures/01_petsitters_logo.png"/></a>
       <CreateHeaderList options={menuOptArr} hrefOpt={hrefArr} />
       <div className="headerMenu_div3">
         <CreateButton classN="btn header_button_styles" onClickFunct={()=>{}} btnText="Заказать звонок" />
@@ -24,4 +23,4 @@ export default function CreateHeader() {
       </div>
     </div>
   )
-}
+} 
