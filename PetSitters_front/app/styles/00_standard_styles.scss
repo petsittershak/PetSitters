@@ -13,14 +13,18 @@ $fontSizeSmall: 20px;
 $fontSizeSmall22: 22px;
 $fontSizeButtons: 24px;
 $borderRadius: 30px;
+$borderRadiusSmallSitterPic: 10px;
 $fontSizeMedium: 32px;
 $fontSizeLargeMedium:44px; 
 $fontSizeLarge: 48px;
-$fontWeightStandart: 400;
-
+$fontWeightStandart: 500;
+$customTransition: all .03s ease-in-out;
+$fontFamilyCustom: "Myfont";
+ 
 
 @font-face {
+  font: "Random Grotesque Standard Medium";
   font-family: "Myfont";
   font-style: normal;
-  src: url(../fonts/RG-StandardMedium.ttf) format(".ttf");
+  src: url(public/fonts/RG-StandardMedium.woff) format(".woff");
 }

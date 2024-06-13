@@ -1,5 +1,6 @@
 @import "sitters_page.scss";
 @import "00_standard_styles.scss";
+@import  "00_1_main_header_styles.scss";
 @import "01_client_form_styles.scss";
 @import "03_button_styles.scss";
 @import "04_main_div3_styles.scss";
@@ -7,21 +8,29 @@
 @import "06_main_div2_styles.scss";
 @import "07_main_div1_styles.scss";
 @import "08_main_div4_styles.scss";
+@import "09_main_div5_styles.scss";
+@import "10_main_div6_styles.scss";
 @import "11_footer_styles.scss";
+@import "12_sitter_data_styles.scss";
 
+// @font-face {
+//   font: "Random Grotesque Standard Medium";
+//   font-family: "Myfont";
+//   font-style: normal;
+//   src: url(./../../../PetSitters_front/public/fonts/RG-StandardMedium.woff) format(".woff");
+// }
 
 
 html{
   width: 100%;
   scroll-behavior: smooth;
-  font-family: "MyFont";
-  background-color: $beigeColor;
+  font-family: $fontFamilyCustom;
   color: $mainDarkColor;
   font-weight: $fontWeightStandart;
 }
 
 body{
- background-color: $whiteColor;
+ background-color: $beigeColor;
  margin:0px;
 
 }
@@ -57,7 +66,6 @@ body{
 
 .div1{
   height:240px;
-  background-color: $whiteColor;
   padding-left: 60px;
   padding-right: 60px;
   display: flex;
@@ -77,7 +85,6 @@ body{
 
 .div3{
   height:742px;
-  background-color: $whiteColor;
   padding-left: 60px;
   padding-right: 60px;
   display: flex;
@@ -94,7 +101,6 @@ body{
 }
 .div5{
   height:239px;
-  background-color: $mainLightColor;
   padding-left: 60px;
   padding-right: 60px;
   display: flex;
@@ -102,7 +108,6 @@ body{
 }
 .div6{
   height:566px;
-  background-color: $mainLightColor;
   padding-left: 60px;
   padding-right: 60px;
   display: flex;

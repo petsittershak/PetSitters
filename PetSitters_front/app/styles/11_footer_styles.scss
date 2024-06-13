@@ -1,12 +1,14 @@
 @import "00_standard_styles.scss";
-
+h2{
+  font-weight: $fontWeightStandart;
+ }
 
   .link {
     text-decoration: none;
     display: flex;
     align-items: center;
     color: $mainBlackColor;
-    font-family: "Myfont";
+    font-family: $fontFamilyCustom;
     font-size: $fontSizeSmall;
     line-height: 24px;   
   }
@@ -38,6 +40,8 @@ img{
     font-size: $fontSizeLarge;
     font-weight: $fontWeightStandart;
      }
+  
+  
 }
 
 .footerContent{
@@ -54,7 +58,7 @@ img{
 
   p{
     color: $mainBlackColor;
-    font-family: "Myfont";
+    font-family: $fontFamilyCustom;
     font-size: $fontSizeSmall;
   }
 
@@ -99,6 +103,6 @@ img{
   right: 20px;
   line-height: 5px;
   color: $mainDarkColor;
-  font-family: "Myfont";
+  font-family: $fontFamilyCustom;
   font-size: $fontSizeSmall;
 }

@@ -1,0 +1,55 @@
+@import "00_standard_styles.scss";
+
+.getToKnowContent{
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+min-width: 1160px;
+max-width: 1300px;
+width: 90%;
+height: 566px;
+
+h1{
+  align-self: center;
+  font-size: $fontSizeLarge;
+  font-family: $fontFamilyCustom;
+  font-weight: $fontWeightStandart;
+}
+
+}
+
+.getToKnowContent_div2{
+  display: flex;
+  min-width: 1160px;
+  width: 100%;
+  max-width: 1300px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.createAboutSittersDiv{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 380px;
+  height: 444px;
+  font-size: $fontSizeSmall;
+  color: $mainBlackColor;
+
+
+  p{
+    text-align: center;
+    line-height: normal;
+    margin: 0px;
+  }
+}
+
+
+.createSittersProfilesDiv{
+  display: flex;
+  justify-content:space-between;
+  flex-wrap: wrap;
+  overflow: hidden;
+  width: 660px;
+  height: 444px;
+}

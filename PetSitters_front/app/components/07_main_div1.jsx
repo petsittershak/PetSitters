@@ -12,7 +12,7 @@ export default function FindSitter() {
           <CreateButton classN ="btn main_button_styles" onClickFunct={() => { }} btnText="Выбрать услугу"/>
         </div>
       </div>
-      <img src="./app/pictures/pic/01_picture.jpg"/>
+      <img src="./app/pictures/gif/00_animation _front_page.gif"/>
     </div>
   )
 }

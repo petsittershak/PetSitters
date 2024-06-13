@@ -7,6 +7,8 @@ import WhyChooseUs from "./components/06_main_div2.jsx";
 import FindSitter from "./components/07_main_div1.jsx";
 import CreateHeader from "./components/00_1_main_header.jsx";
 import CreateOurSitters from "./components/08_main_div4.jsx";
+import CreateFindPerfectSitter from "./components/09_main_div5.jsx";
+import CreateGetToKnowOurSitters from "./components/10_main_div6.jsx";
 import CreateFooter from "./components/11_footer.jsx";
 
 
@@ -29,7 +31,7 @@ function CreateMainPageContent() {
                     <WhyChooseUs />
                 </div>
 
-                <div className="div3" >
+                <div className="div3" id="HowPetsittersWork">
                     <HowPetsittersWork />
                 </div>
 
@@ -38,10 +40,12 @@ function CreateMainPageContent() {
                 </div>
 
                 <div className="div5">
-                    <div className="form_background" ><Form /></div>
+                    <CreateFindPerfectSitter />
                 </div>
 
-                <div className="div6"><h1>DIV 6</h1></div>
+                <div className="div6">
+                    <CreateGetToKnowOurSitters />
+                </div>
             </div>
 
             <div className="footer">

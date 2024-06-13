@@ -1,0 +1,40 @@
+@import "00_standard_styles.scss";
+
+.findPetsittersContent{
+display: flex;
+flex-direction: column;
+
+max-width: 1300px;
+min-width: 1160px;
+width: 90%;
+
+h1{
+align-self: center;
+font-size: $fontSizeLarge;
+font-family:$fontFamilyCustom;
+font-weight: $fontWeightStandart;
+
+}
+
+
+h2{
+  font-size: $fontSizeMedium;
+  color: $mainBlackColor;
+  font-family: $fontFamilyCustom;
+  font-weight: 400;
+  width: 660px;
+  height: 144px;
+}
+
+}
+
+.findPetsittersContent_div2{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 1160px;
+  max-width: 1300px;
+  width: 100%;
+  height: 144px;
+}

@@ -36,7 +36,7 @@
   border: $outline;
   border-radius: 30px;
   background-color: $whiteColor;
-  font-family: "Myfont";
+  font-family: $fontFamilyCustom;
 
   .client_form_pic1{
     position: absolute;
@@ -189,7 +189,7 @@ label{
         width: 145px;
         padding-left: 14px;
         padding-right: 14px;
-        font-family: "Myfont";
+        font-family: $fontFamilyCustom;
         font-size: $fontSizeSmall;
       }
        } 
@@ -200,10 +200,7 @@ label{
         justify-content: space-between;
   
         input{
-          // width: 145px;
-          // padding-left: 14px;
-          // padding-right: 14px;
-          font-family: "Myfont";
+          font-family: $fontFamilyCustom;
           font-size: $fontSizeSmall;
         }
          } 

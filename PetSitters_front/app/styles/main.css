@@ -1,8 +1,9 @@
 @charset "UTF-8";
 @font-face {
+  font: "Random Grotesque Standard Medium";
   font-family: "Myfont";
   font-style: normal;
-  src: url(../fonts/RG-StandardMedium.ttf) format(".ttf");
+  src: url(public/fonts/RG-StandardMedium.woff) format(".woff");
 }
 .sitters_page {
   width: 100%;
@@ -36,24 +37,64 @@
 }
 
 @font-face {
+  font: "Random Grotesque Standard Medium";
   font-family: "Myfont";
   font-style: normal;
-  src: url(../fonts/RG-StandardMedium.ttf) format(".ttf");
+  src: url(public/fonts/RG-StandardMedium.woff) format(".woff");
 }
 @font-face {
+  font: "Random Grotesque Standard Medium";
   font-family: "Myfont";
   font-style: normal;
-  src: url(../fonts/RG-StandardMedium.ttf) format(".ttf");
+  src: url(public/fonts/RG-StandardMedium.woff) format(".woff");
+}
+.headerMenu {
+  display: flex;
+  justify-content: space-between;
+  min-width: 1160px;
+  max-width: 1300px;
+  width: 90%;
+  align-items: center;
+}
+
+.headerMenu_div3 {
+  width: 360px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.headerMenu_div2 {
+  display: flex;
+  justify-content: space-around;
+  width: 539px;
+}
+
+.header_link {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  color: #320064;
+  font-family: "Myfont";
+  font-size: 18px;
+  line-height: 24px;
+}
+
+@font-face {
+  font: "Random Grotesque Standard Medium";
+  font-family: "Myfont";
+  font-style: normal;
+  src: url(public/fonts/RG-StandardMedium.woff) format(".woff");
 }
 @font-face {
+  font: "Random Grotesque Standard Medium";
   font-family: "Myfont";
   font-style: normal;
-  src: url(../fonts/RG-StandardMedium.ttf) format(".ttf");
+  src: url(public/fonts/RG-StandardMedium.woff) format(".woff");
 }
 .btn {
   cursor: pointer;
   border-radius: 30px;
-  font-family: "MyFont";
+  font-family: "Myfont";
   border: solid 1px #BDA8D4;
 }
 
@@ -63,6 +104,13 @@
   color: #320064;
   background-color: #BDA8D4;
   font-size: 22px;
+  transition: all 0.03s ease-in-out;
+}
+
+.main_button_styles:hover {
+  color: #FFF9F5;
+  background-color: #320064;
+  transition: all 0.03s ease-in-out;
 }
 
 .fill_form_btn {
@@ -70,6 +118,14 @@
   height: 76px;
   color: #320064;
   background-color: #BDA8D4;
+  font-size: 24px;
+  transition: all 0.03s ease-in-out;
+}
+
+.fill_form_btn:hover {
+  color: #FFF9F5;
+  background-color: #320064;
+  transition: all 0.03s ease-in-out;
 }
 
 .submit_form_btn {
@@ -84,6 +140,13 @@
   background-position-y: 5px;
   font-size: 32px;
   color: #B3B3B3;
+  transition: all 0.03s ease-in-out;
+}
+
+.submit_form_btn:hover {
+  color: #0F0F0F;
+  background-color: #BDA8D4;
+  transition: all 0.03s ease-in-out;
 }
 
 .positionBtn {
@@ -106,6 +169,27 @@
   height: 36px;
   color: #0F0F0F;
   background-color: #FFF9F5;
+  font-size: 16px;
+  transition: all 0.03s ease-in-out;
+}
+
+.small_button_styles:hover {
+  background-color: #BDA8D4;
+  transition: all 0.03s ease-in-out;
+}
+
+.header_button_styles {
+  width: 160px;
+  height: 44px;
+  color: #0F0F0F;
+  background-color: #FFF9F5;
+  transition: all 0.03s ease-in-out;
+}
+
+.header_button_styles:hover {
+  color: #FFF9F5;
+  background-color: #320064;
+  transition: all 0.03s ease-in-out;
 }
 
 .footer_button_styles {
@@ -114,6 +198,46 @@
   color: #0F0F0F;
   background-color: #FFF9F5;
   font-size: 20px;
+  transition: all 0.03s ease-in-out;
+}
+
+.footer_button_styles:hover {
+  background-color: #320064;
+  color: #FFF9F5;
+  transition: all 0.03s ease-in-out;
+}
+
+.verticalButton {
+  width: 60px;
+  height: 444px;
+  background-image: url("../pictures/icons/08_buttonArrow.png");
+  background-repeat: no-repeat;
+  background-position-x: 21px;
+  background-position-y: 205px;
+  border: 1px solid #BDA8D4;
+  border-radius: 30px;
+  background-color: #FFF9F5;
+  transition: all 0.03s ease-in-out;
+}
+
+.verticalButton:hover {
+  background-image: url("../pictures/icons/08_buttonDarkArrow.png");
+  background-color: #BDA8D4;
+  transition: all 0.03s ease-in-out;
+}
+
+.persitterProfilesSmallBtn {
+  width: 110px;
+  height: 36px;
+  color: #0F0F0F;
+  background-color: #FFF9F5;
+  transition: all 0.03s ease-in-out;
+}
+
+.persitterProfilesSmallBtn:hover {
+  color: #FFF9F5;
+  background-color: #320064;
+  transition: all 0.03s ease-in-out;
 }
 
 .form_background {
@@ -300,14 +424,15 @@
 }
 
 @font-face {
+  font: "Random Grotesque Standard Medium";
   font-family: "Myfont";
   font-style: normal;
-  src: url(../fonts/RG-StandardMedium.ttf) format(".ttf");
+  src: url(public/fonts/RG-StandardMedium.woff) format(".woff");
 }
 .btn {
   cursor: pointer;
   border-radius: 30px;
-  font-family: "MyFont";
+  font-family: "Myfont";
   border: solid 1px #BDA8D4;
 }
 
@@ -317,6 +442,13 @@
   color: #320064;
   background-color: #BDA8D4;
   font-size: 22px;
+  transition: all 0.03s ease-in-out;
+}
+
+.main_button_styles:hover {
+  color: #FFF9F5;
+  background-color: #320064;
+  transition: all 0.03s ease-in-out;
 }
 
 .fill_form_btn {
@@ -324,6 +456,14 @@
   height: 76px;
   color: #320064;
   background-color: #BDA8D4;
+  font-size: 24px;
+  transition: all 0.03s ease-in-out;
+}
+
+.fill_form_btn:hover {
+  color: #FFF9F5;
+  background-color: #320064;
+  transition: all 0.03s ease-in-out;
 }
 
 .submit_form_btn {
@@ -338,6 +478,13 @@
   background-position-y: 5px;
   font-size: 32px;
   color: #B3B3B3;
+  transition: all 0.03s ease-in-out;
+}
+
+.submit_form_btn:hover {
+  color: #0F0F0F;
+  background-color: #BDA8D4;
+  transition: all 0.03s ease-in-out;
 }
 
 .positionBtn {
@@ -360,6 +507,27 @@
   height: 36px;
   color: #0F0F0F;
   background-color: #FFF9F5;
+  font-size: 16px;
+  transition: all 0.03s ease-in-out;
+}
+
+.small_button_styles:hover {
+  background-color: #BDA8D4;
+  transition: all 0.03s ease-in-out;
+}
+
+.header_button_styles {
+  width: 160px;
+  height: 44px;
+  color: #0F0F0F;
+  background-color: #FFF9F5;
+  transition: all 0.03s ease-in-out;
+}
+
+.header_button_styles:hover {
+  color: #FFF9F5;
+  background-color: #320064;
+  transition: all 0.03s ease-in-out;
 }
 
 .footer_button_styles {
@@ -368,12 +536,53 @@
   color: #0F0F0F;
   background-color: #FFF9F5;
   font-size: 20px;
+  transition: all 0.03s ease-in-out;
+}
+
+.footer_button_styles:hover {
+  background-color: #320064;
+  color: #FFF9F5;
+  transition: all 0.03s ease-in-out;
+}
+
+.verticalButton {
+  width: 60px;
+  height: 444px;
+  background-image: url("../pictures/icons/08_buttonArrow.png");
+  background-repeat: no-repeat;
+  background-position-x: 21px;
+  background-position-y: 205px;
+  border: 1px solid #BDA8D4;
+  border-radius: 30px;
+  background-color: #FFF9F5;
+  transition: all 0.03s ease-in-out;
+}
+
+.verticalButton:hover {
+  background-image: url("../pictures/icons/08_buttonDarkArrow.png");
+  background-color: #BDA8D4;
+  transition: all 0.03s ease-in-out;
+}
+
+.persitterProfilesSmallBtn {
+  width: 110px;
+  height: 36px;
+  color: #0F0F0F;
+  background-color: #FFF9F5;
+  transition: all 0.03s ease-in-out;
+}
+
+.persitterProfilesSmallBtn:hover {
+  color: #FFF9F5;
+  background-color: #320064;
+  transition: all 0.03s ease-in-out;
 }
 
 @font-face {
+  font: "Random Grotesque Standard Medium";
   font-family: "Myfont";
   font-style: normal;
-  src: url(../fonts/RG-StandardMedium.ttf) format(".ttf");
+  src: url(public/fonts/RG-StandardMedium.woff) format(".woff");
 }
 .main_page_div3 {
   display: flex;
@@ -386,7 +595,7 @@
 }
 .main_page_div3 h1 {
   font-size: 48px;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 68px;
 }
 
@@ -1297,9 +1506,10 @@ a.gif:hover .gifBackground {
 }
 
 @font-face {
+  font: "Random Grotesque Standard Medium";
   font-family: "Myfont";
   font-style: normal;
-  src: url(../fonts/RG-StandardMedium.ttf) format(".ttf");
+  src: url(public/fonts/RG-StandardMedium.woff) format(".woff");
 }
 .main_page_div2 {
   display: flex;
@@ -1314,7 +1524,7 @@ a.gif:hover .gifBackground {
 }
 .main_page_div2 h1 {
   font-size: 48px;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 68px;
 }
 
@@ -1337,7 +1547,7 @@ a.gif:hover .gifBackground {
 
 .mainPage_div_descript h2 {
   font-size: 32px;
-  font-weight: 400;
+  font-weight: 500;
 }
 .mainPage_div_descript p {
   font-size: 20px;
@@ -1345,9 +1555,10 @@ a.gif:hover .gifBackground {
 }
 
 @font-face {
+  font: "Random Grotesque Standard Medium";
   font-family: "Myfont";
   font-style: normal;
-  src: url(../fonts/RG-StandardMedium.ttf) format(".ttf");
+  src: url(public/fonts/RG-StandardMedium.woff) format(".woff");
 }
 .main_find_sitter_block {
   display: flex;
@@ -1362,14 +1573,13 @@ a.gif:hover .gifBackground {
 }
 .main_find_sitter_block h1 {
   font-size: 48px;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 68px;
   width: 760px;
 }
 .main_find_sitter_block img {
-  border-radius: 30px;
-  width: 360px;
-  height: 240px;
+  width: 460px;
+  height: 260px;
   align-self: center;
 }
 
@@ -1388,9 +1598,10 @@ a.gif:hover .gifBackground {
 }
 
 @font-face {
+  font: "Random Grotesque Standard Medium";
   font-family: "Myfont";
   font-style: normal;
-  src: url(../fonts/RG-StandardMedium.ttf) format(".ttf");
+  src: url(public/fonts/RG-StandardMedium.woff) format(".woff");
 }
 .div4_content {
   display: flex;
@@ -1412,7 +1623,7 @@ a.gif:hover .gifBackground {
   width: 100%;
 }
 .div4_content .div4_content_div h1 {
-  font-weight: 400;
+  font-weight: 500;
   font-family: "Myfont";
   font-size: 44px;
 }
@@ -1441,7 +1652,7 @@ a.gif:hover .gifBackground {
 }
 
 .dogsittersCatsittersCan {
-  background-color: #FFFFFF;
+  background-color: #FFF9F5;
   border: solid 1px #320064;
   border-radius: 30px;
   height: 128px;
@@ -1465,10 +1676,109 @@ a.gif:hover .gifBackground {
 }
 
 @font-face {
+  font: "Random Grotesque Standard Medium";
   font-family: "Myfont";
   font-style: normal;
-  src: url(../fonts/RG-StandardMedium.ttf) format(".ttf");
+  src: url(public/fonts/RG-StandardMedium.woff) format(".woff");
 }
+.findPetsittersContent {
+  display: flex;
+  flex-direction: column;
+  max-width: 1300px;
+  min-width: 1160px;
+  width: 90%;
+}
+.findPetsittersContent h1 {
+  align-self: center;
+  font-size: 48px;
+  font-family: "Myfont";
+  font-weight: 500;
+}
+.findPetsittersContent h2 {
+  font-size: 32px;
+  color: #0F0F0F;
+  font-family: "Myfont";
+  font-weight: 400;
+  width: 660px;
+  height: 144px;
+}
+
+.findPetsittersContent_div2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 1160px;
+  max-width: 1300px;
+  width: 100%;
+  height: 144px;
+}
+
+@font-face {
+  font: "Random Grotesque Standard Medium";
+  font-family: "Myfont";
+  font-style: normal;
+  src: url(public/fonts/RG-StandardMedium.woff) format(".woff");
+}
+.getToKnowContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 1160px;
+  max-width: 1300px;
+  width: 90%;
+  height: 566px;
+}
+.getToKnowContent h1 {
+  align-self: center;
+  font-size: 48px;
+  font-family: "Myfont";
+  font-weight: 500;
+}
+
+.getToKnowContent_div2 {
+  display: flex;
+  min-width: 1160px;
+  width: 100%;
+  max-width: 1300px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.createAboutSittersDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 380px;
+  height: 444px;
+  font-size: 20px;
+  color: #0F0F0F;
+}
+.createAboutSittersDiv p {
+  text-align: center;
+  line-height: normal;
+  margin: 0px;
+}
+
+.createSittersProfilesDiv {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  overflow: hidden;
+  width: 660px;
+  height: 444px;
+}
+
+@font-face {
+  font: "Random Grotesque Standard Medium";
+  font-family: "Myfont";
+  font-style: normal;
+  src: url(public/fonts/RG-StandardMedium.woff) format(".woff");
+}
+h2 {
+  font-weight: 500;
+}
+
 .link {
   text-decoration: none;
   display: flex;
@@ -1504,7 +1814,7 @@ a.gif:hover .gifBackground {
 }
 .footer_header h1 {
   font-size: 48px;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .footerContent {
@@ -1567,17 +1877,122 @@ a.gif:hover .gifBackground {
   font-size: 20px;
 }
 
+@font-face {
+  font: "Random Grotesque Standard Medium";
+  font-family: "Myfont";
+  font-style: normal;
+  src: url(public/fonts/RG-StandardMedium.woff) format(".woff");
+}
+.sitterProfileDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 248px;
+  height: 402px;
+  font-size: 20px;
+  padding: 21px 26px;
+  color: #0F0F0F;
+  background-color: #BDA8D4;
+  border-radius: 30px;
+}
+.sitterProfileDiv p {
+  font-size: 16px;
+  margin: 0px;
+}
+
+.starRaiting {
+  display: flex;
+  align-items: center;
+  height: 24px;
+  width: 65%;
+  justify-content: space-between;
+  font-size: 16px;
+  line-height: 20px;
+}
+.starRaiting p {
+  align-items: center;
+}
+
+.sitterProfileDiv_div1 {
+  display: flex;
+  justify-content: center;
+  height: 100px;
+  width: 248px;
+}
+.sitterProfileDiv_div1 img {
+  width: 72px;
+  height: 100px;
+  border-radius: 10px;
+}
+.sitterProfileDiv_div1 .sitterProfileDiv_div1_div2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 190px;
+  height: 104px;
+  align-items: flex-start;
+  margin-left: 5px;
+}
+.sitterProfileDiv_div1 .sitterNameText {
+  font-size: 20px;
+  line-height: 24px;
+}
+.sitterProfileDiv_div1 .petsitterPriceText {
+  font-size: 18px;
+  line-height: 24px;
+}
+.sitterProfileDiv_div1 .starRaitingImg {
+  width: 24px;
+  height: 24px;
+}
+
+.sitterProfileDiv_div2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 248px;
+  height: 202px;
+}
+
+.sitterProfileDiv_sitterCanDiv {
+  display: flex;
+  width: 248px;
+  height: 36px;
+  justify-content: flex-start;
+}
+
+.sitterProfileDiv_div3 {
+  display: flex;
+  justify-content: space-between;
+  width: 248px;
+  height: 36px;
+}
+
+.sitterDescription_header {
+  display: flex;
+  width: 248px;
+  height: 34px;
+  overflow: hidden;
+}
+
+.sitterDescription {
+  width: 248px;
+  height: 96px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 html {
   width: 100%;
   scroll-behavior: smooth;
-  font-family: "MyFont";
-  background-color: #FFF9F5;
+  font-family: "Myfont";
   color: #320064;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 body {
-  background-color: #FFFFFF;
+  background-color: #FFF9F5;
   margin: 0px;
 }
 
@@ -1612,7 +2027,6 @@ body {
 
 .div1 {
   height: 240px;
-  background-color: #FFFFFF;
   padding-left: 60px;
   padding-right: 60px;
   display: flex;
@@ -1631,7 +2045,6 @@ body {
 
 .div3 {
   height: 742px;
-  background-color: #FFFFFF;
   padding-left: 60px;
   padding-right: 60px;
   display: flex;
@@ -1650,7 +2063,6 @@ body {
 
 .div5 {
   height: 239px;
-  background-color: #BDA8D4;
   padding-left: 60px;
   padding-right: 60px;
   display: flex;
@@ -1659,7 +2071,6 @@ body {
 
 .div6 {
   height: 566px;
-  background-color: #BDA8D4;
   padding-left: 60px;
   padding-right: 60px;
   display: flex;
