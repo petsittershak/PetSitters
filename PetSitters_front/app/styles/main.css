@@ -155,6 +155,7 @@
   font-size: 32px;
   color: #B3B3B3;
   transition: all 0.03s ease-in-out;
+  background-color: #FFF9F5;
 }
 
 .submit_form_btn:hover {
@@ -175,6 +176,7 @@
   background-position-y: 5px;
   font-size: 24px;
   color: #B3B3B3;
+  background-color: #FFF9F5;
   line-height: 60px;
 }
 
@@ -268,7 +270,7 @@
   transition: all 0.03s ease-in-out;
 }
 
-.form_background {
+.modal {
   content: "";
   background-color: rgba(0, 0, 0, 0.6);
   position: fixed;
@@ -280,6 +282,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.modal.active {
+  opacity: 1;
+  pointer-events: all;
 }
 
 .client_form_div {
@@ -287,6 +297,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  transform: scale(0.5);
+  transition: 0.4s all;
+}
+
+.client_form_div.active {
+  transform: scale(1);
 }
 
 .client_form {
@@ -299,7 +315,7 @@
   height: 668px;
   border: solid 1px #BDA8D4;
   border-radius: 30px;
-  background-color: #FFFFFF;
+  background-color: #FFF9F5;
   font-family: "Myfont";
 }
 .client_form .client_form_pic1 {
@@ -373,7 +389,7 @@
   overflow: visible;
   width: 400px;
   border-radius: 30px;
-  background-color: #FFFFFF;
+  background-color: #FFF9F5;
   border: solid 1px #BDA8D4;
   z-index: 2;
   position: absolute;
@@ -398,6 +414,7 @@
   border: solid 1px #BDA8D4;
   box-shadow: none;
   border-radius: 30px;
+  background-color: #FFF9F5;
 }
 .client_form ._select {
   width: 360px;
@@ -407,7 +424,7 @@
   line-height: 60px;
   padding-left: 20px;
   padding-right: 20px;
-  background-color: #FFFFFF;
+  background-color: #FFF9F5;
   border: solid 1px #BDA8D4;
   box-shadow: none;
   border-radius: 30px;
@@ -507,6 +524,7 @@
   font-size: 32px;
   color: #B3B3B3;
   transition: all 0.03s ease-in-out;
+  background-color: #FFF9F5;
 }
 
 .submit_form_btn:hover {
@@ -527,6 +545,7 @@
   background-position-y: 5px;
   font-size: 24px;
   color: #B3B3B3;
+  background-color: #FFF9F5;
   line-height: 60px;
 }
 
@@ -710,7 +729,7 @@ a.gif:hover .gifBackground {
 .react-datepicker {
   font-family: "Myfont";
   font-size: 18px;
-  background-color: #fff;
+  background-color: #FFF9F5;
   color: #320064;
   border: 1px solid #BDA8D4;
   border-radius: 30px;
@@ -739,18 +758,18 @@ a.gif:hover .gifBackground {
 }
 
 .react-datepicker-popper[data-placement^=bottom] .react-datepicker__triangle {
-  fill: #f0f0f0;
-  color: #f0f0f0;
+  fill: #FFF9F5;
+  color: #FFF9F5;
 }
 
 .react-datepicker-popper[data-placement^=top] .react-datepicker__triangle {
-  fill: #fff;
-  color: #fff;
+  fill: #FFF9F5;
+  color: #FFF9F5;
 }
 
 .react-datepicker__header {
   text-align: center;
-  background-color: #FFFFFF;
+  background-color: #FFF9F5;
   border-top-left-radius: 30px;
   padding: 8px 0;
   position: relative;
@@ -1736,6 +1755,9 @@ a.gif:hover .gifBackground {
   font-family: "Myfont";
   font-weight: 500;
 }
+.findPetsittersContent .findPetsittersContent.active {
+  overflow-y: hidden;
+}
 .findPetsittersContent h2 {
   font-size: 32px;
   color: #0F0F0F;
@@ -2199,10 +2221,6 @@ body {
   padding-right: 60px;
   display: flex;
   justify-content: space-around;
-}
-
-.form_background {
-  display: none;
 }
 
 .footer {

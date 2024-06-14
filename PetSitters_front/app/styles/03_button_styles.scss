@@ -49,6 +49,7 @@ transition: $customTransition;
     font-size: 32px;
     color: $outlineGrayColor;
     transition: $customTransition;
+    background-color: $beigeColor;
 }
 .submit_form_btn:hover{
 color: $mainBlackColor;
@@ -68,6 +69,7 @@ transition: $customTransition;
   background-position-y: 5px;
   font-size: 24px;
   color: $outlineGrayColor;
+  background-color: $beigeColor;
   line-height: 60px;
   }
 

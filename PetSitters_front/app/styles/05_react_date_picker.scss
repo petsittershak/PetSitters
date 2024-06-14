@@ -21,7 +21,7 @@
 .react-datepicker {
   font-family: "Myfont";
   font-size: $fontSizeSecondSmall;
-  background-color: #fff;
+  background-color: $beigeColor;
   color: $mainDarkColor;
   border: 1px solid $mainLightColor;
   border-radius: 30px;
@@ -47,17 +47,17 @@
   stroke: #aeaeae;
 }
 .react-datepicker-popper[data-placement^=bottom] .react-datepicker__triangle {
-  fill: #f0f0f0;
-  color: #f0f0f0;
+  fill: $beigeColor;
+  color:$beigeColor;
 }
 .react-datepicker-popper[data-placement^=top] .react-datepicker__triangle {
-  fill: #fff;
-  color: #fff;
+  fill: $beigeColor;
+  color: $beigeColor;
 }
 
 .react-datepicker__header {
   text-align: center;
-  background-color: $whiteColor;
+  background-color: $beigeColor;
   // border-bottom: 1px solid ;
   border-top-left-radius: 30px;
   padding: 8px 0;

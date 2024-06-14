@@ -3,7 +3,6 @@
 .findPetsittersContent{
 display: flex;
 flex-direction: column;
-
 max-width: 1300px;
 min-width: 1160px;
 width: 90%;
@@ -16,6 +15,9 @@ font-weight: $fontWeightStandart;
 
 }
 
+// .findPetsittersContent.active{
+// overflow-y:scroll;
+// }
 
 h2{
   font-size: $fontSizeMedium;

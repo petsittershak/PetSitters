@@ -43,7 +43,7 @@ async function getCity(myCoords, setCity) {
 }
 
 // функция создающая форму для заказчика
-function FormCreator() {
+function FormCreator({active, setActive}) {
 
 const tooltips = ["Погуляем с собачкой в вашем районе", "Возьмём питомца к себе, пока Вы в отъезде", "Посидим с пушистиком у Вас дома"]; 
 
@@ -104,10 +104,11 @@ const tooltips = ["Погуляем с собачкой в вашем район
     return clientCity;
   }
 
-  
+
 /// возвращаем форму, в которой вызываются компоненты создания кнопки и инпута
   return (
-    <div className="client_form_div">
+    <div className={active ? "modal active" : "modal"} onClick={()=> setActive(false)}>
+      <div className={active ? "client_form_div active" : "client_form_div"} onClick={(e)=> e.stopPropagation()}>
       <form name="client_form" className="client_form" onSubmit={(e)=>handleFormSubmit(e)}>
         <img
           src="./app/pictures/cats/Cat_whiskers_dark_light.png"
@@ -168,10 +169,12 @@ const tooltips = ["Погуляем с собачкой в вашем район
         </div>
       </form>
     </div>
+    </div>
+    
   );
 }
 
 
-export default function Form() {
-  return <FormCreator />;
+export default function Form({active, setActive}) {
+  return <FormCreator active={active} setActive={setActive}/>;
 }
