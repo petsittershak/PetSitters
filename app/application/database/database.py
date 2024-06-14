@@ -7,7 +7,7 @@ class Model(DeclarativeBase):
     pass
 
 
-engine = create_async_engine("sqlite+aiosqlite:///Clients.db")
+engine = create_async_engine("sqlite+aiosqlite:///database.db")
 new_session = async_sessionmaker(engine, expire_on_commit=False)
 
 

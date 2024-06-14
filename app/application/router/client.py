@@ -11,7 +11,7 @@ router = APIRouter(
 )
 
 
-@router.post("add_cliens")
+@router.post("add_client")
 async def add_client(
     client: Annotated[SClientAdd, Depends()],
 ) -> SClientId:
