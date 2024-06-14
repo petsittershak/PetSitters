@@ -177,10 +177,10 @@ export default function CreateSuggestSitters() {
 
 
   return (
-    <div className="sitters_page_foundSitters">
+    <div className="sitters_page_foundSitters" id="sitters_page_foundSitters">
       <h1> Нашли для вас подходящих sitters</h1>
       <div className="sitters_page_suggestedSitters">
-        {petSittersProfilesArr.map((sitter, i) => { return <CreateSitterInfoBlock sitterObj={sitter} iconsLinksOpt={iconsLinks} sitterCan={sitterCanOpt} key={i} />})}
+        {petSittersProfilesArr.map((sitter, i) => { return <CreateSitterInfoBlock sitterObj={sitter} iconsLinksOpt={iconsLinks} sitterCan={sitterCanOpt} key={i} extraClassWidth="sittersPageProfile" extraClassBtnWidth="sittersPageProfileBtn"/>})}
       </div>
     </div>
   )

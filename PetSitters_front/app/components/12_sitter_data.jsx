@@ -14,11 +14,11 @@ function CreateAbilityDiv({options, iconsLinks, sitterObject}) {
     </div>
   );
 }
-
-export default function CreateSitterInfoBlock({sitterObj, iconsLinksOpt, sitterCan, key}) {
+//"sittersPageProfile"  extraClassWidth="sittersPageProfile" extraClassBtnWidth="sittersPageProfileBtn"
+export default function CreateSitterInfoBlock({sitterObj, iconsLinksOpt, sitterCan, key, extraClassWidth, extraClassBtnWidth}) {
   return (
-    <div key={key} className="sitterProfileDiv">
-      <div className="sitterProfileDiv_div1">
+    <div key={key} className={`sitterProfileDiv  ${extraClassWidth ? extraClassWidth : ""}`}>
+      <div className={`sitterProfileDiv_div1 ${extraClassWidth ? extraClassWidth : ""}`}>
         <img src={sitterObj.picture} />
         <div className="sitterProfileDiv_div1_div2">
           <p className="sitterNameText">{`${sitterObj.firstName} ${sitterObj.lastName}`}</p>
@@ -31,17 +31,17 @@ export default function CreateSitterInfoBlock({sitterObj, iconsLinksOpt, sitterC
       </div>
         <div className="sitterProfileDiv_div2">
           <CreateAbilityDiv options={sitterCan} iconsLinks={iconsLinksOpt}  sitterObject={sitterObj} />
-          <p className="sitterDescription_header">{sitterObj.aboutSitter}</p>
-          <p className="sitterDescription">{sitterObj.description}</p>
+          <p className={`sitterDescription_header ${extraClassWidth ? extraClassWidth : ""}`}>{sitterObj.aboutSitter}</p>
+          <p className={`sitterDescription ${extraClassWidth ? extraClassWidth : ""}`}>{sitterObj.description}</p>
         </div>
-        <div className="sitterProfileDiv_div3">
+        <div className={`sitterProfileDiv_div3 ${extraClassWidth ? extraClassWidth : ""}`}>
           <CreateButton
-            classN="btn persitterProfilesSmallBtn"
+            classN={`btn ${extraClassBtnWidth}`}
             onClickFunct={() => {}}
             btnText="Профиль"
           />
           <CreateButton
-            classN="btn persitterProfilesSmallBtn"
+          classN={`btn ${extraClassBtnWidth}`}
             onClickFunct={() => {}}
             btnText="Связаться"
           />

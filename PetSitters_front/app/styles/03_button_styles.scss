@@ -140,7 +140,22 @@ transition: $customTransition;
   transition: $customTransition;
 }
 
+
 .persitterProfilesSmallBtn:hover{
+  color: $beigeColor;
+  background-color: $mainDarkColor;
+  transition: $customTransition;
+}
+
+.sittersPageProfileBtn{
+  width: 140px;
+  height: 36px;
+  color: $mainBlackColor;
+  background-color: $beigeColor;
+  transition: $customTransition;
+}
+
+.sittersPageProfileBtn:hover{
   color: $beigeColor;
   background-color: $mainDarkColor;
   transition: $customTransition;

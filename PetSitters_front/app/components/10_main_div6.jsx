@@ -16,7 +16,7 @@ const iconsLinks = {
 
   return (
     <div className="createSittersProfilesDiv">
-      {sitters.map((sitter, i) => { return <CreateSitterInfoBlock sitterObj={sitter} iconsLinksOpt={iconsLinks} sitterCan={sitterCanOpt} key={i} />})}
+      {sitters.map((sitter, i) => { return <CreateSitterInfoBlock sitterObj={sitter} iconsLinksOpt={iconsLinks} sitterCan={sitterCanOpt} key={i} extraClassBtnWidth="persitterProfilesSmallBtn"/>})}
     </div>
   )
 }
@@ -124,7 +124,7 @@ export default function CreateGetToKnowOurSitters() {
       <div className="getToKnowContent_div2">
       <CreateAboutSitterDiv options={getToKnowArr} />
       <CreateSittersProfiles sitters={petSittersProfilesArr}/>
-        <CreateButton classN="btn verticalButton" onClickFunct={() => {}}/>
+        <a href="/sitters#sitters_page_foundSitters"><CreateButton classN="btn verticalButton"/></a>
 </div>
     </div>
   )

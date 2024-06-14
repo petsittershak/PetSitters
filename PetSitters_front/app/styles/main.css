@@ -254,6 +254,20 @@
   transition: all 0.03s ease-in-out;
 }
 
+.sittersPageProfileBtn {
+  width: 140px;
+  height: 36px;
+  color: #0F0F0F;
+  background-color: #FFF9F5;
+  transition: all 0.03s ease-in-out;
+}
+
+.sittersPageProfileBtn:hover {
+  color: #FFF9F5;
+  background-color: #320064;
+  transition: all 0.03s ease-in-out;
+}
+
 .form_background {
   content: "";
   background-color: rgba(0, 0, 0, 0.6);
@@ -587,6 +601,20 @@
 }
 
 .persitterProfilesSmallBtn:hover {
+  color: #FFF9F5;
+  background-color: #320064;
+  transition: all 0.03s ease-in-out;
+}
+
+.sittersPageProfileBtn {
+  width: 140px;
+  height: 36px;
+  color: #0F0F0F;
+  background-color: #FFF9F5;
+  transition: all 0.03s ease-in-out;
+}
+
+.sittersPageProfileBtn:hover {
   color: #FFF9F5;
   background-color: #320064;
   transition: all 0.03s ease-in-out;
@@ -1930,7 +1958,7 @@ h2 {
 
 .sitterProfileDiv_div1 {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   height: 100px;
   width: 248px;
 }
@@ -1996,6 +2024,10 @@ h2 {
   overflow: hidden;
   overflow-wrap: break-word;
   text-overflow: ellipsis;
+}
+
+.sittersPageProfile {
+  width: 308px;
 }
 
 @font-face {

@@ -10,7 +10,7 @@ function CreateHeaderList({options, hrefOpt}){
 }
 
 const menuOptArr = ["О сервисе", "Ситтеры", "Сотрудничество", "Отзывы"];
-const hrefArr = ["#HowPetsittersWork", "/sitters", "#", "#"]
+const hrefArr = ["/#HowPetsittersWork", "/sitters", "#", "#"]
 
 export default function CreateHeader() {
   return (
