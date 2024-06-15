@@ -41,7 +41,7 @@ function CreateOurSittersOptions({ options, picOptions, picSize, gifOpt, classN,
                     e.target.closest("A").style.background = `url(${picOptions[i]}) no-repeat`;
                     e.target.closest("A").style.backgroundPosition = "center";
                     e.target.closest("A").style.backgroundSize = "cover";
-                    e.target.closest("A").style.width = picSize[i][0] + "px";
+                    e.target.closest("A").style.width = picSize[i][0]+ "px";
                     e.target.closest("A").style.height = picSize[i][1] + "px";
                 }}
               
@@ -79,11 +79,11 @@ export default function CreateOurSitters() {
     "./app/pictures/gif/05_dog_sick.gif"
   ]
   const dogsPicSize = [
-    [103, 100],
-    [125, 90],
-    [230, 81],
-    [102, 98],
-    [119, 100]
+    [103, 103],
+    [125, 125],
+    [230, 125],
+    [125, 125],
+    [119, 119]
   ]
   
   const dogsitterDescrArr = [
@@ -108,10 +108,10 @@ export default function CreateOurSitters() {
     "./app/pictures/gif/04_cat_sick.gif",
   ]
   const catsPicSize = [
-    [166, 170],
-    [77, 120],
-    [117, 100],
-    [99, 100]
+    [170, 170],
+    [120, 120],
+    [117, 117],
+    [100, 100]
   ]
 
   const catsitterDescrArr = [
