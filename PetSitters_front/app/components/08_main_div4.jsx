@@ -1,12 +1,55 @@
 import React, { useState } from "react";
 
-function CreateOurSittersOptions({ options, picOptions, classN, classNComp}) {
+
+//options={gifArray} description={descriptionArr} iconsOpt={iconArray} 
+
+function CreateOurSittersOptions({ options, picOptions, picSize, gifOpt, classN, classNComp}) {
   return (
     <div className={classN}>
       {options.map((opt, i) => {
         return (
           <div key={i} className="oneActionblock">
-            <img src={picOptions[i]} />
+  <a className="div4_gif" href=""
+              style={{
+                background: `url(${picOptions[i]}) no-repeat`, backgroundPosition: "center", backgroundSize: "cover", width: picSize[i][0] + "px", height: picSize[i][1] + "px"
+              }}
+              onMouseOver={(e) => {
+                e.target.style.background = 'none';
+                e.target.firstChild.style.visibility = "visible";
+              }}
+            
+              onMouseLeave={(e) => {
+                e.target.firstChild.style.visibility = "hidden";
+                e.target.style.background = `url(${picOptions[i]}) no-repeat`;
+                e.target.style.backgroundPosition = "center";
+                e.target.style.backgroundSize = "cover";
+                e.target.style.width =  picSize[i][0] + "px";
+                e.target.style.height = picSize[i][1] + "px";
+            
+              }} 
+            
+            >
+              <img className="div4_gifBackground" src={gifOpt[i]} alt="" style={{ width: picSize[i][0] + "px", height: picSize[i][1] + "px", visibility: "hidden" }}
+                onMouseOver={(e) => {
+                  e.target.closest("A").style.background = 'none';
+                  e.target.style.visibility = 'visible';
+                  
+                }}
+              
+                onMouseLeave={(e) => {
+                  e.target.style.visibility = 'hidden';
+                    e.target.closest("A").style.background = `url(${picOptions[i]}) no-repeat`;
+                    e.target.closest("A").style.backgroundPosition = "center";
+                    e.target.closest("A").style.backgroundSize = "cover";
+                    e.target.closest("A").style.width = picSize[i][0] + "px";
+                    e.target.closest("A").style.height = picSize[i][1] + "px";
+                }}
+              
+              
+              />
+                  </a>
+
+          {/* <img src={picOptions[i]} /> */}
             <div className={classNComp}>{opt}</div>
         </div>
       )})
@@ -28,6 +71,20 @@ export default function CreateOurSitters() {
     "./app/pictures/dogs/04_dog_happy.png",
    "./app/pictures/dogs/05_dog_sick.png"
   ];
+  const dogsGifArr = [
+    "./app/pictures/gif/01_dog_piece.gif",
+    "./app/pictures/gif/02_dog_angry.gif",
+    "./app/pictures/gif/03_dog_fight.gif",
+    "./app/pictures/gif/04_dog_happy.gif",
+    "./app/pictures/gif/05_dog_sick.gif"
+  ]
+  const dogsPicSize = [
+    [103, 100],
+    [125, 90],
+    [230, 81],
+    [102, 98],
+    [119, 100]
+  ]
   
   const dogsitterDescrArr = [
     "Умеют вытаскивать подобранный кусок из пасти собаки",
@@ -44,6 +101,19 @@ export default function CreateOurSitters() {
     "./app/pictures/cats/04_cat_sick.png"
   ];
 
+  const catsGifArr = [
+    "./app/pictures/gif/01_cat_play.gif",
+    "./app/pictures/gif/02_cat_happy.gif",
+    "./app/pictures/gif/03_cat_shhh.gif",
+    "./app/pictures/gif/04_cat_sick.gif",
+  ]
+  const catsPicSize = [
+    [166, 170],
+    [77, 120],
+    [117, 100],
+    [99, 100]
+  ]
+
   const catsitterDescrArr = [
     "Знают, как развлечь шерстяного",
     "Умеют ладить с любым котэ",
@@ -56,11 +126,11 @@ export default function CreateOurSitters() {
     <div className="div4_content">
       <div className="div4_content_div">
         <h1>Наши dogsitters</h1>
-        <CreateOurSittersOptions options={dogsitterDescrArr} picOptions={dogsArr} classN="dogCatSittersBlockPict" classNComp="dogsittersCatsittersCan dogsittersCan" />
+        <CreateOurSittersOptions options={dogsitterDescrArr} picSize={dogsPicSize} picOptions={dogsArr} gifOpt ={dogsGifArr} classN="dogCatSittersBlockPict" classNComp="dogsittersCatsittersCan dogsittersCan" />
       </div>
       <div className="div4_content_div">
         <h1>Наши catsitters</h1>
-        <CreateOurSittersOptions options={catsitterDescrArr} picOptions={catsArr} classN="dogCatSittersBlockPict catSittersBlockPict" classNComp="dogsittersCatsittersCan catsittersCan"/>
+        <CreateOurSittersOptions options={catsitterDescrArr} picSize={catsPicSize} picOptions={catsArr} gifOpt={catsGifArr} classN="dogCatSittersBlockPict catSittersBlockPict" classNComp="dogsittersCatsittersCan catsittersCan"/>
       </div>
     </div>
   )
