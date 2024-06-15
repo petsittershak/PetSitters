@@ -3,6 +3,8 @@ import ReactDOM from "react-dom/client";
 import CreateInput from "./02_input.jsx";
 import CreateButton from "./03_button_all.jsx";
 import CreateDatePicker from "./05_react_date_picker.jsx";
+import connectServerFunc from "./01_clinet_form_connectsServer.jsx";
+
 
 //данный компонент согдает форму для заполнения заказчиком
 
@@ -10,7 +12,7 @@ import CreateDatePicker from "./05_react_date_picker.jsx";
 //функция находит город местоположения заказчика по его геолокации, используется бесплатный
 //апи DAdata до 10 000 вызовов в сутки ("https://dadata.ru/product/geolocate/")
 
-async function getCity(myCoords, setCity) {
+async function getCity(myCoords, setCity, setCityName) {
   var url = "http://suggestions.dadata.ru/suggestions/api/4_1/rs/geolocate/address";
   var token = `28625502ebc89256979d508f7c9c4125c443746f`;
   var query = { lat: myCoords["0"], lon: myCoords["1"] };
@@ -36,6 +38,7 @@ async function getCity(myCoords, setCity) {
       const clientCity = address.match(regexp)[0].split(",")[0];
       // меняем состояние вида кнопки, в ней отобразится название города
       setCity(`Ваш город: ${clientCity}`);
+      setCityName(clientCity)
       // функция возвращает название города
       return clientCity;
   })
@@ -50,19 +53,68 @@ const tooltips = ["Погуляем с собачкой в вашем район
   // отвечает за забмит формы
   function handleFormSubmit(e) {
     e.preventDefault();
-    console.log("submitted")
-    // const form = document.forms["client_form"];
-    // const userRequest = {
-    //   name: "",
-    //   pet: choice,
-    //   price: maxPrice,
-    //   city: clientCity,
-    //   telephone: form.elements["telephone"].value,
-    //   description: form.elements["description"].value,
-    // }
-    // console.log(userRequest)
-};
+    console.log("submitted");
+
+    const form = document.forms["client_form"];
   
+    const userRequest = {
+      name: "no Name",
+      pet: animal,
+      price: maxPrice,
+      city: cityName,
+      telephone: `+7${(form.elements["telephone"].value).match(/\d/g).join('')}`,
+      description: form.elements["description"].value,
+    }
+
+    sendUser(userRequest);
+
+    async function sendUser(userRequest) {
+      const clientData = {
+        name: userRequest.name,
+        pet: userRequest.pet,
+        price: parseInt(userRequest.price, 10),
+        city: userRequest.city,
+        telephone: userRequest.telephone,
+        description: userRequest.description
+      }
+
+
+      const response = await fetch("http://localhost:8909/clientsadd_client", {
+        method: "POST",
+        headers: {"Accept": "application/json", "Content-Type": "application/json"},
+        body: JSON.stringify(clientData)
+      });
+      if (response.ok === true) {
+        const user = await response.json();
+        console.log(response)
+      }
+
+    }
+  }
+    // fetch('/add_client', {
+    //   method: 'POST',
+    //   headers: {
+    //     'Content-Type': 'application/json'
+    //   },
+    //   body: JSON.stringify(clientData)
+    // })
+    //   .then(response => response.json())
+    //   .then(data => {
+    //     console.log('Ответ сервера:', data);
+    //     // Обработка успешного ответа
+    //   })
+    //   .catch(error => {
+    //     console.error('Ошибка:', error);
+    //     // Обработка ошибки
+    //   });
+
+    
+ //name: str
+    // pet: str
+    // price: int
+    // city: str
+    // telephone: str
+    // description: Optional[str] = None
 /// все данные для создания списков, посредством вызова  функции CreateInput, которая вызывается несколько раз в форме ниже
   const serviceOptions = ["Выгул", "Передержка", "Няня"];
   const [clicked, setClicked] = useState(false);
@@ -84,7 +136,7 @@ const tooltips = ["Погуляем с собачкой в вашем район
 
 ////////////////////////////////////////////////////////////////////
   const [city, setCity] = useState("Определить город");
- 
+  const [cityName, setCityName] = useState("default");
   //по клику на кнопку поиска местоположения заказчика, вызывается функция handleGeoClick
   function handleGeoClick(e) {
     e.preventDefault();
@@ -98,7 +150,7 @@ const tooltips = ["Погуляем с собачкой в вашем район
         myCoords.push(latitude);
         myCoords.push(longitude);
         //// вызываем функцию getCity которая определить город по координатам
-        clientCity = getCity(myCoords, setCity);
+        clientCity = getCity(myCoords, setCity, setCityName);
       });
     } 
     return clientCity;
@@ -124,7 +176,7 @@ const tooltips = ["Погуляем с собачкой в вашем район
             <label htmlFor="service_name">
               Тип услуги
               <br />
-              <CreateInput formName="service_name" classes="client_form_select_opt" opt={serviceOptions} clickState={clicked} setClick={setClicked} changeStateOpt={setChoice} choiceMade={choice} />
+              <CreateInput formName="service_name" classes="client_form_select_opt" opt={serviceOptions} clickState={clicked} setClick={setClicked} changeStateOpt={setChoice} choiceMade={choice}/>
             </label>
 
             <label htmlFor="animal_type">
