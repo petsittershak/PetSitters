@@ -1,6 +1,6 @@
 from typing import Annotated
 
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter, Depends, Body
 
 from application.repository.client import ClientRepository
 from application.schemas.client import SClientAdd, SClient, SClientId
@@ -11,15 +11,23 @@ router = APIRouter(
 )
 
 
-@router.post("add_client")
+@router.post("/add_client")
 async def add_client(
-    client: Annotated[SClientAdd, Depends()],
+    client: Annotated[SClientAdd, Body()],
 ) -> SClientId:
     client_id = await ClientRepository.add_one(client)
     return {"Add": True, "client_id": client_id}
 
 
-@router.get("get_all_clients")
+# @router.post("/add_client")
+# async def add_client(
+#     client: Annotated[SClientAdd, Depends()],
+# ) -> SClientId:
+#     client_id = await ClientRepository.add_one(client)
+#     return {"Add": True, "client_id": client_id}
+
+
+@router.get("/get_all_clients")
 async def get_clients() -> list[SClient]:
     client = await ClientRepository.find_all()
     return client
