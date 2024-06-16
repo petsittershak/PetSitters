@@ -9,13 +9,13 @@ align-items: center;
 }
 
 .sitters_page_suggestedSitters{
-  width: 1160px;
-  height: 928px;
+  width: 1200px;
+  height: fit-content;
   display: flex;
   flex-direction: row;
-  overflow: hidden;
+  // overflow: hidden;
   flex-wrap: wrap;
   overflow-wrap: normal;
-  justify-content: space-between;
+  justify-content:flex-start;
   align-items: center;
 }

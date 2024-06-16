@@ -8,7 +8,7 @@
 .sitters_page {
   width: 100%;
   min-width: 1280px;
-  height: 2382px;
+  height: fit-content;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -1755,9 +1755,6 @@ a.gif:hover .gifBackground {
   font-family: "Myfont";
   font-weight: 500;
 }
-.findPetsittersContent .findPetsittersContent.active {
-  overflow-y: hidden;
-}
 .findPetsittersContent h2 {
   font-size: 32px;
   color: #0F0F0F;
@@ -1826,10 +1823,10 @@ a.gif:hover .gifBackground {
 
 .createSittersProfilesDiv {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   flex-wrap: wrap;
   overflow: hidden;
-  width: 660px;
+  width: 680px;
   height: 444px;
 }
 
@@ -1959,6 +1956,8 @@ h2 {
   color: #0F0F0F;
   background-color: #BDA8D4;
   border-radius: 30px;
+  margin-right: 40px;
+  margin-bottom: 40px;
 }
 .sitterProfileDiv p {
   font-size: 16px;
@@ -2062,7 +2061,7 @@ h2 {
   height: 260px;
   min-width: 1160px;
   width: 100%;
-  max-width: 1300px;
+  max-width: 1250px;
   display: flex;
   justify-content: space-between;
 }
@@ -2087,9 +2086,9 @@ h2 {
 }
 
 .sitters_div1_content_div2 {
-  width: 660px;
+  width: 340px;
   height: 260px;
-  border-radius: 30px;
+  padding-top: 10px;
 }
 
 @font-face {
@@ -2112,14 +2111,13 @@ h2 {
 }
 
 .sitters_page_suggestedSitters {
-  width: 1160px;
-  height: 928px;
+  width: 1200px;
+  height: fit-content;
   display: flex;
   flex-direction: row;
-  overflow: hidden;
   flex-wrap: wrap;
   overflow-wrap: normal;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
 }
 

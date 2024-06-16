@@ -7,22 +7,26 @@ function CreateAbilityDiv({options, iconsLinks, sitterObject}) {
   options.forEach(opt => { if (sitterObject[opt] == true) { thisSitterCan.push(opt)  } })
 
   return (
-    <div className="sitterProfileDiv_sitterCanDiv">
+    <div  className="sitterProfileDiv_sitterCanDiv">
       {thisSitterCan.map((opt, i) => {
-        return <img src={iconsLinks[opt]} />
+        return <img key={i} src={iconsLinks[opt]} />
       })}
     </div>
   );
 }
+let count = 523;
 //"sittersPageProfile"  extraClassWidth="sittersPageProfile" extraClassBtnWidth="sittersPageProfileBtn"
-export default function CreateSitterInfoBlock({sitterObj, iconsLinksOpt, sitterCan, key, extraClassWidth, extraClassBtnWidth}) {
+export default function CreateSitterInfoBlock({ sitterObj, iconsLinksOpt, sitterCan, extraClassWidth, extraClassBtnWidth }) {
+  
+  const defaultPic = "./app/pictures/pic/petsitter_avatar2.jpg"
+  count++;
   return (
-    <div key={key} className={`sitterProfileDiv  ${extraClassWidth ? extraClassWidth : ""}`}>
+    <div key={count} className={`sitterProfileDiv  ${extraClassWidth ? extraClassWidth : ""}`}>
       <div className={`sitterProfileDiv_div1 ${extraClassWidth ? extraClassWidth : ""}`}>
-        <img src={sitterObj.picture} />
+        <img src={sitterObj.picture ? sitterObj.picture : defaultPic} />
         <div className="sitterProfileDiv_div1_div2">
           <p className="sitterNameText">{`${sitterObj.firstName} ${sitterObj.lastName}`}</p>
-          <p className="starRaiting"><img className="starRaitingImg" src="./app/pictures/icons/09_raiting_start.png" /> <p>{sitterObj.raiting}</p><p>{sitterObj.title}</p></p>
+          <div className="starRaiting"><img className="starRaitingImg" src="./app/pictures/icons/09_raiting_start.png" /> <p>{sitterObj.raiting}</p><p>{sitterObj.title}</p></div>
           <p className="petsitterPriceText">{`${sitterObj.price} ${sitterObj.priceTitle}`}</p>
           <p>{`г. ${sitterObj.city} ${
             sitterObj.cityArea ? `(${sitterObj.cityArea})` : ""

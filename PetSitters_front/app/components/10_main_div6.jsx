@@ -3,6 +3,8 @@ import CreateButton from "./03_button_all.jsx";
 import CreateSitterInfoBlock from "./12_sitter_data.jsx";
 import Sitters from "../pages/sitters.js";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import getSitters from "./10_request&receiveSitters.jsx";
+
 
 function CreateSittersProfiles({ sitters }) {
 let sitterCanOpt= ["vet", "canHelpAlergicAnimal", "ownSertificate", "canCookHomeFood"];
@@ -16,22 +18,24 @@ const iconsLinks = {
 
   return (
     <div className="createSittersProfilesDiv">
-      {sitters.map((sitter, i) => { return <CreateSitterInfoBlock sitterObj={sitter} iconsLinksOpt={iconsLinks} sitterCan={sitterCanOpt} key={i} extraClassBtnWidth="persitterProfilesSmallBtn"/>})}
-    </div>
-  )
+      {sitters.map((sitter, i) => { 
+ return <CreateSitterInfoBlock key={i} sitterObj={sitter} iconsLinksOpt={iconsLinks} sitterCan={sitterCanOpt} extraClassBtnWidth="persitterProfilesSmallBtn" /> 
+      })}
+  </div>)
+
 }
 
 function CreateAboutSitterDiv({options}) {
   return (
     <div className="createAboutSittersDiv">
-      {options.map((opt, i) => { return <p>{opt}</p>})}
+      {options.map((opt, i) => { return <p key={i}>{opt}</p>})}
     </div>
   )
   
 }
 
 
-const petSittersProfilesArr = [
+const petSittersDefaultProfilesArr = [
   {
     picture: "./app/pictures/pic/petsitter_avatar2.jpg",
     firstName: "Иринa",
@@ -80,31 +84,8 @@ const petSittersProfilesArr = [
     canCookHomeFood: true,
     aboutSitter: "Кошатник со стажем",
     description: "Я работаю удалённо, поэтому собака будет постоянно находиться под присмотром. Рядом с домом есть просторное поле для любителей побегать"
-  },
-  {
-    picture:"./app/pictures/pic/petsitter_avatar3.jpg",
-    firstName: "Анастасия",
-    lastName: "Рим",
-    raiting: "5.0",
-    age: 30,
-    completedOrders: 35,
-    joinedPetsittersDate: "13.06.2022",
-    title: "Dogsitter",
-    price: 1000,
-    priceFor: "передержка",
-    customersFeedbacks: "",
-    phone: "",
-    email:"",
-    priceTitle: "руб/сутки",
-    city: "Санкт-Петербург",
-    cityArea: "",
-    vet: false,
-    canHelpAlergicAnimal: true,
-    ownSertificate: false,
-    canCookHomeFood: true,
-    aboutSitter: "С радостью позабочусь о вашем четвероногом друге!",
-    description: "🐶 Подхожу к делу с особой любовью.Работаю из дома, поэтому ваш питомец всегда будет под чутким присмотром, рядом с домом есть прекрасный парк для прогулок и площадка для собак."
   }
+ 
 ]
 
 
@@ -115,6 +96,9 @@ const getToKnowArr = ["Мы собрали профайлы про наших si
   "Узнай про sitter все - его навыки, стоимость услуг, отзывы клиентов."
 ]
 
+//вызываем функцию гет ситтерс чтобы получить всех ситтеров из базы данных и в дальнейшев мымводить их профили на страницах
+const sittersArr = await getSitters();
+console.log(sittersArr);
 
 export default function CreateGetToKnowOurSitters() {
 
@@ -123,7 +107,7 @@ export default function CreateGetToKnowOurSitters() {
       <h1>Познакомьтесь с нашими sitters</h1>
       <div className="getToKnowContent_div2">
       <CreateAboutSitterDiv options={getToKnowArr} />
-      <CreateSittersProfiles sitters={petSittersProfilesArr}/>
+      <CreateSittersProfiles sitters={ sittersArr ? sittersArr.slice(sittersArr.length-2) : petSittersDefaultProfilesArr}/>
         <a href="/sitters#sitters_page_foundSitters"><CreateButton classN="btn verticalButton"/></a>
 </div>
     </div>

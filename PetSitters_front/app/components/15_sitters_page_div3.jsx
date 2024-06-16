@@ -1,18 +1,9 @@
 import React, { useState } from "react";
 import CreateSitterInfoBlock from "./12_sitter_data.jsx";
+import getSitters from "./10_request&receiveSitters.jsx"
 
-
-// function CreateSittersProfiles({ sitters }) {
-
-    
-  
-//     return (
-//       <div className="createSittersProfilesDiv">
-//         {sitters.map((sitter, i) => { return <CreateSitterInfoBlock sitterObj={sitter} iconsLinksOpt={iconsLinks} sitterCan={sitterCanOpt} />})}
-//       </div>
-//     )
-//   }
-
+  const sittersArr = await getSitters();
+    console.log(sittersArr);
 
 export default function CreateSuggestSitters() {
 
@@ -174,13 +165,13 @@ export default function CreateSuggestSitters() {
     canCookHomeFood: "./app/pictures/sitterCan/canCookHomeFood.png"
     }
 
-
+    
 
   return (
     <div className="sitters_page_foundSitters" id="sitters_page_foundSitters">
       <h1> Нашли для вас подходящих sitters</h1>
       <div className="sitters_page_suggestedSitters">
-        {petSittersProfilesArr.map((sitter, i) => { return <CreateSitterInfoBlock sitterObj={sitter} iconsLinksOpt={iconsLinks} sitterCan={sitterCanOpt} key={i} extraClassWidth="sittersPageProfile" extraClassBtnWidth="sittersPageProfileBtn"/>})}
+        {(sittersArr ? sittersArr: petSittersProfilesArr).map((sitter, i) => { return <CreateSitterInfoBlock sitterObj={sitter} iconsLinksOpt={iconsLinks} sitterCan={sitterCanOpt} key={i} extraClassWidth="sittersPageProfile" extraClassBtnWidth="sittersPageProfileBtn"/>})}
       </div>
     </div>
   )

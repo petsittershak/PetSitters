@@ -1,9 +1,12 @@
 import React, { useState } from "react";
+import Histiry, { useHistory } from 'react-router-dom';
 import ReactDOM from "react-dom/client";
+
 import CreateInput from "./02_input.jsx";
 import CreateButton from "./03_button_all.jsx";
 import CreateDatePicker from "./05_react_date_picker.jsx";
-import connectServerFunc from "./01_clinet_form_connectsServer.jsx";
+
+import getSitters from "./10_request&receiveSitters.jsx"
 
 
 //данный компонент согдает форму для заполнения заказчиком
@@ -47,13 +50,13 @@ async function getCity(myCoords, setCity, setCityName) {
 
 // функция создающая форму для заказчика
 function FormCreator({active, setActive}) {
-
 const tooltips = ["Погуляем с собачкой в вашем районе", "Возьмём питомца к себе, пока Вы в отъезде", "Посидим с пушистиком у Вас дома"]; 
 
-  // отвечает за забмит формы
+
+  // отвечает за сабмит формы
   function handleFormSubmit(e) {
     e.preventDefault();
-    console.log("submitted");
+    // console.log("submitted");
 
     const form = document.forms["client_form"];
   
@@ -65,56 +68,41 @@ const tooltips = ["Погуляем с собачкой в вашем район
       telephone: `+7${(form.elements["telephone"].value).match(/\d/g).join('')}`,
       description: form.elements["description"].value,
     }
-
+    // const history = useHistory();
+    // history.push('/sitters')
+// нужно ли вызывать функцию запроса ситтеров???????
+    //getSitters();
+    // goToSittersPage();
+    // function goToSittersPage() {
+    //  return <a href="/sitters"></a>
+    //   }
+   
+    window.location.href = "/sitters";
+  
     sendUser(userRequest);
 
     async function sendUser(userRequest) {
-      const clientData = {
-        name: userRequest.name,
-        pet: userRequest.pet,
-        price: parseInt(userRequest.price, 10),
-        city: userRequest.city,
-        telephone: userRequest.telephone,
-        description: userRequest.description
-      }
 
-
-      const response = await fetch("http://localhost:8909/clientsadd_client", {
+      try {
+        const response = await fetch("http://localhost:8909/clients/add_client", {
         method: "POST",
         headers: {"Accept": "application/json", "Content-Type": "application/json"},
-        body: JSON.stringify(clientData)
+        body: JSON.stringify(userRequest)
       });
       if (response.ok === true) {
         const user = await response.json();
-        console.log(response)
+        console.log(user)
+        }
+       
       }
-
-    }
-  }
-    // fetch('/add_client', {
-    //   method: 'POST',
-    //   headers: {
-    //     'Content-Type': 'application/json'
-    //   },
-    //   body: JSON.stringify(clientData)
-    // })
-    //   .then(response => response.json())
-    //   .then(data => {
-    //     console.log('Ответ сервера:', data);
-    //     // Обработка успешного ответа
-    //   })
-    //   .catch(error => {
-    //     console.error('Ошибка:', error);
-    //     // Обработка ошибки
-    //   });
-
+      catch (err) {
+        console.log(err)
+      }
+     }
     
- //name: str
-    // pet: str
-    // price: int
-    // city: str
-    // telephone: str
-    // description: Optional[str] = None
+  }
+    
+
 /// все данные для создания списков, посредством вызова  функции CreateInput, которая вызывается несколько раз в форме ниже
   const serviceOptions = ["Выгул", "Передержка", "Няня"];
   const [clicked, setClicked] = useState(false);
