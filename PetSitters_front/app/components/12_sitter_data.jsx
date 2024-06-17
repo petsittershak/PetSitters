@@ -26,7 +26,7 @@ export default function CreateSitterInfoBlock({ sitterObj, iconsLinksOpt, sitter
         <img src={sitterObj.picture ? sitterObj.picture : defaultPic} />
         <div className="sitterProfileDiv_div1_div2">
           <p className="sitterNameText">{`${sitterObj.firstName} ${sitterObj.lastName}`}</p>
-          <div className="starRaiting"><img className="starRaitingImg" src="./app/pictures/icons/09_raiting_start.png" /> <p>{sitterObj.raiting}</p><p>{sitterObj.title}</p></div>
+          <div className="starRaiting"><img className="starRaitingImg" src="./app/pictures/icons/09_raiting_start.png" /> <p>{Number.isInteger(sitterObj.rating) ? `${sitterObj.rating}.0` : `${sitterObj.rating}`}</p><p>{sitterObj.title}</p></div>
           <p className="petsitterPriceText">{`${sitterObj.price} ${sitterObj.priceTitle}`}</p>
           <p>{`г. ${sitterObj.city} ${
             sitterObj.cityArea ? `(${sitterObj.cityArea})` : ""

@@ -5,8 +5,8 @@ import ReactDOM from "react-dom/client";
 import CreateInput from "./02_input.jsx";
 import CreateButton from "./03_button_all.jsx";
 import CreateDatePicker from "./05_react_date_picker.jsx";
-
-import getSitters from "./10_request&receiveSitters.jsx"
+import DEFINE_URL_ADRESS from "./000_backend_key.jsx";
+import getSitters from "./10_request&receiveSitters.jsx";
 
 
 //данный компонент согдает форму для заполнения заказчиком
@@ -48,12 +48,17 @@ async function getCity(myCoords, setCity, setCityName) {
   .catch(error => console.log("error", error));
 }
 
+
+
+
+
+
+
 // функция создающая форму для заказчика
-function FormCreator({active, setActive}) {
-const tooltips = ["Погуляем с собачкой в вашем районе", "Возьмём питомца к себе, пока Вы в отъезде", "Посидим с пушистиком у Вас дома"]; 
-
-
+function FormCreator({ classN, onSubmitFunc }) {
+  const tooltips = ["Погуляем с собачкой в вашем районе", "Возьмём питомца к себе, пока Вы в отъезде", "Посидим с пушистиком у Вас дома"];
   // отвечает за сабмит формы
+
   function handleFormSubmit(e) {
     e.preventDefault();
     // console.log("submitted");
@@ -70,7 +75,7 @@ const tooltips = ["Погуляем с собачкой в вашем район
     }
     // const history = useHistory();
     // history.push('/sitters')
-// нужно ли вызывать функцию запроса ситтеров???????
+    // нужно ли вызывать функцию запроса ситтеров???????
     //getSitters();
     // goToSittersPage();
     // function goToSittersPage() {
@@ -84,41 +89,43 @@ const tooltips = ["Погуляем с собачкой в вашем район
     async function sendUser(userRequest) {
 
       try {
-        const response = await fetch("http://localhost:8909/clients/add_client", {
-        method: "POST",
-        headers: {"Accept": "application/json", "Content-Type": "application/json"},
-        body: JSON.stringify(userRequest)
-      });
-      if (response.ok === true) {
-        const user = await response.json();
-        console.log(user)
+        const response = await fetch(`http://${DEFINE_URL_ADRESS}/clients/add_client`, {
+          method: "POST",
+          headers: { "Accept": "application/json", "Content-Type": "application/json" },
+          body: JSON.stringify(userRequest)
+        });
+        if (response.ok === true) {
+          const user = await response.json();
+          console.log(user)
         }
        
       }
       catch (err) {
         console.log(err)
       }
-     }
+    }
     
   }
+
+  
     
 
-/// все данные для создания списков, посредством вызова  функции CreateInput, которая вызывается несколько раз в форме ниже
+  /// все данные для создания списков, посредством вызова  функции CreateInput, которая вызывается несколько раз в форме ниже
   const serviceOptions = ["Выгул", "Передержка", "Няня"];
   const [clicked, setClicked] = useState(false);
   const [choice, setChoice] = useState(serviceOptions["0"]);
 
 
   const [clickedAnimal, setClickedAnimal] = useState(false);
-  const animalOptions = ["Котюня", "Пёсель", "Котопёс"];
+  const animalOptions = ["Кошка", "Собака"];
   const [animal, setAnimal] = useState(animalOptions["0"]);
 
 
-  const priceOptions = [400, 500, 600, 700];
+  const priceOptions = [600, 700, 900, 1000];
   const [clickedMinPrice, setClickedMinPrice] = useState(false);
   const [minPrice, setMinPrice] = useState(priceOptions[0]);
 
-  const maxPriceOptions = [400, 500, 700, 800, 1000];
+  const maxPriceOptions = [1000, 1200, 1400, 1600];
   const [clickedMaxPrice, setClickedMaxPrice] = useState(false);
   const [maxPrice, setMaxPrice] = useState(maxPriceOptions[maxPriceOptions.length-1]);
 
@@ -147,43 +154,40 @@ const tooltips = ["Погуляем с собачкой в вашем район
 
 /// возвращаем форму, в которой вызываются компоненты создания кнопки и инпута
   return (
-    <div className={active ? "modal active" : "modal"} onClick={()=> setActive(false)}>
-      <div className={active ? "client_form_div active" : "client_form_div"} onClick={(e)=> e.stopPropagation()}>
-      <form name="client_form" className="client_form" onSubmit={(e)=>handleFormSubmit(e)}>
+      <form name="client_form" className={classN} onSubmit={onSubmitFunc ? ((e) => onSubmitFunc(e) ): ((e)=>handleFormSubmit(e))}>
         <img
-          src="./app/pictures/cats/Cat_whiskers_dark_light.png"
-          className="client_form_pic1"
-        />
+        src="./app/pictures/cats/Cat_whiskers_dark_light.png"
+        className={`${classN}_pic1`} />
         <img
           src="./app/pictures/dogs/Dog_nose_dark_light.png"
-          className="client_form_pic2"
+        className={`${classN}_pic2`}
         />
-        <h1 className="client_form_header">Анкета</h1>
-        <div className="client_form_form_div">
-          <div className="client_form_div1">
+      <h1 className={`${classN}_header`}>Анкета</h1>
+        <div className={`${classN}_form_div`}>
+          <div className={`${classN}_div1`}>
             <label htmlFor="service_name">
               Тип услуги
               <br />
-              <CreateInput formName="service_name" classes="client_form_select_opt" opt={serviceOptions} clickState={clicked} setClick={setClicked} changeStateOpt={setChoice} choiceMade={choice}/>
+              <CreateInput formName="service_name" classes={`${classN}_select_opt`} opt={serviceOptions} clickState={clicked} setClick={setClicked} changeStateOpt={setChoice} choiceMade={choice}/>
             </label>
 
             <label htmlFor="animal_type">
               Вид животного
               <br />
-              <CreateInput formName="animal_type" classes="client_form_select_opt" opt={animalOptions} clickState={clickedAnimal} setClick={setClickedAnimal} changeStateOpt={setAnimal} choiceMade={animal} />
+              <CreateInput formName="animal_type" classes={`${classN}_select_opt`} opt={animalOptions} clickState={clickedAnimal} setClick={setClickedAnimal} changeStateOpt={setAnimal} choiceMade={animal} />
             </label>
 
             <label htmlFor="price_from price_to">
               Цена
               <br />
               <div className="price">
-                  <CreateInput formName="price_select" classes="client_form_select_opt" opt={priceOptions} clickState={clickedMinPrice} setClick={setClickedMinPrice} changeStateOpt={setMinPrice} choiceMade={minPrice} placeholder="Oт" />
-                  <CreateInput formName="price_select" classes="client_form_select_opt" opt={maxPriceOptions} clickState={clickedMaxPrice} setClick={setClickedMaxPrice} changeStateOpt={setMaxPrice} choiceMade={maxPrice} placeholder="До" />
+                  <CreateInput formName="price_select" classes={`${classN}_select_opt`} opt={priceOptions} clickState={clickedMinPrice} setClick={setClickedMinPrice} changeStateOpt={setMinPrice} choiceMade={minPrice} placeholder="Oт" />
+                  <CreateInput formName="price_select" classes={`${classN}_select_opt`} opt={maxPriceOptions} clickState={clickedMaxPrice} setClick={setClickedMaxPrice} changeStateOpt={setMaxPrice} choiceMade={maxPrice} placeholder="До" />
               </div>
             </label>
             <CreateButton btnType="" classN="btn positionBtn" onClickFunct={handleGeoClick} btnText={city} />
           </div>
-          <div className="client_form_div2">
+        <div className={`${classN}_div2`}>
             <label>
               Период
               <br />
@@ -208,13 +212,10 @@ const tooltips = ["Погуляем с собачкой в вашем район
           </div>
         </div>
       </form>
-    </div>
-    </div>
-    
   );
 }
 
 
-export default function Form({active, setActive}) {
-  return <FormCreator active={active} setActive={setActive}/>;
+export default function Form({classN, onSubmitFunc}) {
+  return <FormCreator classN={classN} onSubmitFunc={onSubmitFunc}/>;
 }

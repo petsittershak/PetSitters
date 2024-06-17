@@ -57,6 +57,28 @@ background-color: $mainLightColor;
 transition: $customTransition;
 }
 
+.submit_form_sitters_page_btn{
+  width: 361px;
+  height: 60px;
+  text-align: center;
+  line-height: 60px;
+  background-image: url('../pictures/dogs/Dog_Paw_light.png');
+  background-size: initial;
+  background-repeat: no-repeat;
+  background-position-x: 265px;
+  background-position-y: 3px;
+  color: $mainBlackColor;
+  font-size: $fontSizeMedium;
+  transition: $customTransition;
+  background-color: $beigeColor;
+}
+
+.submit_form_sitters_page_btn:hover{
+color: $beigeColor;
+background-color: $mainDarkColor;
+transition: $customTransition;
+}
+
 .positionBtn{
   width: 400px;
   height: 60px;
@@ -72,6 +94,22 @@ transition: $customTransition;
   background-color: $beigeColor;
   line-height: 60px;
   }
+
+  .sitters_page_positionBtn{
+    width: 360px;
+    height: 40px;
+    text-align: left;
+    padding-left: 20px;
+    background-image: url('../pictures/icons/07_icons_drop.png');
+    background-size: 25px 25px;
+    background-repeat: no-repeat;
+    background-position-x: 320px;
+    background-position-y: 5px;
+    font-size: 24px;
+    color: $outlineGrayColor;
+    background-color: $beigeColor;
+    line-height: 30px;
+    }
 
 .small_button_styles{
   width: 119px;

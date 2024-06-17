@@ -14,7 +14,8 @@
 
 
 .main_content_sitters{
-  height: 1700px;
+  min-height: 1700px;
+  height: fit-content;
   width: inherit;
   display: flex;
   flex-direction:column;
@@ -36,6 +37,7 @@
   display: flex;
   justify-content: space-around;
   background-color: $mainLightColor;
+  border-radius: $borderRadius;
 }
 
 .div_sitters_3{

@@ -1,5 +1,5 @@
 
-
+import DEFINE_URL_ADRESS from "./000_backend_key.jsx";
 
 let sittersArr = [];
 
@@ -7,7 +7,7 @@ let sittersArr = [];
 //   picture:"./app/pictures/pic/petsitter_avatar3.jpg",
 //   firstName: "Анастасия",
 //   lastName: "Рим",
-//   raiting: "5.0",
+//   rating: "5.0",
 //   age: 30,
 //   completedOrders: 35,
 //   joinedPetsittersDate: "13.06.2022",
@@ -31,7 +31,7 @@ let sittersArr = [];
   export default async function getSitters() {
 
       try {
-          const response = await fetch("http://localhost:8909/sitters/", {
+          const response = await fetch(`http://${DEFINE_URL_ADRESS}/sitters/`, {
               method: "GET",
               headers: { "Accept": "application/json" }
           });
@@ -41,7 +41,10 @@ let sittersArr = [];
               sitters.forEach(sitter => {
                   sittersArr.push(sitter)
               });
-          } 
+          } else {
+            console.log("response is not ok")
+            sittersArr = null;
+          }
       
       }
       catch (err) {
@@ -49,8 +52,6 @@ let sittersArr = [];
           sittersArr = null;
       }
           
-    
+
     return sittersArr;
 }
-      
-//console.log(sittersArr)

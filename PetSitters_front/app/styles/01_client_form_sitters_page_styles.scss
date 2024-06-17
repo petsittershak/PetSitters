@@ -1,87 +1,45 @@
 @import "00_standard_styles.scss";
 @import "03_button_styles.scss";
-/// 
 
-
-.client_form{
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  align-items: center;
-  justify-content: space-evenly;
-  width: 1000px;
-  height: 668px;
-  border: $outline;
-  border-radius: 30px;
-  background-color: $beigeColor;
-  font-family: $fontFamilyCustom;
-
-  .client_form_pic1{
-    position: absolute;
-    z-index: 1;
-    left: 40px;
-    top: 90px;
-  }
-  
-  .client_form_pic2{
-    position: absolute;
-    z-index: 1;
-    left: 840px;
-    top: 96px;
-  }
-  .client_form_li{
-   list-style: none;
-   line-height: 60px;
-  }
-}
-
-
-.client_form_header{
-  height: min-content;
-  margin: 0px;
-  color: $mainDarkColor;
-  font-size: 48px;
-}
-.client_form_form_div{
-  display: flex;
-  justify-content: space-evenly;
-  width: 1000px;
-  height: 472px;
-  z-index: 2;
-.client_form_div2{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  width: fit-content;
-}
-.client_form_div1{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  width: fit-content;
-}
-
+ ///////// Client form стили для страницы ситтерс!!!
  
-label{
-  color: $outlineGrayColor;
-  font-size: 24px;
-}
+ .client_form_sitters_page{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  max-width: 1300px;
+  min-width: 1160px;
+  height: 310px;
+  font-family: $fontFamilyCustom;
+  color: $mainDarkColor;
 
-}
-
-.client_form{
-    label{
+  .client_form_sitters_page_div1,
+  .client_form_sitters_page_div2,
+  .client_form_sitters_page_div3{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    align-items: center;
+    height: 160px;
+    width: fit-content;
+  }
+
+  .client_form_sitters_page_li{
+   list-style: none;
+   line-height: 40px;
+  }
+
+  label{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
     height: 100px;
-    width: 341px;
+    width: 361px;
     align-items: center;
     }
 
-.client_form_select_opt{
+.client_form_sitters_page_select_opt{
     display: none;
     flex-direction: column;
     overflow: hidden;
@@ -93,44 +51,63 @@ label{
       display: flex;
       height: fit-content;
       overflow: visible;
-      width: 400px;
+      width: 361px;
       border-radius: 30px;
       background-color: $beigeColor;
       border: $outline;
       z-index: 2;
       position: absolute;
-      top: 60px;
+      top: 40px;
       left: 0px;
 
       li{
         cursor: pointer;
-        width:390px;
+        list-style: none;
+        width:351px;
         color: $mainDarkColor;
         border-radius: $borderRadius;
         padding-left: 10px;
       }
       li:hover{
-        background-color: $mainLightColor;
+        color: $beigeColor;
+        background-color: $mainDarkColor;
       }
     }
 
-    input{
-    width: 301px;
-    height: 60px;
+    .telInput{
+      width: 321px;
+    height: 40px;
     padding-left: 20px;
     padding-right: 20px;
     border: $outline;
-    box-shadow: $shadow;
     border-radius: 30px;
     background-color: $beigeColor;
-  }
+    }
+   input{
+    width: 321px;
+    height: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: $outline;
+    border-radius: 30px;
+    background-color: $beigeColor;
+ }
 
-    ._select_client_form_select_opt{
-    width: 360px;
-    height: 60px;
+  // .telInput:autofill {
+  //   background-color: $beigeColor !important;
+  //   border: none !important;
+  // }
+  // .telInput:-webkit-autofill {
+  //   background-color: $beigeColor !important;
+  //   border: none !important;
+  // }
+
+    ._select_client_form_sitters_page_select_opt{
+    width: 321px;
+    height: 40px;
     color: black;
     align-items: start;
-    line-height: 60px;
+    line-height: 40px;
     padding-left: 20px;
     padding-right: 20px;
     background-color: $beigeColor;
@@ -140,7 +117,9 @@ label{
     display: flex;
     justify-content: space-between;
     position: relative;
-  
+
+ 
+
 
     option{
      height: max-content;
@@ -157,18 +136,19 @@ label{
      .price{
       display:flex;
       flex-direction: row;
+      width: 361px;
       justify-content: space-between;
-      width: 400px;
 
       input{
-        width: 145px;
+        width: 160px;
+        height: 40px;
         padding-left: 14px;
         padding-right: 14px;
         font-family: $fontFamilyCustom;
         font-size: $fontSizeSmall;
       }
       .li_price_select{
-        width: 181px;
+        width: 151px;
        }
        } 
 
@@ -181,18 +161,37 @@ label{
           font-family: $fontFamilyCustom;
           font-size: $fontSizeSmall;
         }
+
          } 
 
        .price_select{
-        width: 163px;
+        width: 132px;
+        height: 40px;
         padding-left: 14px;
         padding-right: 14px;
 
-        .client_form_select_opt{
-          width: 191px;
+        .client_form_sitters_page_select_opt{
+          width: 161px;
         }
-       }
-   
-  }
 
+       }
+}
+
+.client_form_sitters_page_form_div{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1300px;
+  min-width: 1160px;
  
+
+label{
+  color: $mainDarkColor;
+  font-size: $fontSizeSmall;
+}
+
+}
+
+

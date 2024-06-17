@@ -1,0 +1,39 @@
+@import "00_standard_styles.scss";
+
+.modal{
+  content: '';
+  background-color: rgba(0, 0, 0, 0.6);
+	position: fixed; 
+	left: 0;
+	top: 0;
+	width: 100%; 
+	height: 100%;
+	z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+
+.modal.active{
+  opacity: 1;
+  pointer-events: all;
+}
+
+.client_form_div{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: scale(0.5);
+  transition: 0.4s all;
+  // z-index: 101;
+}
+
+
+.client_form_div.active{
+  transform: scale(1);
+}

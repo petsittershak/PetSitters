@@ -1,7 +1,9 @@
 @import "sitters_page_styles.scss";
-@import "00_standard_styles.scss";
 @import "00_1_main_header_styles.scss";
+@import "00_standard_styles.scss";
 @import "01_client_form_styles.scss";
+@import "01_client_form_sitters_page_styles.scss";
+@import "01_modal_styles";
 @import "03_button_styles.scss";
 @import "04_main_div3_styles.scss";
 @import "05_react_date_picker.scss";
@@ -15,6 +17,8 @@
 @import "13_sitters_page_div1_styles.scss";
 @import "14_sitters_page_div2_styles.scss";
 @import "15_sitters_page_div3_styles.scss";
+
+
 
 @font-face {
   font: "Random Grotesque Standard Medium";
