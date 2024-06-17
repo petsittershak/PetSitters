@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 
+
+//в этом блоке идут картинки слева/справа и кекст, для достижения эффекта лесинки, использовала свой сво float left/right
+//и применяла его в зависимости от четности элемента
 function CreateDiv({ textOpt, headersOpt, picOpt }) {
   return (
     <div className="mainPageDiv2_2_block">

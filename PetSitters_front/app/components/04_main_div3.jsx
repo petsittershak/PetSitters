@@ -4,7 +4,7 @@ function changeBackground(e) {
   e.target.style.background = 'none';
 }
 
-
+//функция создает блоки с движущимися по наведению мыши гифками, без наведения мыши показывается картинка
 function CreateBlocks({ options, description, iconsOpt}) {
   return (
     <div className="returnBlocksDiv">
@@ -41,8 +41,9 @@ function CreateBlocks({ options, description, iconsOpt}) {
     </div>
   );
 }
-
+/// функция возвращает блок для главной страницы с гифками по наведению мыши
 export default function HowPetsittersWork() {
+  ///список местоположения гифок
   const gifArray = [
     "./app/pictures/gif/01_gif_request.gif",
     "./app/pictures/gif/02_Gif_choose_sitter.gif",
@@ -51,6 +52,8 @@ export default function HowPetsittersWork() {
     "./app/pictures/gif/05_gif_dogsitter.gif",
     "./app/pictures/gif/06_gif_reports.gif",
   ];
+
+  //список местоположения картинок
   const iconArray = [
     "./app/pictures/icons/01_icons_request.png",
     "./app/pictures/icons/02_icons_choose_sitter.png",
@@ -59,7 +62,7 @@ export default function HowPetsittersWork() {
     "./app/pictures/icons/05_icons_dogsitter.png",
     "./app/pictures/icons/06_icons_reports.png",
   ]
-
+//список текста, который помещается рядом с картинками
   const descriptionArr = [
     "Вы оставляете заявку на передержку на сайте",
     "Вы выбираете идеального sitter из предложенных нами вариантов",
@@ -68,7 +71,9 @@ export default function HowPetsittersWork() {
     "Catsitter играет с вашим котиком, кормит и следит за чистотой лотка",
     "Во время передержки sitter отправляет отчеты, чтобы Вы были уверены - ваш питомец в безопасности и с ним все хорошо",
   ];
+  
 
+  //возвращаем блоки с картинками и текстом и все внутри основного блока с заголовком
   return (
     <div className="main_page_div3">
       <div>

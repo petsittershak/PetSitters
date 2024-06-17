@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import CreateButton from "./03_button_all.jsx";
 
 
-
+//создаем футтер
 function CreateFooterList({ headerN, options, classN, socialNames }) {
   
 if (socialNames) {
@@ -29,7 +29,7 @@ if (socialNames) {
 
 
 function CreatefooterSection(){
-
+// все списки которые используются в создании футера
   const cityArr = ["Ереван",  "Москва", "Казань", "Санкт-Петербург", "Нижний Новгород", "Екатеринбург"];
   const socialNetworksArr = [
     "./app/pictures/icons/01_telegram.png",
@@ -40,7 +40,6 @@ function CreatefooterSection(){
     "./app/pictures/icons/06_facebook.png"
   ];
   const socialNamesArr = ["Telegram", "ВКонтакте", "Instagram", "YouTube", "Одноклассники", "Facebook"];
-
   const infoLinksArr = ["О нас", "Наши ситтеры", "Услуги", "Отзывы", "Политика конфиденциальности"]
 
   return (
@@ -65,7 +64,7 @@ function CreatefooterSection(){
 
 
 
-
+/// верхняя функция которая вызывает CreatefooterSection для создания контента футера
 export default function CreateFooter() {
   return (
     <div className="footerDivContainer">

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import CreateButton from "./03_button_all.jsx"
 
-
+/// первый блок после header тут только картика и кнопки
 export default function FindSitter() {
   return (
     <div className="main_find_sitter_block">

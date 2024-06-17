@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import CreateButton from "./03_button_all.jsx";
 import CreateSitterInfoBlock from "./12_sitter_data.jsx";
-import Sitters from "../pages/sitters.js";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import getSitters from "./10_request&receiveSitters.jsx";
 
+/// у ситтеров могут быть определенные навыки, мы объекте ситтера проверяем true или false , и если тру то берем картинку
+//находящуюся по пути для каждого параметра
 
 function CreateSittersProfiles({ sitters }) {
 let sitterCanOpt= ["vet", "canHelpAlergicAnimal", "ownSertificate", "canCookHomeFood"];
@@ -15,7 +15,7 @@ const iconsLinks = {
   canCookHomeFood: "./app/pictures/sitterCan/canCookHomeFood.png"
   }
   
-
+///для каждого ситера в списке создаем профайл ситтера вызывая функцию, которая его создает CreateSitterInfoBlock
   return (
     <div className="createSittersProfilesDiv">
       {sitters.map((sitter, i) => { 
@@ -25,6 +25,7 @@ const iconsLinks = {
 
 }
 
+/// это функция которая создает описание ситтеров слева от профайлов ситтеров
 function CreateAboutSitterDiv({options}) {
   return (
     <div className="createAboutSittersDiv">
@@ -34,6 +35,7 @@ function CreateAboutSitterDiv({options}) {
   
 }
 
+//// в случае, если не получится получить данные с сервера, используем дефолтные профайлы ситтеров для примера
 
 const petSittersDefaultProfilesArr = [
   {
@@ -88,7 +90,7 @@ const petSittersDefaultProfilesArr = [
  
 ]
 
-
+///описания для блока слева от примеров профайлов ситтеров
 const getToKnowArr = ["Мы собрали профайлы про наших sitters. Каждый из них имеет опыт общения с животными и даже больше!",
   "Проверяем паспорт, соцсети и другие данные о догситтере в открытых источниках.",
   "Мы всегда на связи, даже ночью. Оперативно поможем, если что-то пойдет не так.",
@@ -98,8 +100,9 @@ const getToKnowArr = ["Мы собрали профайлы про наших si
 
 //вызываем функцию гет ситтерс чтобы получить всех ситтеров из базы данных и в дальнейшев мымводить их профили на страницах
 const sittersArr = await getSitters();
-console.log(sittersArr);
+//console.log(sittersArr);
 
+//в функции проверяем если аррэй ситтеров с сервера равен null  тогда берем данные из аррэя дефолтных ситтеров выше
 export default function CreateGetToKnowOurSitters() {
 
   return (

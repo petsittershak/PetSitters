@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import CreateButton from "./03_button_all.jsx";
-
+///создает хэдэр из списка опций меню ниже. стили этого блока заданы в файле стилей с таким же названием
 function CreateHeaderList({options, hrefOpt}){
   return (
   <div className="headerMenu_div2">
@@ -8,10 +8,13 @@ function CreateHeaderList({options, hrefOpt}){
   </div>
 )
 }
-
+// список для меню, и список ссылок для навигации
 const menuOptArr = ["О сервисе", "Ситтеры", "Сотрудничество", "Отзывы"];
 const hrefArr = ["/#HowPetsittersWork", "/sitters", "#", "#"]
 
+
+
+///функция создает хэдэр и экспортируется
 export default function CreateHeader() {
   return (
     <div className="headerMenu">

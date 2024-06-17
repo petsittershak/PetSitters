@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import CreateButton from "./03_button_all.jsx";
 import Form from "./01_client_form.jsx";
 import Modal from "./01_modal.jsx";
-import DEFINE_URL_ADRESS from "./000_backend_key.jsx";
+
 
 
 export default function CreateFindPerfectSitter() {
@@ -11,7 +11,7 @@ export default function CreateFindPerfectSitter() {
 
 
 
-////// работа модального окна
+////// работа модального окна, стейти передаются модальному окну для изменения
   const [modalAvtive, setModalActive] = useState(false);
   if (modalAvtive) {
     document.body.style.overflowY = 'hidden';

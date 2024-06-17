@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
 
-//options={gifArray} description={descriptionArr} iconsOpt={iconArray} 
-
+// еще один блок с гифками при наведении мыши.
+//
 function CreateOurSittersOptions({ options, picOptions, picSize, gifOpt, classN, classNComp}) {
   return (
     <div className={classN}>
@@ -78,6 +78,8 @@ export default function CreateOurSitters() {
     "./app/pictures/gif/04_dog_happy.gif",
     "./app/pictures/gif/05_dog_sick.gif"
   ]
+
+  /// в этом блоке картинки/гифки разного размера, поэтому размер задается динамически по размерам ниже
   const dogsPicSize = [
     [103, 103],
     [125, 125],
@@ -85,7 +87,7 @@ export default function CreateOurSitters() {
     [125, 125],
     [119, 119]
   ]
-  
+    ///описание для картинок 
   const dogsitterDescrArr = [
     "Умеют вытаскивать подобранный кусок из пасти собаки",
     "Поладят с собакой даже если у нее сложный характер",
@@ -93,7 +95,7 @@ export default function CreateOurSitters() {
     "Знают язык тела собакена",
     "Знают, что делать, если собаке плохо"
   ];
-
+//ниже списки гифок и картинок
   const catsArr = [
     "./app/pictures/cats/01_cat_play.png",
     "./app/pictures/cats/02_cat_happy.png",
@@ -107,6 +109,8 @@ export default function CreateOurSitters() {
     "./app/pictures/gif/03_cat_shhh.gif",
     "./app/pictures/gif/04_cat_sick.gif",
   ]
+
+   /// в этом блоке картинки/гифки разного размера, поэтому размер задается динамически по размерам ниже
   const catsPicSize = [
     [170, 170],
     [120, 120],
@@ -114,6 +118,7 @@ export default function CreateOurSitters() {
     [100, 100]
   ]
 
+  ///описание для картинок 
   const catsitterDescrArr = [
     "Знают, как развлечь шерстяного",
     "Умеют ладить с любым котэ",
@@ -121,7 +126,7 @@ export default function CreateOurSitters() {
     "Знают, что делать, если кошке нездоровится",
   ];
 
-
+//возвращает блок с картинками кобачек и блок к картинками кошек
   return (
     <div className="div4_content">
       <div className="div4_content_div">

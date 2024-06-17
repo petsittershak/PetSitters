@@ -6,7 +6,7 @@ import getSitters from "./10_request&receiveSitters.jsx"
     console.log(sittersArr);
 
 export default function CreateSuggestSitters() {
-
+////дефолтные объекты ситтеров на случай неответа с сервера
   const petSittersProfilesArr = [
     {
       picture: "./app/pictures/pic/petsitter_avatar2.jpg",
@@ -166,7 +166,8 @@ export default function CreateSuggestSitters() {
     }
 
     
-
+  //функция публикует профайлы ситтеров на страницу ситтеров, и если они не были загружены с сервера,
+  // функция берет дефолтные значения для примера из petSittersProfilesArr
   return (
     <div className="sitters_page_foundSitters" id="sitters_page_foundSitters">
       <h1> Нашли для вас подходящих sitters</h1>

@@ -2,7 +2,7 @@ import React, { Children, useState } from "react";
 
 
 
-
+///функция создающая модпльное окно, ее пожно переиспользовать вставляя в нее children
 
 export default function Modal({active, setActive, children, childrenClass}) {
   return (

@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import Histiry, { useHistory } from "react-router-dom";
-import ReactDOM from "react-dom/client";
 
 import CreateInput from "./02_input.jsx";
 import CreateButton from "./03_button_all.jsx";
@@ -58,9 +56,9 @@ function FormCreator({ classN, onSubmitFunc }) {
   function handleFormSubmit(e) {
     e.preventDefault();
 
-
+//находим нужную форму в документе
     const form = document.forms["client_form"];
-
+//параметры заполненной формы послн нажатия кнопки отправить
     const userRequest = {
       name: "no Name",
       pet: animal,
@@ -70,11 +68,12 @@ function FormCreator({ classN, onSubmitFunc }) {
       description: form.elements["description"].value,
     };
 
-
+//переходим на страницу ситтеров
     window.location.href = "/sitters";
-
+//отправляем данные юзера, телефон и параметры поиска на сервер
     sendUser(userRequest);
 
+//функция отправляющая данные юзера на сервер
     async function sendUser(userRequest) {
       try {
         const response = await fetch(
@@ -123,7 +122,8 @@ function FormCreator({ classN, onSubmitFunc }) {
   //по клику на кнопку поиска местоположения заказчика, вызывается функция handleGeoClick
   function handleGeoClick(e) {
     e.preventDefault();
-    // const yandexKey = "f5c06f3f-77c4-4412-ba84-2a93141f56d7";
+    
+    //тут аррей для координат после определения местоположения  пользователя
     const myCoords = [];
     let clientCity;
 

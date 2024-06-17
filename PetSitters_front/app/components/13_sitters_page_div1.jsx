@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 
+///функция создает контент на странице ситтеров первый блок после хэдэра
 
 export default function CreateOurSitters() {
   

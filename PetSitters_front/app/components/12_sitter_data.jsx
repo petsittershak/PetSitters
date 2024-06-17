@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import CreateButton from "./03_button_all.jsx";
 
-function CreateAbilityDiv({options, iconsLinks, sitterObject}) {
+///функция которая грузит картинки умений ситтера к их профайлам
+function CreateAbilityDiv({ options, iconsLinks, sitterObject }) {
+  //для проверки умений ситтера создан аррэй thisSitterCan, в него пушим все что ситтер умеет, и потом его перебираем
+  //чтобы загрузить картинки обозначающие эти способности в профайл ситтера
   const thisSitterCan = [];
  
   options.forEach(opt => { if (sitterObject[opt] == true) { thisSitterCan.push(opt)  } })
@@ -14,8 +17,11 @@ function CreateAbilityDiv({options, iconsLinks, sitterObject}) {
     </div>
   );
 }
+
+ /// переменная count используется для согдания ключа списка в функции CreateSitterInfoBlock
 let count = 523;
-//"sittersPageProfile"  extraClassWidth="sittersPageProfile" extraClassBtnWidth="sittersPageProfileBtn"
+
+//функция получая параменты и объект ситтера создает профайл ситтера
 export default function CreateSitterInfoBlock({ sitterObj, iconsLinksOpt, sitterCan, extraClassWidth, extraClassBtnWidth }) {
   
   const defaultPic = "./app/pictures/pic/petsitter_avatar2.jpg"
