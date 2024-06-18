@@ -1,7 +1,8 @@
 from http.client import HTTPException
-from typing import Annotated
+from typing import Annotated, Optional
 
-from fastapi import APIRouter, Depends, UploadFile, File
+from fastapi import APIRouter, Depends, UploadFile, File, Form
+from starlette import status
 from starlette.responses import JSONResponse, Response
 
 from application.repository.sitter import SitterRepository
@@ -14,21 +15,58 @@ router = APIRouter(
 )
 
 
-@router.post("/add_sitter")
+@router.post("/add_sitter", response_model=SSitterId, status_code=status.HTTP_200_OK)
 async def add_sitter(
-    sitter: Annotated[SSitterAdd, Depends()], photo: UploadFile = File(None)
+    firstName: str = Form(...),
+    lastName: Optional[str] = Form(None),
+    rating: float = Form(5.0),
+    age: int = Form(...),
+    completedOrders: int = Form(...),
+    joinedPetsittersDate: str = Form(...),
+    title: str = Form(...),
+    phone: str = Form(...),
+    email: str = Form(...),
+    city: str = Form(...),
+    cityArea: str = Form(...),
+    vet: Optional[bool] = Form(None),
+    canHelpAlergicAnimal: Optional[bool] = Form(None),
+    ownSertificate: Optional[bool] = Form(None),
+    canCookHomeFood: Optional[bool] = Form(None),
+    aboutSitter: Optional[str] = Form(None),
+    description: Optional[str] = Form(None),
+    photo: UploadFile = File(None),
 ) -> SSitterId:
+    sitter = SSitterAdd(
+        firstName=firstName,
+        lastName=lastName,
+        rating=rating,
+        age=age,
+        completedOrders=completedOrders,
+        joinedPetsittersDate=joinedPetsittersDate,
+        title=title,
+        phone=phone,
+        email=email,
+        city=city,
+        cityArea=cityArea,
+        vet=vet,
+        canHelpAlergicAnimal=canHelpAlergicAnimal,
+        ownSertificate=ownSertificate,
+        canCookHomeFood=canCookHomeFood,
+        aboutSitter=aboutSitter,
+        description=description,
+    )
     sitter_id = await SitterRepository.add_one(sitter)
 
+    photo_data = None
     if photo:
         photo_data = await photo.read()
         await SitterRepository.add_photo(sitter_id, photo_data)
 
-    return {
-        "Add": True,
-        "sitter_id": sitter_id,
-        "photo": f"string({len(photo_data)})" if photo else None,
-    }
+    return SSitterId(
+        Add=True,
+        sitter_id=sitter_id,
+        photo=f"string({len(photo_data)})" if photo else None,
+    )
 
 
 @router.get("/{sitter_id}/photo")
