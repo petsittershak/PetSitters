@@ -18,16 +18,16 @@ class SittersOrm(Model):
     title: Mapped[str]
     price: Mapped[Optional[int]] = None
     priceFor: Mapped[Optional[str]] = None
-    customersFeedbacks: Mapped[str]
+    customersFeedbacks: Mapped[Optional[str]] = None
     phone: Mapped[str]
     email: Mapped[str]
     priceTitle: Mapped[Optional[str]] = None
     city: Mapped[str]
     cityArea: Mapped[str]
-    vet: Mapped[Optional[bool]] = None
-    canHelpAlergicAnimal: Mapped[Optional[bool]] = None
-    ownSertificate: Mapped[Optional[bool]] = None
-    canCookHomeFood: Mapped[Optional[bool]] = None
+    vet: Mapped[Optional[bool]]
+    canHelpAlergicAnimal: Mapped[Optional[bool]]
+    ownSertificate: Mapped[Optional[bool]]
+    canCookHomeFood: Mapped[Optional[bool]]
     aboutSitter: Mapped[Optional[str]] = None
     description: Mapped[Optional[str]] = None
     photo: Mapped[Optional[bytes]]

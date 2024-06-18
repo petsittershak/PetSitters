@@ -13,18 +13,10 @@ router = APIRouter(
 
 @router.post("/add_client")
 async def add_client(
-    client: Annotated[SClientAdd, Body()],
+    client: Annotated[SClientAdd, Depends()],
 ) -> SClientId:
     client_id = await ClientRepository.add_one(client)
     return {"Add": True, "client_id": client_id}
-
-
-# @router.post("/add_client")
-# async def add_client(
-#     client: Annotated[SClientAdd, Depends()],
-# ) -> SClientId:
-#     client_id = await ClientRepository.add_one(client)
-#     return {"Add": True, "client_id": client_id}
 
 
 @router.get("/get_all_clients")

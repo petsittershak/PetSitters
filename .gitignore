@@ -5,7 +5,6 @@ __pycache__/
 
 app/Clients.db
 
-database.db
 
 poetry.lock
 

@@ -16,7 +16,7 @@ class SSitterAdd(BaseModel):
     title: str
     price: Optional[int] = None
     priceFor: Optional[str] = None
-    customersFeedbacks: str
+    customersFeedbacks: Optional[str] = None
     phone: str
     email: str
     priceTitle: Optional[str] = None
