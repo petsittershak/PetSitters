@@ -8,9 +8,6 @@ import Modal from "./01_modal.jsx";
 export default function CreateFindPerfectSitter() {
 
 
-
-
-
 ////// работа модального окна, стейти передаются модальному окну для изменения
   const [modalAvtive, setModalActive] = useState(false);
   if (modalAvtive) {

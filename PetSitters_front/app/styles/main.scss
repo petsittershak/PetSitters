@@ -14,6 +14,7 @@
 @import "10_main_div6_styles.scss";
 @import "11_footer_styles.scss";
 @import "12_sitter_data_styles.scss";
+@import "12_sitter_data_fullProfile_styles.scss";
 @import "13_sitters_page_div1_styles.scss";
 @import "14_sitters_page_div2_styles.scss";
 @import "15_sitters_page_div3_styles.scss";
@@ -39,6 +40,20 @@ html{
 body{
  background-color: $beigeColor;
  margin:0px;
+}
+
+body::-webkit-scrollbar {
+  width: 10px; /* Ширина всего элемента навигации */
+}
+
+body::-webkit-scrollbar-track {
+  background: $beigeColor; /* Цвет дорожки */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: $mainDarkColor; /* Цвет бегунка */
+  border-radius: $borderRadius; /* Округление бегунка */
+  border: 1px solid $mainDarkColor; /* Оформление границ бегунка */
 }
 
 .main_page{

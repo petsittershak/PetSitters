@@ -200,3 +200,36 @@ transition: $customTransition;
   background-color: $mainDarkColor;
   transition: $customTransition;
 }
+
+.sitter_fullProfile_btn1{
+  width: 220px;
+  height: 46px;
+  color: $mainBlackColor;
+  background-color: $beigeColor;
+  transition: $customTransition;
+  border: solid 1px $mainLightColor;
+  font-size: $fontSizeSmall;
+  line-height: 24px;
+}
+
+.sitter_fullProfile_btn1:hover{
+  color: $beigeColor;
+  background-color: $mainLightColor;
+  transition: $customTransition;
+}
+
+.sitter_fullProfile_btn2{
+  width: 220px;
+  height: 46px;
+  color: $mainBlackColor;
+  background-color: $mainLightColor;
+  transition: $customTransition;
+  font-size: $fontSizeSmall;
+  line-height: 24px;
+}
+
+.sitter_fullProfile_btn2:hover{
+  color: $beigeColor;
+  background-color: $mainDarkColor;
+  transition: $customTransition;
+}

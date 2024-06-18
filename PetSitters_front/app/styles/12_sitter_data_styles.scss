@@ -45,11 +45,11 @@
   height: 100px;
   width: 248px;
 
-  img{
-width: 72px;
-height: 100px;
-border-radius: $borderRadiusSmallSitterPic;
-  }
+//   img{
+// width: 72px;
+// height: 100px;
+// border-radius: $borderRadiusSmallSitterPic;
+//   }
   
 
   .sitterProfileDiv_div1_div2{
@@ -86,12 +86,7 @@ line-height: 24px;
   height: 202px;
 }
 
-.sitterProfileDiv_sitterCanDiv{
-  display: flex;
-  width: 248px;
-  height: 36px;
-  justify-content: flex-start;
-}
+
 
 .sitterProfileDiv_div3{
   display: flex;
@@ -116,4 +111,11 @@ line-height: 24px;
 
 .sittersPageProfile{
   width: 308px;
+}
+
+.sitterProfileDiv_sitterCanDiv{
+  display: flex;
+  width: 248px;
+  height: 36px;
+  justify-content: flex-start;
 }
