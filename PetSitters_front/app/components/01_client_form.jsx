@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import Histiry, { useHistory } from 'react-router-dom';
-import ReactDOM from "react-dom/client";
 
 import CreateInput from "./02_input.jsx";
 import CreateButton from "./03_button_all.jsx";
@@ -8,8 +6,6 @@ import CreateDatePicker from "./05_react_date_picker.jsx";
 import DEFINE_URL_ADRESS from "./000_backend_key.jsx";
 import getSitters from "./10_request&receiveSitters.jsx";
 
-
-//данный компонент согдает форму для заполнения заказчиком
 
 
 //функция находит город местоположения заказчика по его геолокации, используется бесплатный
@@ -30,7 +26,7 @@ async function getCity(myCoords, setCity, setCityName) {
       },
       body: JSON.stringify(query)
   }
-
+  
   
   fetch(url, options)
   .then(response => response.json())
@@ -55,7 +51,7 @@ async function getCity(myCoords, setCity, setCityName) {
 
 
 // функция создающая форму для заказчика
-function FormCreator({ classN, onSubmitFunc }) {
+function FormCreator({ classN, onSubmitFunc}) {
   const tooltips = ["Погуляем с собачкой в вашем районе", "Возьмём питомца к себе, пока Вы в отъезде", "Посидим с пушистиком у Вас дома"];
   // отвечает за сабмит формы
 
@@ -73,15 +69,8 @@ function FormCreator({ classN, onSubmitFunc }) {
       telephone: `+7${(form.elements["telephone"].value).match(/\d/g).join('')}`,
       description: form.elements["description"].value,
     }
-    // const history = useHistory();
-    // history.push('/sitters')
-    // нужно ли вызывать функцию запроса ситтеров???????
-    //getSitters();
-    // goToSittersPage();
-    // function goToSittersPage() {
-    //  return <a href="/sitters"></a>
-    //   }
-   
+
+    
     window.location.href = "/sitters";
   
     sendUser(userRequest);
@@ -113,12 +102,12 @@ function FormCreator({ classN, onSubmitFunc }) {
   /// все данные для создания списков, посредством вызова  функции CreateInput, которая вызывается несколько раз в форме ниже
   const serviceOptions = ["Выгул", "Передержка", "Няня"];
   const [clicked, setClicked] = useState(false);
-  const [choice, setChoice] = useState(serviceOptions["0"]);
+  const [choice, setChoice] = useState(serviceOptions[0]);
 
 
   const [clickedAnimal, setClickedAnimal] = useState(false);
   const animalOptions = ["Кошка", "Собака"];
-  const [animal, setAnimal] = useState(animalOptions["0"]);
+  const [animal, setAnimal] = useState(animalOptions[0]);
 
 
   const priceOptions = [600, 700, 900, 1000];
@@ -193,8 +182,6 @@ function FormCreator({ classN, onSubmitFunc }) {
               <br />
               <div className="date_picker" >
                  <CreateDatePicker />
-              {/* <input className="price_select" type="date" placeholder="С"></input>
-              <input className="price_select" type="date" placeholder="По"></input> */}
               </div>
             
             </label>
@@ -217,5 +204,5 @@ function FormCreator({ classN, onSubmitFunc }) {
 
 
 export default function Form({classN, onSubmitFunc}) {
-  return <FormCreator classN={classN} onSubmitFunc={onSubmitFunc}/>;
+  return <FormCreator classN={classN} onSubmitFunc={onSubmitFunc} />;
 }

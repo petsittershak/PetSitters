@@ -110,7 +110,7 @@ export default function CreateGetToKnowOurSitters() {
       <h1>Познакомьтесь с нашими sitters</h1>
       <div className="getToKnowContent_div2">
       <CreateAboutSitterDiv options={getToKnowArr} />
-      <CreateSittersProfiles sitters={ sittersArr ? sittersArr.slice(sittersArr.length-2) : petSittersDefaultProfilesArr}/>
+      <CreateSittersProfiles sitters={ (sittersArr && sittersArr.length !==0 ) ? sittersArr.slice(sittersArr.length-2) : petSittersDefaultProfilesArr}/>
         <a href="/sitters#sitters_page_foundSitters"><CreateButton classN="btn verticalButton"/></a>
 </div>
     </div>

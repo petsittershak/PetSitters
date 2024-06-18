@@ -153,7 +153,7 @@ export default function CreateSuggestSitters() {
       canCookHomeFood: false,
       aboutSitter: "С радостью позабочусь о вашем четвероногом друге!",
       description: "🐶 Подхожу к делу с особой любовью.Работаю из дома, поэтому ваш питомец всегда будет под чутким присмотром, рядом с домом есть прекрасный парк для прогулок и площадка для собак."
-    }
+    },
   ];
 
 
@@ -172,7 +172,7 @@ export default function CreateSuggestSitters() {
     <div className="sitters_page_foundSitters" id="sitters_page_foundSitters">
       <h1> Нашли для вас подходящих sitters</h1>
       <div className="sitters_page_suggestedSitters">
-        {(sittersArr ? sittersArr: petSittersProfilesArr).map((sitter, i) => { return <CreateSitterInfoBlock sitterObj={sitter} iconsLinksOpt={iconsLinks} sitterCan={sitterCanOpt} key={i} extraClassWidth="sittersPageProfile" extraClassBtnWidth="sittersPageProfileBtn"/>})}
+        {((sittersArr && sittersArr.length !== 0 ) ? sittersArr: petSittersProfilesArr).map((sitter, i) => { return <CreateSitterInfoBlock sitterObj={sitter} iconsLinksOpt={iconsLinks} sitterCan={sitterCanOpt} key={i} extraClassWidth="sittersPageProfile" extraClassBtnWidth="sittersPageProfileBtn"/>})}
       </div>
     </div>
   )

@@ -19,12 +19,12 @@ $fontSizeLargeMedium:44px;
 $fontSizeLarge: 48px;
 $fontWeightStandart: 500;
 $customTransition: all .03s ease-in-out;
-$fontFamilyCustom: "Myfont";
+$fontFamilyCustom: "Myfont", Arial, Helvetica, sans-serif;
  
 
 @font-face {
   font: "Random Grotesque Standard Medium";
   font-family: "Myfont";
   font-style: normal;
-  src: url(public/fonts/RG-StandardMedium.woff) format(".woff");
+  src: url("./../fonts/RG-StandardMedium.woff") format(".woff");
 }

@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Form from "./01_client_form_sitters_page.jsx";
 
 
-
 //функция вызывает форму дублирующую форму на первой странице 
 export default function CreateFormSittersPage() {
 

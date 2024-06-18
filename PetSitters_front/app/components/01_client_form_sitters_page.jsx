@@ -45,7 +45,7 @@ async function getCity(myCoords, setCity, setCityName) {
 }
 
 // функция создающая форму для заказчика
-function FormCreator({ classN, onSubmitFunc }) {
+function FormCreator({ classN, onSubmitFunc}) {
   const tooltips = [
     "Погуляем с собачкой в вашем районе",
     "Возьмём питомца к себе, пока Вы в отъезде",
@@ -112,8 +112,7 @@ function FormCreator({ classN, onSubmitFunc }) {
 
   const maxPriceOptions = [1000, 1200, 1400, 1600];
   const [clickedMaxPrice, setClickedMaxPrice] = useState(false);
-  const [maxPrice, setMaxPrice] = useState(
-    maxPriceOptions[maxPriceOptions.length - 1]
+  const [maxPrice, setMaxPrice] = useState(maxPriceOptions[maxPriceOptions.length - 1]
   );
 
   ////////////////////////////////////////////////////////////////////
@@ -138,7 +137,7 @@ function FormCreator({ classN, onSubmitFunc }) {
     }
     return clientCity;
   }
-
+ 
   /// возвращаем форму, в которой вызываются компоненты создания кнопки и инпута
   return (
     <form
@@ -239,6 +238,6 @@ function FormCreator({ classN, onSubmitFunc }) {
   );
 }
 
-export default function Form({ classN, onSubmitFunc }) {
+export default function Form({ classN, onSubmitFunc}) {
   return <FormCreator classN={classN} onSubmitFunc={onSubmitFunc} />;
 }
