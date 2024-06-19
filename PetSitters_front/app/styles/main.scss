@@ -1,23 +1,30 @@
+///all styles
+ @import "00_standard_styles.scss";
+@import "./../components/header/header_styles.scss"; 
+@import "./../components/modal/modal_styles.scss"; 
+@import "./../components/buttons/buttons_styles.scss"; 
+@import "./../components/react_date_picker/react_date_picker_styles.scss"; 
+@import "./../components/footer/footer_styles.scss"; 
+@import "./../components/sittersFullProfile/sittersFullProfile_styles.scss";
+@import "./../components/sitterSmallProfile/sitterSmallProfile_styles.scss";
+
+
+///main page styles
+@import "./../components/00_01_findSitter_main_page/findSitter_main_page_styles.scss";
+@import "./../components/00_02_whyChooseUs_main_page/whyChooseUs_main_page_styles.scss";
+@import "./../components/00_03_HowPetsittersWork_main_page/HowPetsittersWork_main_page_styles.scss";
+@import "./../components/00_04_ourSitters_main_page/ourSitters_main_page_styles.scss"; 
+@import "./../components/00_05_find_perfectSitter_main_page/find_perfectSitter_main_page_styles.scss"; 
+@import "./../components/00_05_form_main_page/form_styles.scss"; 
+@import "./../components/00_06_getToKnowOurSitters_main_page/getToKnowOurSitters_main_page_styles.scss"; 
+
+
+////sitters page styles
 @import "sitters_page_styles.scss";
-@import "00_1_main_header_styles.scss";
-@import "00_standard_styles.scss";
-@import "01_client_form_styles.scss";
-@import "01_client_form_sitters_page_styles.scss";
-@import "01_modal_styles";
-@import "03_button_styles.scss";
-@import "04_main_div3_styles.scss";
-@import "05_react_date_picker.scss";
-@import "06_main_div2_styles.scss";
-@import "07_main_div1_styles.scss";
-@import "08_main_div4_styles.scss";
-@import "09_main_div5_styles.scss";
-@import "10_main_div6_styles.scss";
-@import "11_footer_styles.scss";
-@import "12_sitter_data_styles.scss";
-@import "12_sitter_data_fullProfile_styles.scss";
-@import "13_sitters_page_div1_styles.scss";
-@import "14_sitters_page_div2_styles.scss";
-@import "15_sitters_page_div3_styles.scss";
+@import "./../components/11_01_ourSitters_sitters_page/ourSitters_sitters_page_styles.scss";
+@import "./../components/11_02_form_sitters_page/form_styles.scss"; 
+@import "./../components/11_03_foundSittersForYou_sitters_page/foundSittersForYou_sitters_page.scss";
+
 
 
 

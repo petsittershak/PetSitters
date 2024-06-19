@@ -1,16 +1,13 @@
-// import ReactDOM from "react-dom/client";
-// import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import React from "react";
-// import Form from "./components/01_client_form.jsx";
-// import CreateButton from "./components/03_button_all.jsx";
-import HowPetsittersWork from "../components/04_main_div3.jsx";
-import WhyChooseUs from "../components/06_main_div2.jsx";
-import FindSitter from "../components/07_main_div1.jsx";
-import CreateHeader from "../components/00_1_main_header.jsx";
-import CreateOurSitters from "../components/08_main_div4.jsx";
-import CreateFindPerfectSitter from "../components/09_main_div5.jsx";
-import CreateGetToKnowOurSitters from "../components/10_main_div6.jsx";
-import CreateFooter from "../components/11_footer.jsx";
+import FindSitter from "../components/00_01_findSitter_main_page/index.jsx"; 
+import WhyChooseUs from "../components/00_02_whyChooseUs_main_page/index.jsx";
+import HowPetsittersWork from "../components/00_03_HowPetsittersWork_main_page/index.jsx";
+import OurSitters from "../components/00_04_ourSitters_main_page/index.jsx"; 
+import FindPerfectSitter from "../components/00_05_find_perfectSitter_main_page/index.jsx"; 
+import GetToKnowOurSitters from "../components/00_06_getToKnowOurSitters_main_page/index.jsx"; 
+
+import Header from "../components/header/index.jsx"; 
+import Footer from "../components/footer/index.jsx"; 
 
 
 export default function Main() {
@@ -18,7 +15,7 @@ export default function Main() {
     return (
         <div className="main_page">
             <div className="header">
-                <CreateHeader />
+                <Header />
             </div>
 
             <div className="main_content"> 
@@ -36,20 +33,20 @@ export default function Main() {
                 </div>
 
                 <div className="div4">
-                <CreateOurSitters />
+                <OurSitters />
                 </div>
 
                 <div className="div5">
-                    <CreateFindPerfectSitter />
+                    <FindPerfectSitter />
                 </div>
 
                 <div className="div6">
-                    <CreateGetToKnowOurSitters />
+                    <GetToKnowOurSitters />
                 </div>
             </div>
 
             <div className="footer">
-            <CreateFooter />
+            <Footer />
             </div>
         </div>
     )

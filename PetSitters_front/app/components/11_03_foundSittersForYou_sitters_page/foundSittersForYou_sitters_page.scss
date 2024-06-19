@@ -1,0 +1,24 @@
+
+
+
+.sitters_page_foundSitters{
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+align-items: center;
+
+h1{
+  font-weight: $fontWeightStandart;
+}
+
+}
+
+.sitters_page_suggestedSitters{
+  width: 1200px;
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content:flex-start;
+  align-items: center;
+}

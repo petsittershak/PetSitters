@@ -1,0 +1,123 @@
+
+
+
+.sitterProfileDiv{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 248px;
+  height: 402px;
+  font-size: $fontSizeSmall;
+  padding: (21px 26px);
+  color: $mainBlackColor;
+  background-color: $mainLightColor;
+  border-radius: $borderRadius;
+  margin-right: 40px;
+  margin-bottom: 40px;
+
+  p{
+    font-size: $fontSizeSmallButton;
+    margin: 0px;
+  }
+}
+
+
+
+.starRaiting{
+  display: flex;
+  align-items: center; 
+  height: 24px;
+  width: 65%;
+  justify-content: space-between;
+  font-size: $fontSizeSmallButton;
+  line-height: 20px;
+
+  p{
+    align-items: center;
+  }
+
+}
+
+
+.sitterProfileDiv_div1{
+  display: flex;
+  justify-content: flex-start;
+  height: 100px;
+  width: 248px;
+
+//   img{
+// width: 72px;
+// height: 100px;
+// border-radius: $borderRadiusSmallSitterPic;
+//   }
+  
+
+  .sitterProfileDiv_div1_div2{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 190px;
+  height: 104px;
+  align-items: flex-start;
+  margin-left: 5px;
+}
+
+.sitterNameText{
+  font-size: $fontSizeSmall;
+  line-height: 24px;
+  width: fit-content;
+}
+
+.petsitterPriceText{
+font-size: $fontSizeSecondSmall;
+line-height: 24px;
+}
+
+.starRaitingImg{
+  width: 24px;
+  height: 24px;
+  }
+}
+
+.sitterProfileDiv_div2{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 248px;
+  height: 202px;
+}
+
+
+
+.sitterProfileDiv_div3{
+  display: flex;
+  justify-content: space-between;
+  width: 248px;
+  height: 36px;
+}
+
+.sitterDescription_header{
+  display: flex;
+  width: 248px;
+  height: 34px;
+  overflow: hidden;
+}
+.sitterDescription{
+  width: 248px;
+  height: 96px;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  text-overflow: ellipsis;
+}
+
+.sittersPageProfile{
+  width: 308px;
+}
+
+.sitterProfileDiv_sitterCanDiv{
+  display: flex;
+  width: 248px;
+  height: 36px;
+  justify-content: flex-start;
+}

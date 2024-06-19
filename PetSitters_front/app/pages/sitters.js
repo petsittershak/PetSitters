@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import CreateHeader from "../components/00_1_main_header.jsx";
-import CreateFooter from "../components/11_footer.jsx";
-import CreateOurSitters from "../components/13_sitters_page_div1.jsx";
-import CreateFormSittersPage from "../components/14_sitters_page_div2.jsx";
-import CreateSuggestSitters from "../components/15_sitters_page_div3.jsx";
+import Header from "../components/header/index.jsx";
+import Footer from "../components/footer/index.jsx";
+import OurSitters from "../components/11_01_ourSitters_sitters_page/index.jsx";
+import FormDivSittersPage from "../components/11_02_formDiv_sitters_page/index.jsx";
+import FoundSitters from "../components/11_03_foundSittersForYou_sitters_page/index.jsx";
 
 
 
@@ -11,27 +11,27 @@ export default function Sitters() {
   return (
     <div className="sitters_page">
       <div className="header">
-        <CreateHeader />
+        <Header />
       </div>
 
       <div className="main_content_sitters">
 
         <div className="div_sitters_1">
-          <CreateOurSitters />
+          <OurSitters />
         </div>
 
         <div className="div_sitters_2">
-          <CreateFormSittersPage />
+          <FormDivSittersPage />
         </div>
               
         <div className="div_sitters_3">
-          <CreateSuggestSitters />
+          <FoundSitters />
         </div>
         
       </div>
 
       <div className="footer">
-        <CreateFooter />
+        <Footer />
       </div>
     </div>
   );

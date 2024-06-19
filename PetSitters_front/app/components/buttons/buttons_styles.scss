@@ -1,0 +1,235 @@
+
+
+.btn{
+  cursor: pointer;
+  border-radius: $borderRadius;
+  font-family: $fontFamilyCustom;
+  border: solid 1px $mainLightColor;
+}
+
+.main_button_styles{
+width: 360px;
+height: 44px;
+color: $mainDarkColor;
+background-color: $mainLightColor;
+font-size: $fontSizeSmall22;
+transition: $customTransition;
+}
+.main_button_styles:hover{
+  color: $beigeColor;
+  background-color: $mainDarkColor;
+  transition: $customTransition;
+}
+
+.fill_form_btn {
+width: 460px;
+height: 76px;
+color: $mainDarkColor;
+background-color: $mainLightColor;
+font-size: $fontSizeButtons;
+transition: $customTransition;
+}
+
+.fill_form_btn:hover {
+color: $beigeColor;
+background-color: $mainDarkColor;
+transition: $customTransition;
+}
+
+.submit_form_btn{
+    width: 342px;
+    height: 70px;
+    text-align: center;
+    line-height: 70px;
+    background-image: url('../pictures/dogs/Dog_Paw_light.png');
+    background-size: initial;
+    background-repeat: no-repeat;
+    background-position-x: 275px;
+    background-position-y: 5px;
+    font-size: 32px;
+    color: $outlineGrayColor;
+    transition: $customTransition;
+    background-color: $beigeColor;
+}
+.submit_form_btn:hover{
+color: $mainBlackColor;
+background-color: $mainLightColor;
+transition: $customTransition;
+}
+
+.submit_form_sitters_page_btn{
+  width: 361px;
+  height: 60px;
+  text-align: center;
+  line-height: 60px;
+  background-image: url('../pictures/dogs/Dog_Paw_light.png');
+  background-size: initial;
+  background-repeat: no-repeat;
+  background-position-x: 265px;
+  background-position-y: 3px;
+  color: $mainBlackColor;
+  font-size: $fontSizeMedium;
+  transition: $customTransition;
+  background-color: $beigeColor;
+}
+
+.submit_form_sitters_page_btn:hover{
+color: $beigeColor;
+background-color: $mainDarkColor;
+transition: $customTransition;
+}
+
+.positionBtn{
+  width: 400px;
+  height: 60px;
+  text-align: left;
+  padding-left: 20px;
+  background-image: url('../pictures/icons/07_icons_drop.png');
+  background-size: initial;
+  background-repeat: no-repeat;
+  background-position-x: 340px;
+  background-position-y: 5px;
+  font-size: 24px;
+  color: $outlineGrayColor;
+  background-color: $beigeColor;
+  line-height: 60px;
+  }
+
+  .sitters_page_positionBtn{
+    width: 360px;
+    height: 40px;
+    text-align: left;
+    padding-left: 20px;
+    background-image: url('../pictures/icons/07_icons_drop.png');
+    background-size: 25px 25px;
+    background-repeat: no-repeat;
+    background-position-x: 320px;
+    background-position-y: 5px;
+    font-size: 24px;
+    color: $outlineGrayColor;
+    background-color: $beigeColor;
+    line-height: 30px;
+    }
+
+.small_button_styles{
+  width: 119px;
+  height: 36px;
+  color: $mainBlackColor;
+  background-color: $beigeColor;
+  font-size: $fontSizeSmallButton;
+  transition: $customTransition;
+}
+
+.small_button_styles:hover{
+background-color: $mainLightColor;
+transition: $customTransition;
+}
+
+.header_button_styles{
+  width: 160px;
+  height: 44px;
+  color: $mainBlackColor;
+  background-color: $beigeColor;
+  transition: $customTransition;
+}
+
+.header_button_styles:hover{
+  color: $beigeColor;
+  background-color: $mainDarkColor;
+  transition: $customTransition;
+}
+
+.footer_button_styles{
+  width: 361px;
+  height: 48px;
+  color: $mainBlackColor;
+  background-color: $beigeColor;
+  font-size: $fontSizeSmall;
+  transition: $customTransition;
+}
+.footer_button_styles:hover{
+  background-color: $mainDarkColor;
+  color: $beigeColor;
+  transition: $customTransition;
+}
+
+.verticalButton{
+  width: 60px;
+  height: 444px;
+  background-image: url('../pictures/icons/08_buttonArrow.png');
+  background-repeat: no-repeat;
+  background-position-x: 21px;
+  background-position-y: 205px;
+  border: 1px solid $mainLightColor;
+  border-radius: $borderRadius;
+  background-color: $beigeColor;
+  transition: $customTransition;
+}
+
+.verticalButton:hover{
+  background-image: url('../pictures/icons/08_buttonDarkArrow.png');
+  background-color: $mainLightColor;
+  transition: $customTransition;
+}
+
+.persitterProfilesSmallBtn{
+  width: 110px;
+  height: 36px;
+  color: $mainBlackColor;
+  background-color: $beigeColor;
+  transition: $customTransition;
+}
+
+
+.persitterProfilesSmallBtn:hover{
+  color: $beigeColor;
+  background-color: $mainDarkColor;
+  transition: $customTransition;
+}
+
+.sittersPageProfileBtn{
+  width: 140px;
+  height: 36px;
+  color: $mainBlackColor;
+  background-color: $beigeColor;
+  transition: $customTransition;
+}
+
+.sittersPageProfileBtn:hover{
+  color: $beigeColor;
+  background-color: $mainDarkColor;
+  transition: $customTransition;
+}
+
+.sitter_fullProfile_btn1{
+  width: 220px;
+  height: 46px;
+  color: $mainBlackColor;
+  background-color: $beigeColor;
+  transition: $customTransition;
+  border: solid 1px $mainLightColor;
+  font-size: $fontSizeSmall;
+  line-height: 24px;
+}
+
+.sitter_fullProfile_btn1:hover{
+  color: $beigeColor;
+  background-color: $mainLightColor;
+  transition: $customTransition;
+}
+
+.sitter_fullProfile_btn2{
+  width: 220px;
+  height: 46px;
+  color: $mainBlackColor;
+  background-color: $mainLightColor;
+  transition: $customTransition;
+  font-size: $fontSizeSmall;
+  line-height: 24px;
+}
+
+.sitter_fullProfile_btn2:hover{
+  color: $beigeColor;
+  background-color: $mainDarkColor;
+  transition: $customTransition;
+}
