@@ -9,4 +9,5 @@ database.db
 
 poetry.lock
 
+.DS_Store
 Clients.db
