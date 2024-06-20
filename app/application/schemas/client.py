@@ -1,7 +1,5 @@
 from typing import Optional
-import re
 from pydantic import BaseModel, ConfigDict, validator
-import phonenumbers
 from phonenumbers import parse, is_valid_number
 from fastapi import HTTPException
 

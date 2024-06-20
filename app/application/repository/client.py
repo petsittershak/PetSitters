@@ -1,6 +1,8 @@
-from sqlalchemy import select
+from sqlalchemy import select, delete
 
-from ..database.client import new_session, ClientOrm
+from ..database.client import ClientOrm
+from ..database.database import new_session
+
 from ..schemas.client import SClientAdd, SClient
 
 
@@ -26,3 +28,19 @@ class ClientRepository:
                 SClient.model_validate(client_model) for client_model in client_models
             ]
             return client_schemas
+
+    @classmethod
+    async def find_by_id(cls, client_id: int) -> SClient:
+        async with new_session() as session:
+            client = await session.get(ClientOrm, client_id)
+            if client:
+                return SClient.model_validate(client)
+            else:
+                return None
+
+    @classmethod
+    async def delete_by_id(cls, client_id: int) -> None:
+        async with new_session() as session:
+            query = delete(ClientOrm).where(ClientOrm.id == client_id)
+            await session.execute(query)
+            await session.commit()
