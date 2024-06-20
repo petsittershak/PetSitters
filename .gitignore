@@ -1,5 +1,5 @@
 __pycache__/
-.env
+PetSitters_backend/.env
 
 .DS_Store
 
@@ -10,3 +10,5 @@ database.db
 poetry.lock
 
 Clients.db
+
+PetSitters_front/node_modules
