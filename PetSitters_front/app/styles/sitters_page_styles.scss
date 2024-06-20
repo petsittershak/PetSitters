@@ -1,0 +1,51 @@
+@import "00_standard_styles.scss";
+
+.sitters_page{
+  width: 100%;
+  min-width: 1280px;
+  height: fit-content;
+  display: flex;
+  flex-direction:column;
+  justify-content: space-between;
+  align-items: stretch;
+  font-family: $fontFamilyCustom;
+  font-weight: $fontWeightStandart;
+}
+
+
+.main_content_sitters{
+  //min-height: 1700px;
+  height: fit-content;
+  width: inherit;
+  display: flex;
+  flex-direction:column;
+  justify-content: space-between;
+}
+
+.div_sitters_1{
+  margin-top: 20px;
+  height:260px;
+  padding-left: 60px;
+  padding-right: 60px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.div_sitters_2{
+  margin-top: 20px;
+  height:310px;
+  padding-left: 60px;
+  padding-right: 60px;
+  display: flex;
+  justify-content: space-around;
+  background-color: $mainLightColor;
+  border-radius: $borderRadius;
+}
+
+.div_sitters_3{
+  height:fit-content;
+  padding-left: 60px;
+  padding-right: 60px;
+  display: flex;
+  justify-content: space-around;
+}

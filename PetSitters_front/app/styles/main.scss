@@ -1,0 +1,165 @@
+///all styles
+ @import "00_standard_styles.scss";
+@import "./../components/header/header_styles.scss"; 
+@import "./../components/modal/modal_styles.scss"; 
+@import "./../components/buttons/buttons_styles.scss"; 
+@import "./../components/react_date_picker/react_date_picker_styles.scss"; 
+@import "./../components/footer/footer_styles.scss"; 
+@import "./../components/sittersFullProfile/sittersFullProfile_styles.scss";
+@import "./../components/sitterSmallProfile/sitterSmallProfile_styles.scss";
+
+
+///main page styles
+@import "./../components/00_01_findSitter_main_page/findSitter_main_page_styles.scss";
+@import "./../components/00_02_whyChooseUs_main_page/whyChooseUs_main_page_styles.scss";
+@import "./../components/00_03_HowPetsittersWork_main_page/HowPetsittersWork_main_page_styles.scss";
+@import "./../components/00_04_ourSitters_main_page/ourSitters_main_page_styles.scss"; 
+@import "./../components/00_05_find_perfectSitter_main_page/find_perfectSitter_main_page_styles.scss"; 
+@import "./../components/00_05_form_main_page/form_styles.scss"; 
+@import "./../components/00_06_getToKnowOurSitters_main_page/getToKnowOurSitters_main_page_styles.scss"; 
+
+
+////sitters page styles
+@import "sitters_page_styles.scss";
+@import "./../components/11_01_ourSitters_sitters_page/ourSitters_sitters_page_styles.scss";
+@import "./../components/11_02_form_sitters_page/form_styles.scss"; 
+@import "./../components/11_03_foundSittersForYou_sitters_page/foundSittersForYou_sitters_page.scss";
+
+
+
+
+@font-face {
+  font: "Random Grotesque Standard Medium";
+  font-family: "Myfont";
+  font-style: normal;
+  src: url(./../../../PetSitters_front/public/fonts/RG-StandardMedium.woff) format(".woff");
+}
+
+
+html{
+  width: 100%;
+  scroll-behavior: smooth;
+  font-family: $fontFamilyCustom;
+  color: $mainDarkColor;
+  font-weight: $fontWeightStandart;
+}
+
+body{
+ background-color: $beigeColor;
+ font-family: $fontFamilyCustom;
+ margin:0px;
+}
+
+body::-webkit-scrollbar {
+  width: 10px; /* Ширина всего элемента навигации */
+}
+
+body::-webkit-scrollbar-track {
+  background: $beigeColor; /* Цвет дорожки */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: $mainDarkColor; /* Цвет бегунка */
+  border-radius: $borderRadius; /* Округление бегунка */
+  border: 1px solid $mainDarkColor; /* Оформление границ бегунка */
+}
+
+.main_page{
+  width: 100%;
+  min-width: 1280px;
+  height: 5166px;
+  display: flex;
+  flex-direction:column;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+.header{
+  height: 96px;
+  display:flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  background-color: $mainLightColor;
+  border-bottom-left-radius: $borderRadius;
+  border-bottom-right-radius: $borderRadius;
+}
+
+.main_content{
+  height: 4447px;
+  width: inherit;
+  display: flex;
+  flex-direction:column;
+  justify-content: space-between;
+}
+
+.div1{
+  height:240px;
+  padding-left: 60px;
+  padding-right: 60px;
+  display: flex;
+  justify-content: space-around;
+
+}
+
+.div2{
+  height:1092px;
+  background-color: $mainLightColor;
+  padding-left: 60px;
+  padding-right: 60px;
+  border-radius: $borderRadius;
+  display: flex;
+  justify-content: space-around;
+}
+
+.div3{
+  height:742px;
+  padding-left: 60px;
+  padding-right: 60px;
+  display: flex;
+  justify-content: space-around;
+}
+.div4{
+  height:840px;
+  background-color: $mainLightColor;
+  padding-left: 60px;
+  padding-right: 60px;
+  display: flex;
+  justify-content: space-around;
+  border-radius: $borderRadius;
+}
+.div5{
+  height:239px;
+  padding-left: 60px;
+  padding-right: 60px;
+  display: flex;
+  justify-content: space-around;
+}
+.div6{
+  height:566px;
+  padding-left: 60px;
+  padding-right: 60px;
+  display: flex;
+  justify-content: space-around;
+}
+
+// .form_background{
+//   display: none;
+// }
+
+.footer{
+  height: 460px;
+  background-color: $mainLightColor;
+  padding-left: 60px;
+  padding-right: 60px;
+  border-top-left-radius: $borderRadius;
+  border-top-right-radius: $borderRadius;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+}
+
+.picture{
+  border-radius: $borderRadius;
+}

@@ -1,0 +1,30 @@
+$mainLightColor: #BDA8D4;
+$secondLightColor: #DFCFF1;
+$mainDarkColor: #320064;
+$whiteColor: #FFFFFF;
+$outlineGrayColor: #B3B3B3;
+$beigeColor: #FFF9F5;
+$mainBlackColor: #0F0F0F;
+$outline: solid 1px $mainLightColor;
+$shadow: none;
+$fontSizeSmallButton: 16px;
+$fontSizeSecondSmall : 18px;
+$fontSizeSmall: 20px;
+$fontSizeSmall22: 22px;
+$fontSizeButtons: 24px;
+$fontSizeMedium: 32px;
+$fontSizeLargeMedium:44px; 
+$fontSizeLarge: 48px;
+$borderRadius: 30px;
+$borderRadiusSmallSitterPic: 10px;
+$fontWeightStandart: 500;
+$customTransition: all .03s ease-in-out;
+$fontFamilyCustom: "Myfont", Arial, Helvetica, sans-serif;
+ 
+
+@font-face {
+  font: "Random Grotesque Standard Medium";
+  font-family: "Myfont";
+  font-style: normal;
+  src: url("./../fonts/RG-StandardMedium.woff") format(".woff");
+}
