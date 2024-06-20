@@ -1,0 +1,11 @@
+#BACKEND
+PetSitters_backend/Dockerfile
+PetSitters_backend/README.md
+PetSitters_backend/run.py
+PetSitters_backend/Makefile
+__pycache__/
+
+
+#FRONTEND
+PetSitters_front/Dockerfile
+PetSitters_front/node_modules
