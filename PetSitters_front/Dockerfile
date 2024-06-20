@@ -2,8 +2,8 @@ FROM node:slim
 
 WORKDIR /app
 
-COPY package.json /app/
-COPY . /app/.
+COPY PetSitters_front/package.json /app/
+COPY PetSitters_front/. /app/.
 
 RUN yarn install
 

@@ -1,14 +1,13 @@
+#BACKEND
 __pycache__/
-PetSitters_backend/.env
+.env
+PetSitters_backend/database.db
+PetSitters_backend/poetry.lock
 
-.DS_Store
 
-app/Clients.db
-
-database.db
-
-poetry.lock
-
-Clients.db
-
+#FRONTEND
 PetSitters_front/node_modules
+
+
+#ALL
+.DS_Store
