@@ -89,7 +89,11 @@
     border-radius: 30px;
     background-color: $beigeColor;
  }
-
+input::placeholder{
+  font-size: 18px;
+  line-height: 40px;
+  color: $mainBlackColor;
+}
   // .telInput:autofill {
   //   background-color: $beigeColor !important;
   //   border: none !important;
@@ -164,8 +168,9 @@
        .price_select{
         width: 132px;
         height: 40px;
-        padding-left: 14px;
+        padding-left: 60px;
         padding-right: 14px;
+        background-color: transparent;
 
         .client_form_sitters_page_select_opt{
           width: 161px;

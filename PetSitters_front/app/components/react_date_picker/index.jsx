@@ -12,6 +12,7 @@ export default function CreateDatePicker(){
 
   const [dateRange, setDateRange] = useState([null, null]);
   const [startDate, endDate] = dateRange;
+  
   return (
     <DatePicker
       locale="ru"

@@ -5,8 +5,9 @@ import React, {useState} from "react";
 // функция необходима для иммитации работы инпута
 // в функции определяется стиль списка, название нужного класса так же передается в пропсах
 function CreateServiceList({ options, click, changeState, classN, liClass}) {
+  
   return (
-    <div className={`${classN}  ${click ? " form_select_active" : " "}`}>
+    <div className={`${classN}  ${click ? " form_select_active" : " "}`} >
       {options.map((opt, i) => { return <li key={i} className={`client_form_li li_${liClass}`} onClick={()=>changeState(opt)}>{opt}</li> })}
     </div>
   )
@@ -32,7 +33,7 @@ export default function Input({formName, classes, opt, clickState, setClick, cha
 return (
   <div name={formName} placeholder={placeholder} className={`_select_${classes} ${formName}`} onClick={() => handleClick(formName, clickState, setClick)}>
 {choiceMade}
-    <CreateServiceList options={opt} click={clickState} changeState={changeStateOpt} classN={classes} liClass={formName} />
+    <CreateServiceList setClick={setClick} options={opt} click={clickState} changeState={changeStateOpt} classN={classes} liClass={formName}/>
 </div>
   )
 }

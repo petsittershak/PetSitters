@@ -32,9 +32,8 @@ async function getCity(myCoords, setCity, setCityName) {
     .then((response) => response.json())
     .then((result) => {
       let address = result.suggestions[0].value;
-      let regexp = /\W+,/y;
-      regexp.lastIndex = 2;
-      const clientCity = address.match(regexp)[0].split(",")[0];
+      let regexp = /[а-яё\-\. ]+/i;
+      const clientCity = address.match(regexp)[0].slice(2);
       // меняем состояние вида кнопки, в ней отобразится название города
       setCity(`Ваш город: ${clientCity}`);
       setCityName(clientCity);
@@ -44,6 +43,8 @@ async function getCity(myCoords, setCity, setCityName) {
     .catch((error) => console.log("error", error));
 }
 
+
+
 // функция создающая форму для заказчика
 function FormCreator({ classN, onSubmitFunc}) {
   const tooltips = [
@@ -51,98 +52,124 @@ function FormCreator({ classN, onSubmitFunc}) {
     "Возьмём питомца к себе, пока Вы в отъезде",
     "Посидим с пушистиком у Вас дома",
   ];
-  // отвечает за сабмит формы
 
-  function handleFormSubmit(e) {
-    e.preventDefault();
 
-//находим нужную форму в документе
-    const form = document.forms["client_form"];
-//параметры заполненной формы послн нажатия кнопки отправить
-    const userRequest = {
-      name: "no Name",
-      pet: animal,
-      price: maxPrice,
-      city: cityName,
-      telephone: `+7${form.elements["telephone"].value.match(/\d/g).join("")}`,
-      description: form.elements["description"].value,
-    };
+ 
+  const parametersObj = {};
+  if (window.location.search !="") {
+   const str = window.location.search;
+   const params = ["type", "anim", "city", "phone", "pfrom", "pto"];
+    let regexp;
 
-//переходим на страницу ситтеров
-    window.location.href = "/sitters";
-//отправляем данные юзера, телефон и параметры поиска на сервер
-    sendUser(userRequest);
-
-//функция отправляющая данные юзера на сервер
-    async function sendUser(userRequest) {
-      try {
-        const response = await fetch(
-          `http://${DEFINE_URL_ADRESS}/clients/add_client`,
-          {
-            method: "POST",
-            headers: {
-              Accept: "application/json",
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(userRequest),
-          }
-        );
-        if (response.ok === true) {
-          const user = await response.json();
-          console.log(user);
-        }
-      } catch (err) {
-        console.log(err);
+    for (let i = 0; i < params.length; i++){
+      regexp = `[\\?&]${params[i]}=([^&#]*)`;
+         parametersObj[params[i]] = str.match(regexp)[1]
       }
-    }
+  
+    parametersObj.type = decodeURIComponent(parametersObj.type);
+    parametersObj.anim = decodeURIComponent(parametersObj.anim);
+    parametersObj.city = decodeURIComponent(parametersObj.city);
+    parametersObj.phone = `${parametersObj.phone.slice(0,2)} (${parametersObj.phone.slice(2,5)}) ${parametersObj.phone.slice(5,8)}-${parametersObj.phone.slice(8,10)}-${parametersObj.phone.slice(10,12)}`;
+
   }
+  
+ 
+  console.log(parametersObj)
+  // const form = document.forms["client_form"];
+  // form.elements["telephone"].placeholder = parametersObj.phone;
+
+  
 
   /// все данные для создания списков, посредством вызова  функции CreateInput, которая вызывается несколько раз в форме ниже
   const serviceOptions = ["Выгул", "Передержка", "Няня"];
   const [clicked, setClicked] = useState(false);
-  const [choice, setChoice] = useState(serviceOptions["0"]);
+  const [choice, setChoice] = useState(parametersObj.type ?  parametersObj.type : serviceOptions["0"]);
 
   const [clickedAnimal, setClickedAnimal] = useState(false);
   const animalOptions = ["Кошка", "Собака"];
-  const [animal, setAnimal] = useState(animalOptions["0"]);
+  const [animal, setAnimal] = useState(parametersObj.anim ? parametersObj.anim : animalOptions["0"]);
 
   const priceOptions = [600, 700, 900, 1000];
   const [clickedMinPrice, setClickedMinPrice] = useState(false);
-  const [minPrice, setMinPrice] = useState(priceOptions[0]);
+  const [minPrice, setMinPrice] = useState( parametersObj.pfrom ? parametersObj.pfrom : priceOptions[0]);
 
   const maxPriceOptions = [1000, 1200, 1400, 1600];
   const [clickedMaxPrice, setClickedMaxPrice] = useState(false);
-  const [maxPrice, setMaxPrice] = useState(maxPriceOptions[maxPriceOptions.length - 1]
+  const [maxPrice, setMaxPrice] = useState(parametersObj.pto ? parametersObj.pto : maxPriceOptions[maxPriceOptions.length - 1]
   );
 
-  ////////////////////////////////////////////////////////////////////
-  const [city, setCity] = useState("Определить");
-  const [cityName, setCityName] = useState("default");
-  //по клику на кнопку поиска местоположения заказчика, вызывается функция handleGeoClick
-  function handleGeoClick(e) {
-    e.preventDefault();
-    
-    //тут аррей для координат после определения местоположения  пользователя
-    const myCoords = [];
-    let clientCity;
 
-    if ("geolocation" in navigator) {
+  function changeState(e) {
+    if (clicked == true) {
+    setClicked(false);
+    } else if (clickedAnimal == true) {
+      setClickedAnimal(false);
+    } else if (clickedMinPrice == true) {
+      setClickedMinPrice(false);
+    } else if (clickedMaxPrice == true) {
+      setClickedMaxPrice(false)
+    } else if (clickedCity == true) {
+      setClickedCity(false)
+    }
+   
+  }
+
+  ////////////////////////////////////////////////////////////////////
+  const [city, setCity] = useState((parametersObj.city && parametersObj.city != "null") ? `Ваш город: ${parametersObj.city}` : "Определить");
+  const [clickedCity, setClickedCity] = useState(false);
+  const cityOpt = ["Москва", "Санкт-Петербург"];
+  const [geo, setGeo] = useState(true);
+  const [cityName, setCityName] = useState(cityOpt[0]);
+
+  //по клику на кнопку поиска местоположения заказчика, вызывается функция handleGeoClick
+
+  async function handleGeoClick(e) {
+    e.preventDefault();
+    // const yandexKey = "f5c06f3f-77c4-4412-ba84-2a93141f56d7";
+     const myCoords = [];
+     let clientCity; 
+    const { state } = await navigator.permissions.query({ name: 'geolocation' });
+    if (state != "granted") {
+      setGeo(false)
+      alert("Доступ к геоданным не получен, пожалуйста выберите город вручную!")
+ } else if ("geolocation" in navigator) {
       navigator.geolocation.getCurrentPosition(function (position) {
         const { latitude, longitude } = position.coords;
         myCoords.push(latitude);
         myCoords.push(longitude);
         //// вызываем функцию getCity которая определить город по координатам
         clientCity = getCity(myCoords, setCity, setCityName);
+        
       });
-    }
+    } 
     return clientCity;
   }
+  // function handleGeoClick(e) {
+  //   e.preventDefault();
+    
+  //   //тут аррей для координат после определения местоположения  пользователя
+  //   const myCoords = [];
+  //   let clientCity;
+
+  //   if ("geolocation" in navigator) {
+  //     navigator.geolocation.getCurrentPosition(function (position) {
+  //       const { latitude, longitude } = position.coords;
+  //       myCoords.push(latitude);
+  //       myCoords.push(longitude);
+  //       //// вызываем функцию getCity которая определить город по координатам
+  //       clientCity = getCity(myCoords, setCity, setCityName);
+  //     });
+  //   }
+  //   return clientCity;
+  // }
+
  
   /// возвращаем форму, в которой вызываются компоненты создания кнопки и инпута
   return (
     <form
       name="client_form"
       className={classN}
+      onClick={(e)=> changeState(e)}
       onSubmit={
         onSubmitFunc ? (e) => onSubmitFunc(e) : (e) => handleFormSubmit(e)
       }
@@ -184,8 +211,8 @@ function FormCreator({ classN, onSubmitFunc}) {
             <input className="telInput"
               type="tel"
               name="telephone"
-              pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-              required
+              pattern="+7[0-9]{3}-[0-9]{3}-[0-9]{4}"
+              placeholder={`${parametersObj.phone ? parametersObj.phone : ""}`}
             ></input>
           </label>
           <label>
@@ -200,20 +227,25 @@ function FormCreator({ classN, onSubmitFunc}) {
         <div className={`${classN}_div3`}>
           <label>
             Местоположение
-          <br/>
-          <Button
+            <br />
+            {geo == true ? <Button
             btnType=""
             classN="btn sitters_page_positionBtn"
             onClickFunct={handleGeoClick}
             btnText={city}
-          />
+          />  :
+            <Input formName="animal_type" classes={`${classN}_select_opt`} opt={cityOpt} clickState={clickedCity} setClick={setClickedCity} changeStateOpt={setCityName} choiceMade={cityName} />
+          }
+  
           </label>
           
           <label htmlFor="price_from price_to">
             Цена
             <br />
             <div className="price">
+             <div style={{position: "absolute", marginTop: "0px", marginLeft: "5px", whiteSpace: "pre", lineHeight: "40px", fortSize: "20px", backgroundColor: "#FFF9F5", width: "160px", borderRadius: "30px", height: "40px", color: "#B3B3B3"}}>  От                ₽</div>
               <Input    formName="price_select"   classes={`${classN}_select_opt`}  opt={priceOptions}  clickState={clickedMinPrice}  setClick={setClickedMinPrice}  changeStateOpt={setMinPrice}  choiceMade={minPrice}  placeholder="Oт"  />
+              <div style={{position: "absolute", marginTop: "0px", marginLeft: "200px", whiteSpace: "pre", fortSize: "20px", whiteSpace: "pre", lineHeight: "40px", fortSize: "20px", backgroundColor: "#FFF9F5", width: "160px", borderRadius: "30px", height: "40px", color: "#B3B3B3"}}>  До                ₽</div>
               <Input
                 formName="price_select"
                 classes={`${classN}_select_opt`}

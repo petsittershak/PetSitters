@@ -6,6 +6,7 @@ import Form from "../11_02_form_sitters_page/index.jsx";
 export default function FormDivSittersPage() {
 
   function handleFormSubmit(e) {
+    e.preventDefault();
     ///
   }
 

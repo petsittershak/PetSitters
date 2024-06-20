@@ -32,9 +32,8 @@ async function getCity(myCoords, setCity, setCityName) {
   .then(response => response.json())
     .then(result => {
       let address = result.suggestions[0].value;
-      let regexp = /\W+,/y;
-       regexp.lastIndex = 2;
-      const clientCity = address.match(regexp)[0].split(",")[0];
+      let regexp = /[а-яё\-\. ]+/i;
+      const clientCity = address.match(regexp)[0].slice(2);
       // меняем состояние вида кнопки, в ней отобразится название города
       setCity(`Ваш город: ${clientCity}`);
       setCityName(clientCity)
@@ -70,12 +69,17 @@ function FormCreator({ classN, onSubmitFunc}) {
       description: form.elements["description"].value,
     }
 
+    ///// В задачах от команды стояла цель перенести данные из формы на главной странице в форму на страницу с петситтерами
+    ///// Но в связи с тем, что у них нет общего родителя, то есть никак не передать состояние в пропсах
+    ///// И в связи с тем что я еще не учила Redux, я решила в качестве демонстрации передать параменты в строке запроса
+    ///// Я знаю, что телефон так передавать нельзя, но это в виде исключения в целях демонстрации идеи
+    ///// Конечно если сайт возьмуьт в работу, надо это переделать через Redux 
     
-    window.location.href = "/sitters";
-    //windows.location.search
-    
+    window.location.href = `/sitters?type=${choice}&city=${userRequest.city}&anim=${animal}&phone=${userRequest.telephone}&pfrom=${minPrice}&pto=${maxPrice}&descr=${userRequest.description}}`;
+  
     sendUser(userRequest);
-
+    
+///// функция отправляет параметры на бэкэнд
     async function sendUser(userRequest) {
 
       try {
@@ -119,16 +123,38 @@ function FormCreator({ classN, onSubmitFunc}) {
   const [clickedMaxPrice, setClickedMaxPrice] = useState(false);
   const [maxPrice, setMaxPrice] = useState(maxPriceOptions[maxPriceOptions.length-1]);
 
+  ////// функция ниже закрывает открытые опции для выбора при нажатии где либо на форме кроме самого окошка выбора
+  function changeState(e) {
+    if (clicked == true) {
+    setClicked(false);
+    } else if (clickedAnimal == true) {
+      setClickedAnimal(false);
+    } else if (clickedMinPrice == true) {
+      setClickedMinPrice(false);
+    } else if (clickedMaxPrice == true) {
+      setClickedMaxPrice(false)
+    } else if (clickedCity == true) {
+      setClickedCity(false)
+    }
+  }
+
 ////////////////////////////////////////////////////////////////////
   const [city, setCity] = useState("Определить город");
-  const [cityName, setCityName] = useState("default");
+  const [clickedCity, setClickedCity] = useState(false);
+  const cityOpt = ["Москва", "Санкт-Петербург"];
+  const [geo, setGeo] = useState(true);
+  const [cityName, setCityName] = useState(cityOpt[0]);
+ 
   //по клику на кнопку поиска местоположения заказчика, вызывается функция handleGeoClick
-  function handleGeoClick(e) {
+  async function handleGeoClick(e) {
     e.preventDefault();
     // const yandexKey = "f5c06f3f-77c4-4412-ba84-2a93141f56d7";
-    const myCoords = [];
+     const myCoords = [];
      let clientCity; 
-
+    const { state } = await navigator.permissions.query({ name: 'geolocation' });
+    // if (state != "granted") {
+    //   setGeo(false)
+    // } else
     if ("geolocation" in navigator) {
       navigator.geolocation.getCurrentPosition(function (position) {
         const { latitude, longitude } = position.coords;
@@ -136,15 +162,23 @@ function FormCreator({ classN, onSubmitFunc}) {
         myCoords.push(longitude);
         //// вызываем функцию getCity которая определить город по координатам
         clientCity = getCity(myCoords, setCity, setCityName);
+        
       });
-    } 
+      if (state != "granted") {
+        setGeo(false)
+        alert("Доступ к геоданным не получен, пожалуйста выберите город вручную!")
+      }
+    }
     return clientCity;
   }
+
+ // const [inputAvtive, setInputActive] = useState(false);
+
 
 
 /// возвращаем форму, в которой вызываются компоненты создания кнопки и инпута
   return (
-      <form name="client_form" className={classN} onSubmit={onSubmitFunc ? ((e) => onSubmitFunc(e) ): ((e)=>handleFormSubmit(e))}>
+    <form name="client_form" className={classN} onClick={(e)=> changeState(e)} onSubmit={onSubmitFunc ? ((e) => onSubmitFunc(e) ): ((e)=>handleFormSubmit(e))}>
         <img
         src="./app/pictures/cats/Cat_whiskers_dark_light.png"
         className={`${classN}_pic1`} />
@@ -170,19 +204,27 @@ function FormCreator({ classN, onSubmitFunc}) {
             <label htmlFor="price_from price_to">
               Цена
               <br />
-              <div className="price">
-                  <Input formName="price_select" classes={`${classN}_select_opt`} opt={priceOptions} clickState={clickedMinPrice} setClick={setClickedMinPrice} changeStateOpt={setMinPrice} choiceMade={minPrice} placeholder="Oт" />
-                  <Input formName="price_select" classes={`${classN}_select_opt`} opt={maxPriceOptions} clickState={clickedMaxPrice} setClick={setClickedMaxPrice} changeStateOpt={setMaxPrice} choiceMade={maxPrice} placeholder="До" />
+            <div className="price">
+              <div style={{ position: "absolute", marginTop: "17px", marginLeft: "5px", whiteSpace: "pre", fortSize: "20px"} }>  От                ₽</div>
+              <Input formName="price_select" classes={`${classN}_select_opt`} opt={priceOptions} clickState={clickedMinPrice} setClick={setClickedMinPrice} changeStateOpt={setMinPrice} choiceMade={minPrice} placeholder="Oт" />
+              <div style={{position: "absolute", marginTop: "17px", marginLeft: "205px", whiteSpace: "pre", fortSize: "20px"}}>  До                ₽</div>
+             <Input formName="price_select" classes={`${classN}_select_opt`} opt={maxPriceOptions} clickState={clickedMaxPrice} setClick={setClickedMaxPrice} changeStateOpt={setMaxPrice} choiceMade={maxPrice} placeholder="До" />
               </div>
-            </label>
-            <Button btnType="" classN="btn positionBtn" onClickFunct={handleGeoClick} btnText={city} />
+          </label>
+          <label>
+            Местоположение
+            {geo == true ? <Button btnType="" classN="btn positionBtn" onClickFunct={handleGeoClick} btnText={city} /> :
+            <Input formName="animal_type" classes={`${classN}_select_opt`} opt={cityOpt} clickState={clickedCity} setClick={setClickedCity} changeStateOpt={setCityName} choiceMade={cityName} />
+          }
+          </label>
+                   
           </div>
         <div className={`${classN}_div2`}>
             <label>
               Период
               <br />
               <div className="date_picker" >
-                 <CreateDatePicker />
+                 <CreateDatePicker/>
               </div>
             
             </label>
