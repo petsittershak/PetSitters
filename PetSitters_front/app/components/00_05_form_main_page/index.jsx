@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 import Input from "../input/index.jsx";
 import Button from "../buttons/index.jsx";
 import CreateDatePicker from "../react_date_picker/index.jsx";
@@ -46,9 +45,6 @@ async function getCity(myCoords, setCity, setCityName) {
 
 
 
-
-
-
 // функция создающая форму для заказчика
 function FormCreator({ classN, onSubmitFunc}) {
   const tooltips = ["Погуляем с собачкой в вашем районе", "Возьмём питомца к себе, пока Вы в отъезде", "Посидим с пушистиком у Вас дома"];
@@ -68,7 +64,7 @@ function FormCreator({ classN, onSubmitFunc}) {
       telephone: `+7${(form.elements["telephone"].value).match(/\d/g).join('')}`,
       description: form.elements["description"].value,
     }
-
+    //console.log(valueTel)
     ///// В задачах от команды стояла цель перенести данные из формы на главной странице в форму на страницу с петситтерами
     ///// Но в связи с тем, что у них нет общего родителя, то есть никак не передать состояние в пропсах
     ///// И в связи с тем что я еще не учила Redux, я решила в качестве демонстрации передать параменты в строке запроса
@@ -115,11 +111,11 @@ function FormCreator({ classN, onSubmitFunc}) {
   const [animal, setAnimal] = useState(animalOptions[0]);
 
 
-  const priceOptions = [600, 700, 900, 1000];
+  const priceOptions = [1000, 1100, 1200];
   const [clickedMinPrice, setClickedMinPrice] = useState(false);
   const [minPrice, setMinPrice] = useState(priceOptions[0]);
 
-  const maxPriceOptions = [1000, 1200, 1400, 1600];
+  const maxPriceOptions = [1200, 1400, 1700, 2000];
   const [clickedMaxPrice, setClickedMaxPrice] = useState(false);
   const [maxPrice, setMaxPrice] = useState(maxPriceOptions[maxPriceOptions.length-1]);
 
@@ -146,36 +142,43 @@ function FormCreator({ classN, onSubmitFunc}) {
   const [cityName, setCityName] = useState(cityOpt[0]);
  
   //по клику на кнопку поиска местоположения заказчика, вызывается функция handleGeoClick
-  async function handleGeoClick(e) {
+   async function handleGeoClick(e) {
     e.preventDefault();
     // const yandexKey = "f5c06f3f-77c4-4412-ba84-2a93141f56d7";
      const myCoords = [];
      let clientCity; 
-    const { state } = await navigator.permissions.query({ name: 'geolocation' });
-    // if (state != "granted") {
-    //   setGeo(false)
-    // } else
-    if ("geolocation" in navigator) {
-      navigator.geolocation.getCurrentPosition(function (position) {
-        const { latitude, longitude } = position.coords;
-        myCoords.push(latitude);
-        myCoords.push(longitude);
-        //// вызываем функцию getCity которая определить город по координатам
-        clientCity = getCity(myCoords, setCity, setCityName);
-        
-      });
-      if (state != "granted") {
-        setGeo(false)
-        alert("Доступ к геоданным не получен, пожалуйста выберите город вручную!")
-      }
-    }
+     if (navigator.geolocation) {
+      navigator.permissions.query({ name: "geolocation" }).then((result) => {
+         if (result.state === "granted") {
+           navigator.geolocation.getCurrentPosition(function (position) {
+             const { latitude, longitude } = position.coords;
+             myCoords.push(latitude);
+             myCoords.push(longitude);
+             //// вызываем функцию getCity которая определить город по координатам
+             clientCity = getCity(myCoords, setCity, setCityName);
+           })
+         }
+         else {
+           setTimeout(() => {
+            setGeo(false)
+            alert("Доступ к геоданным не получен, пожалуйста выберите город вручную!")
+           }, 3000)
+          
+         }
+       });
+     } else {
+        setTimeout(() => {
+          setGeo(false)
+          alert("Доступ к геоданным не получен, пожалуйста выберите город вручную!")
+         }, 3000)
+     }
+    
     return clientCity;
-  }
-
- // const [inputAvtive, setInputActive] = useState(false);
-
-
-
+          }
+      
+  ///////////////////////////////////////
+ 
+  
 /// возвращаем форму, в которой вызываются компоненты создания кнопки и инпута
   return (
     <form name="client_form" className={classN} onClick={(e)=> changeState(e)} onSubmit={onSubmitFunc ? ((e) => onSubmitFunc(e) ): ((e)=>handleFormSubmit(e))}>
@@ -230,8 +233,12 @@ function FormCreator({ classN, onSubmitFunc}) {
             </label>
             <label>
               Телефон
-              <br />
-              <input type="tel" name="telephone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required></input>
+            <br />
+            <input className="telInput"
+              type="tel"
+              name="telephone"
+              pattern="+7[0-9]{3}-[0-9]{3}-[0-9]{4}"
+           />
             </label>
             <label>
               Примечание

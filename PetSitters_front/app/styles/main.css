@@ -1490,6 +1490,48 @@ h2 {
   justify-content: flex-start;
 }
 
+.contactYouWindow {
+  width: 460px;
+  height: 217px;
+  background-color: #BDA8D4;
+  border-radius: 30px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+}
+.contactYouWindow img {
+  position: absolute;
+  top: 5px;
+  left: 10px;
+}
+
+.contactYouWindow_div1 {
+  font-family: "Myfont", Arial, Helvetica, sans-serif;
+  width: 300px;
+  height: 143px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  color: #320064;
+  line-height: 28px;
+  font-size: 24px;
+}
+.contactYouWindow_div1 p {
+  font-size: 24px;
+  font-family: "Myfont", Arial, Helvetica, sans-serif;
+  margin: 0px;
+}
+.contactYouWindow_div1 p:nth-child(even) {
+  color: #FFF9F5;
+  align-self: center;
+}
+.contactYouWindow_div1 p:last-child {
+  font-size: 18px;
+}
+
 .main_find_sitter_block {
   display: flex;
   flex-direction: row;
@@ -1826,6 +1868,7 @@ a.gif:hover .gifBackground {
   position: absolute;
   top: 60px;
   left: 0px;
+  cursor: pointer;
 }
 .client_form .form_select_active li {
   cursor: pointer;
@@ -1846,6 +1889,7 @@ a.gif:hover .gifBackground {
   box-shadow: none;
   border-radius: 30px;
   background-color: #FFF9F5;
+  font-size: 20px;
 }
 .client_form ._select_client_form_select_opt {
   width: 360px;
@@ -1855,12 +1899,14 @@ a.gif:hover .gifBackground {
   line-height: 60px;
   padding-left: 20px;
   padding-right: 20px;
+  background-color: #FFF9F5;
   border: solid 1px #BDA8D4;
   box-shadow: none;
   border-radius: 30px;
   display: flex;
   justify-content: space-between;
   position: relative;
+  cursor: pointer;
 }
 .client_form ._select_client_form_select_opt option {
   height: max-content;
@@ -1900,6 +1946,7 @@ a.gif:hover .gifBackground {
   width: 163px;
   padding-left: 60px;
   padding-right: 14px;
+  background-color: transparent;
 }
 .client_form .price_select .client_form_select_opt {
   width: 191px;
@@ -2145,6 +2192,7 @@ a.gif:hover .gifBackground {
   display: flex;
   justify-content: space-between;
   position: relative;
+  cursor: pointer;
 }
 .client_form_sitters_page ._select_client_form_sitters_page_select_opt option {
   height: max-content;
@@ -2187,6 +2235,7 @@ a.gif:hover .gifBackground {
   padding-left: 60px;
   padding-right: 14px;
   background-color: transparent;
+  cursor: pointer;
 }
 .client_form_sitters_page .price_select .client_form_sitters_page_select_opt {
   width: 161px;

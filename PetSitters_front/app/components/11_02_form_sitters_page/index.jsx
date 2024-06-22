@@ -89,11 +89,11 @@ function FormCreator({ classN, onSubmitFunc}) {
   const animalOptions = ["Кошка", "Собака"];
   const [animal, setAnimal] = useState(parametersObj.anim ? parametersObj.anim : animalOptions["0"]);
 
-  const priceOptions = [600, 700, 900, 1000];
+  const priceOptions = [1000, 1100, 1200];
   const [clickedMinPrice, setClickedMinPrice] = useState(false);
   const [minPrice, setMinPrice] = useState( parametersObj.pfrom ? parametersObj.pfrom : priceOptions[0]);
 
-  const maxPriceOptions = [1000, 1200, 1400, 1600];
+  const maxPriceOptions = [1200, 1400, 1700, 2000];
   const [clickedMaxPrice, setClickedMaxPrice] = useState(false);
   const [maxPrice, setMaxPrice] = useState(parametersObj.pto ? parametersObj.pto : maxPriceOptions[maxPriceOptions.length - 1]
   );
@@ -128,41 +128,29 @@ function FormCreator({ classN, onSubmitFunc}) {
     // const yandexKey = "f5c06f3f-77c4-4412-ba84-2a93141f56d7";
      const myCoords = [];
      let clientCity; 
-    const { state } = await navigator.permissions.query({ name: 'geolocation' });
-    if (state != "granted") {
+     if (navigator.geolocation) {
+      navigator.permissions.query({ name: "geolocation" }).then((result) => {
+         if (result.state === "granted") {
+           navigator.geolocation.getCurrentPosition(function (position) {
+             const { latitude, longitude } = position.coords;
+             myCoords.push(latitude);
+             myCoords.push(longitude);
+             //// вызываем функцию getCity которая определить город по координатам
+             clientCity = getCity(myCoords, setCity, setCityName);
+           })
+         } else {
+          setGeo(false)
+          alert("Доступ к геоданным не получен, пожалуйста выберите город вручную!")
+         }
+       }
+     );
+ 
+       } else {
       setGeo(false)
-      alert("Доступ к геоданным не получен, пожалуйста выберите город вручную!")
- } else if ("geolocation" in navigator) {
-      navigator.geolocation.getCurrentPosition(function (position) {
-        const { latitude, longitude } = position.coords;
-        myCoords.push(latitude);
-        myCoords.push(longitude);
-        //// вызываем функцию getCity которая определить город по координатам
-        clientCity = getCity(myCoords, setCity, setCityName);
-        
-      });
-    } 
-    return clientCity;
-  }
-  // function handleGeoClick(e) {
-  //   e.preventDefault();
+     alert("Доступ к геоданным не получен, пожалуйста выберите город вручную!") }
     
-  //   //тут аррей для координат после определения местоположения  пользователя
-  //   const myCoords = [];
-  //   let clientCity;
-
-  //   if ("geolocation" in navigator) {
-  //     navigator.geolocation.getCurrentPosition(function (position) {
-  //       const { latitude, longitude } = position.coords;
-  //       myCoords.push(latitude);
-  //       myCoords.push(longitude);
-  //       //// вызываем функцию getCity которая определить город по координатам
-  //       clientCity = getCity(myCoords, setCity, setCityName);
-  //     });
-  //   }
-  //   return clientCity;
-  // }
-
+    return clientCity;
+          }
  
   /// возвращаем форму, в которой вызываются компоненты создания кнопки и инпута
   return (
@@ -213,7 +201,7 @@ function FormCreator({ classN, onSubmitFunc}) {
               name="telephone"
               pattern="+7[0-9]{3}-[0-9]{3}-[0-9]{4}"
               placeholder={`${parametersObj.phone ? parametersObj.phone : ""}`}
-            ></input>
+           />
           </label>
           <label>
             Период

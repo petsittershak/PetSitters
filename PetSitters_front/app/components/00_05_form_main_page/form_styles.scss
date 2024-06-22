@@ -100,6 +100,7 @@ label{
       position: absolute;
       top: 60px;
       left: 0px;
+      cursor: pointer;
 
       li{
         cursor: pointer;
@@ -122,6 +123,7 @@ label{
     box-shadow: $shadow;
     border-radius: 30px;
     background-color: $beigeColor;
+    font-size: $fontSizeSmall;
   }
 
     ._select_client_form_select_opt{
@@ -132,13 +134,14 @@ label{
     line-height: 60px;
     padding-left: 20px;
     padding-right: 20px;
-    //background-color: $beigeColor;
+    background-color: $beigeColor;
     border: $outline;
     box-shadow: $shadow;
     border-radius: $borderRadius;
     display: flex;
     justify-content: space-between;
     position: relative;
+    cursor: pointer;
   
 
     option{
@@ -186,6 +189,7 @@ label{
         width: 163px;
         padding-left: 60px;
         padding-right: 14px;
+        background-color: transparent;
 
         .client_form_select_opt{
           width: 191px;

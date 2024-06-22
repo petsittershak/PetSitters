@@ -163,16 +163,28 @@ export default function FoundSitters() {
     canHelpAlergicAnimal: "./app/pictures/sitterCan/canHelpAlergicAnimal.png",
     ownSertificate: "./app/pictures/sitterCan/ownSertificate.png",
     canCookHomeFood: "./app/pictures/sitterCan/canCookHomeFood.png"
+  }
+  
+    const parametersObj = {};
+    if (window.location.search !="") {
+     const str = window.location.search;
+     const params = ["phone"];
+      let regexp;
+  
+      for (let i = 0; i < params.length; i++){
+        regexp = `[\\?&]${params[i]}=([^&#]*)`;
+           parametersObj[params[i]] = str.match(regexp)[1]
+        }
+    parametersObj.phone = `${parametersObj.phone.slice(0,2)} (${parametersObj.phone.slice(2,5)}) ${parametersObj.phone.slice(5,8)}-${parametersObj.phone.slice(8,10)}-${parametersObj.phone.slice(10,12)}`;
     }
-
-    
+    console.log(parametersObj.phone)
   //функция публикует профайлы ситтеров на страницу ситтеров, и если они не были загружены с сервера,
   // функция берет дефолтные значения для примера из petSittersProfilesArr
   return (
     <div className="sitters_page_foundSitters" id="sitters_page_foundSitters">
       <h1> Нашли для вас подходящих sitters</h1>
       <div className="sitters_page_suggestedSitters">
-        {((sittersArr && sittersArr.length !== 0 ) ? sittersArr: petSittersProfilesArr).map((sitter, i) => { return <SitterSmallProfile sitterObj={sitter} iconsLinksOpt={iconsLinks} sitterCan={sitterCanOpt} key={i} extraClassWidth="sittersPageProfile" extraClassBtnWidth="sittersPageProfileBtn"/>})}
+        {((sittersArr && sittersArr.length !== 0) ? sittersArr : petSittersProfilesArr).map((sitter, i) => { return <SitterSmallProfile sitterObj={sitter} iconsLinksOpt={iconsLinks} sitterCan={sitterCanOpt} key={i} extraClassWidth="sittersPageProfile" extraClassBtnWidth="sittersPageProfileBtn" phone={parametersObj.phone} />})}
       </div>
     </div>
   )
