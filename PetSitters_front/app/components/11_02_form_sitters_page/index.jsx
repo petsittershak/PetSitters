@@ -223,7 +223,7 @@ function FormCreator({ classN, onSubmitFunc}) {
             <div className="price">
              <div style={{position: "absolute", marginTop: "0px", marginLeft: "5px", whiteSpace: "pre", lineHeight: "40px", fortSize: "20px", backgroundColor: "#FFF9F5", width: "160px", borderRadius: "30px", height: "40px", color: "#B3B3B3"}}>  От                ₽</div>
               <Input    formName="price_select"   classes={`${classN}_select_opt`}  opt={priceOptions}  clickState={clickedMinPrice}  setClick={setClickedMinPrice}  changeStateOpt={setMinPrice}  choiceMade={minPrice}  placeholder="Oт"  />
-              <div style={{position: "absolute", marginTop: "0px", marginLeft: "200px", whiteSpace: "pre", fortSize: "20px", whiteSpace: "pre", lineHeight: "40px", fortSize: "20px", backgroundColor: "#FFF9F5", width: "160px", borderRadius: "30px", height: "40px", color: "#B3B3B3"}}>  До                ₽</div>
+              <div style={{position: "absolute", marginTop: "0px", marginLeft: "190px", whiteSpace: "pre", fortSize: "20px", whiteSpace: "pre", lineHeight: "40px", fortSize: "20px", backgroundColor: "#FFF9F5", width: "160px", borderRadius: "30px", height: "40px", color: "#B3B3B3"}}>  До                ₽</div>
               <Input
                 formName="price_select"
                 classes={`${classN}_select_opt`}
