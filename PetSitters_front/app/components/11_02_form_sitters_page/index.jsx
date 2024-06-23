@@ -5,6 +5,7 @@ import Button from "./../buttons/index.jsx";
 import CreateDatePicker from "./../react_date_picker/index.jsx";
 import DEFINE_URL_ADRESS from "../000_backend_key.jsx";
 import getSitters from "../request$receiveSitters/index.jsx";
+import PhoneInput from "../phoneMask/index.jsx";
 
 //данный компонент согдает форму для заполнения заказчиком
 
@@ -69,16 +70,10 @@ function FormCreator({ classN, onSubmitFunc}) {
     parametersObj.type = decodeURIComponent(parametersObj.type);
     parametersObj.anim = decodeURIComponent(parametersObj.anim);
     parametersObj.city = decodeURIComponent(parametersObj.city);
-    parametersObj.phone = `${parametersObj.phone.slice(0,2)} (${parametersObj.phone.slice(2,5)}) ${parametersObj.phone.slice(5,8)}-${parametersObj.phone.slice(8,10)}-${parametersObj.phone.slice(10,12)}`;
+   parametersObj.phone = `${parametersObj.phone.slice(0,1) == "8" ? "8" : "+7"} (${parametersObj.phone.slice(1,4)}) ${parametersObj.phone.slice(4,7)}-${parametersObj.phone.slice(7,9)}-${parametersObj.phone.slice(9,11)}`;
 
   }
-  
  
-  console.log(parametersObj)
-  // const form = document.forms["client_form"];
-  // form.elements["telephone"].placeholder = parametersObj.phone;
-
-  
 
   /// все данные для создания списков, посредством вызова  функции CreateInput, которая вызывается несколько раз в форме ниже
   const serviceOptions = ["Выгул", "Передержка", "Няня"];
@@ -196,12 +191,7 @@ function FormCreator({ classN, onSubmitFunc}) {
           <label>
             Телефон
             <br />
-            <input className="telInput"
-              type="tel"
-              name="telephone"
-              pattern="+7[0-9]{3}-[0-9]{3}-[0-9]{4}"
-              placeholder={`${parametersObj.phone ? parametersObj.phone : ""}`}
-           />
+            <PhoneInput initialValue={parametersObj.phone} />
           </label>
           <label>
             Период

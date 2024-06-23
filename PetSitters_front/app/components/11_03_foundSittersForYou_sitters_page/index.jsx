@@ -175,16 +175,21 @@ export default function FoundSitters() {
         regexp = `[\\?&]${params[i]}=([^&#]*)`;
            parametersObj[params[i]] = str.match(regexp)[1]
         }
-    parametersObj.phone = `${parametersObj.phone.slice(0,2)} (${parametersObj.phone.slice(2,5)}) ${parametersObj.phone.slice(5,8)}-${parametersObj.phone.slice(8,10)}-${parametersObj.phone.slice(10,12)}`;
+      parametersObj.phone = `${parametersObj.phone.slice(0, 1) == "8" ? "8" : "+7"} (${parametersObj.phone.slice(1, 4)}) ${parametersObj.phone.slice(4, 7)}-${parametersObj.phone.slice(7, 9)}-${parametersObj.phone.slice(9, 11)}`;
     }
-    console.log(parametersObj.phone)
+   
+  
   //функция публикует профайлы ситтеров на страницу ситтеров, и если они не были загружены с сервера,
   // функция берет дефолтные значения для примера из petSittersProfilesArr
   return (
     <div className="sitters_page_foundSitters" id="sitters_page_foundSitters">
       <h1> Нашли для вас подходящих sitters</h1>
       <div className="sitters_page_suggestedSitters">
-        {((sittersArr && sittersArr.length !== 0) ? sittersArr : petSittersProfilesArr).map((sitter, i) => { return <SitterSmallProfile sitterObj={sitter} iconsLinksOpt={iconsLinks} sitterCan={sitterCanOpt} key={i} extraClassWidth="sittersPageProfile" extraClassBtnWidth="sittersPageProfileBtn" phone={parametersObj.phone} />})}
+        {((sittersArr && sittersArr.length !== 0) ? sittersArr : petSittersProfilesArr).map((sitter, i) => {
+          return <SitterSmallProfile sitterObj={sitter}
+            iconsLinksOpt={iconsLinks} sitterCan={sitterCanOpt} key={i}
+            extraClassWidth="sittersPageProfile" extraClassBtnWidth="sittersPageProfileBtn" phone={parametersObj.phone}/>
+        })}
       </div>
     </div>
   )
