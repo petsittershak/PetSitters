@@ -1943,7 +1943,7 @@ a.gif:hover .gifBackground {
   font-size: 20px;
 }
 .client_form .price_select {
-  width: 163px;
+  width: 117px;
   padding-left: 60px;
   padding-right: 14px;
   background-color: transparent;
@@ -2170,6 +2170,7 @@ a.gif:hover .gifBackground {
   padding-right: 20px;
   border: solid 1px #BDA8D4;
   border-radius: 30px;
+  font-size: 20px;
   background-color: #FFF9F5;
 }
 .client_form_sitters_page input::placeholder {
