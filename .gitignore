@@ -1,6 +1,5 @@
 #BACKEND
 __pycache__/
-.env
 PetSitters_backend/database.db
 PetSitters_backend/poetry.lock
 
