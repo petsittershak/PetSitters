@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import Button from "../buttons/index.jsx"; //{btnType, classN, onClickFunct, btnText}
 import SittersAbilityIcons from "../sitterProfilesAbilityIcons/index.jsx";
+import Modal from "../modal/index.jsx";
+import WillContactYouWindow from "../willContactYouModal/index.jsx";
+
 
 export default function SitterFullProfile({
   sitterObj,
@@ -8,7 +11,17 @@ export default function SitterFullProfile({
   sitterCan,
   extraClassWidth,
   extraClassBtnWidth,
+  phone
 }) {
+
+  const [modalAvtive, setModalActive] = useState(false);
+  if (modalAvtive) {
+    document.body.style.overflowY = 'hidden';
+  }else{
+    document.body.style.overflowY = 'scroll';
+  }
+
+
   const defaultPic = "./app/pictures/pic/petsitter_avatar2.jpg";
 
   return (
@@ -69,7 +82,10 @@ export default function SitterFullProfile({
           </div>
           <div className="sitter_fullProfile_btn_div">
             <Button classN="btn sitter_fullProfile_btn1" onClickFunct={()=>{}} btnText="Отзывы"/>
-            <Button classN="btn sitter_fullProfile_btn2" onClickFunct={()=>{}} btnText="Связаться"/>
+            <Button classN="btn sitter_fullProfile_btn2" onClickFunct={() => setModalActive(true)} btnText="Связаться" />
+            <Modal active={modalAvtive} setActive={setModalActive}>
+              <WillContactYouWindow phone={phone}/>
+            </Modal>
           </div>
         </div>
       </div>

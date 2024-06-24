@@ -87,6 +87,7 @@
     padding-right: 20px;
     border: $outline;
     border-radius: 30px;
+    font-size: $fontSizeSmall;
     background-color: $beigeColor;
  }
 input::placeholder{
@@ -94,14 +95,6 @@ input::placeholder{
   line-height: 40px;
   color: $mainBlackColor;
 }
-  // .telInput:autofill {
-  //   background-color: $beigeColor !important;
-  //   border: none !important;
-  // }
-  // .telInput:-webkit-autofill {
-  //   background-color: $beigeColor !important;
-  //   border: none !important;
-  // }
 
     ._select_client_form_sitters_page_select_opt{
     width: 321px;
@@ -118,7 +111,7 @@ input::placeholder{
     display: flex;
     justify-content: space-between;
     position: relative;
-
+    cursor: pointer;
  
 
 
@@ -171,6 +164,7 @@ input::placeholder{
         padding-left: 60px;
         padding-right: 14px;
         background-color: transparent;
+        cursor: pointer;
 
         .client_form_sitters_page_select_opt{
           width: 161px;

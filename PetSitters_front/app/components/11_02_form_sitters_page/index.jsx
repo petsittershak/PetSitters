@@ -5,6 +5,7 @@ import Button from "./../buttons/index.jsx";
 import CreateDatePicker from "./../react_date_picker/index.jsx";
 import DEFINE_URL_ADRESS from "../000_backend_key.jsx";
 import getSitters from "../request$receiveSitters/index.jsx";
+import PhoneInput from "../phoneMask/index.jsx";
 
 //данный компонент согдает форму для заполнения заказчиком
 
@@ -69,16 +70,10 @@ function FormCreator({ classN, onSubmitFunc}) {
     parametersObj.type = decodeURIComponent(parametersObj.type);
     parametersObj.anim = decodeURIComponent(parametersObj.anim);
     parametersObj.city = decodeURIComponent(parametersObj.city);
-    parametersObj.phone = `${parametersObj.phone.slice(0,2)} (${parametersObj.phone.slice(2,5)}) ${parametersObj.phone.slice(5,8)}-${parametersObj.phone.slice(8,10)}-${parametersObj.phone.slice(10,12)}`;
+   parametersObj.phone = `${parametersObj.phone.slice(0,1) == "8" ? "8" : "+7"} (${parametersObj.phone.slice(1,4)}) ${parametersObj.phone.slice(4,7)}-${parametersObj.phone.slice(7,9)}-${parametersObj.phone.slice(9,11)}`;
 
   }
-  
  
-  console.log(parametersObj)
-  // const form = document.forms["client_form"];
-  // form.elements["telephone"].placeholder = parametersObj.phone;
-
-  
 
   /// все данные для создания списков, посредством вызова  функции CreateInput, которая вызывается несколько раз в форме ниже
   const serviceOptions = ["Выгул", "Передержка", "Няня"];
@@ -89,11 +84,11 @@ function FormCreator({ classN, onSubmitFunc}) {
   const animalOptions = ["Кошка", "Собака"];
   const [animal, setAnimal] = useState(parametersObj.anim ? parametersObj.anim : animalOptions["0"]);
 
-  const priceOptions = [600, 700, 900, 1000];
+  const priceOptions = [1000, 1100, 1200];
   const [clickedMinPrice, setClickedMinPrice] = useState(false);
   const [minPrice, setMinPrice] = useState( parametersObj.pfrom ? parametersObj.pfrom : priceOptions[0]);
 
-  const maxPriceOptions = [1000, 1200, 1400, 1600];
+  const maxPriceOptions = [1200, 1400, 1700, 2000];
   const [clickedMaxPrice, setClickedMaxPrice] = useState(false);
   const [maxPrice, setMaxPrice] = useState(parametersObj.pto ? parametersObj.pto : maxPriceOptions[maxPriceOptions.length - 1]
   );
@@ -128,41 +123,29 @@ function FormCreator({ classN, onSubmitFunc}) {
     // const yandexKey = "f5c06f3f-77c4-4412-ba84-2a93141f56d7";
      const myCoords = [];
      let clientCity; 
-    const { state } = await navigator.permissions.query({ name: 'geolocation' });
-    if (state != "granted") {
+     if (navigator.geolocation) {
+      navigator.permissions.query({ name: "geolocation" }).then((result) => {
+         if (result.state === "granted") {
+           navigator.geolocation.getCurrentPosition(function (position) {
+             const { latitude, longitude } = position.coords;
+             myCoords.push(latitude);
+             myCoords.push(longitude);
+             //// вызываем функцию getCity которая определить город по координатам
+             clientCity = getCity(myCoords, setCity, setCityName);
+           })
+         } else {
+          setGeo(false)
+          alert("Доступ к геоданным не получен, пожалуйста выберите город вручную!")
+         }
+       }
+     );
+ 
+       } else {
       setGeo(false)
-      alert("Доступ к геоданным не получен, пожалуйста выберите город вручную!")
- } else if ("geolocation" in navigator) {
-      navigator.geolocation.getCurrentPosition(function (position) {
-        const { latitude, longitude } = position.coords;
-        myCoords.push(latitude);
-        myCoords.push(longitude);
-        //// вызываем функцию getCity которая определить город по координатам
-        clientCity = getCity(myCoords, setCity, setCityName);
-        
-      });
-    } 
-    return clientCity;
-  }
-  // function handleGeoClick(e) {
-  //   e.preventDefault();
+     alert("Доступ к геоданным не получен, пожалуйста выберите город вручную!") }
     
-  //   //тут аррей для координат после определения местоположения  пользователя
-  //   const myCoords = [];
-  //   let clientCity;
-
-  //   if ("geolocation" in navigator) {
-  //     navigator.geolocation.getCurrentPosition(function (position) {
-  //       const { latitude, longitude } = position.coords;
-  //       myCoords.push(latitude);
-  //       myCoords.push(longitude);
-  //       //// вызываем функцию getCity которая определить город по координатам
-  //       clientCity = getCity(myCoords, setCity, setCityName);
-  //     });
-  //   }
-  //   return clientCity;
-  // }
-
+    return clientCity;
+          }
  
   /// возвращаем форму, в которой вызываются компоненты создания кнопки и инпута
   return (
@@ -208,12 +191,7 @@ function FormCreator({ classN, onSubmitFunc}) {
           <label>
             Телефон
             <br />
-            <input className="telInput"
-              type="tel"
-              name="telephone"
-              pattern="+7[0-9]{3}-[0-9]{3}-[0-9]{4}"
-              placeholder={`${parametersObj.phone ? parametersObj.phone : ""}`}
-            ></input>
+            <PhoneInput initialValue={parametersObj.phone} />
           </label>
           <label>
             Период
@@ -245,7 +223,7 @@ function FormCreator({ classN, onSubmitFunc}) {
             <div className="price">
              <div style={{position: "absolute", marginTop: "0px", marginLeft: "5px", whiteSpace: "pre", lineHeight: "40px", fortSize: "20px", backgroundColor: "#FFF9F5", width: "160px", borderRadius: "30px", height: "40px", color: "#B3B3B3"}}>  От                ₽</div>
               <Input    formName="price_select"   classes={`${classN}_select_opt`}  opt={priceOptions}  clickState={clickedMinPrice}  setClick={setClickedMinPrice}  changeStateOpt={setMinPrice}  choiceMade={minPrice}  placeholder="Oт"  />
-              <div style={{position: "absolute", marginTop: "0px", marginLeft: "200px", whiteSpace: "pre", fortSize: "20px", whiteSpace: "pre", lineHeight: "40px", fortSize: "20px", backgroundColor: "#FFF9F5", width: "160px", borderRadius: "30px", height: "40px", color: "#B3B3B3"}}>  До                ₽</div>
+              <div style={{position: "absolute", marginTop: "0px", marginLeft: "190px", whiteSpace: "pre", fortSize: "20px", whiteSpace: "pre", lineHeight: "40px", fortSize: "20px", backgroundColor: "#FFF9F5", width: "160px", borderRadius: "30px", height: "40px", color: "#B3B3B3"}}>  До                ₽</div>
               <Input
                 formName="price_select"
                 classes={`${classN}_select_opt`}
