@@ -13,8 +13,9 @@ module.exports = {
      static: {
       directory: path.join(__dirname, "/"),
     },
-     port: 8081,
-     open: true
+     port: 8000,
+     open: true,
+     host: '0.0.0.0'
    },
     module:{
         rules:[   //загрузчик для jsx
